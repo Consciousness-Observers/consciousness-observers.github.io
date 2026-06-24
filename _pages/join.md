@@ -1,6 +1,7 @@
 ---
 layout: page
-title:
+title: join
+hide_title: true
 permalink: /join/
 nav: true
 nav_order: 6
