@@ -18,18 +18,20 @@ You are affiliated with a university or research institute — a student at any 
 3. A current member **recommends** you
 4. Every member **votes** — admission requires a majority, and the process concludes only when everyone has responded
 
+---
+
 ### How to Apply
 
-Send an email to [**psychwangzihao@zju.edu.cn**](mailto:psychwangzihao@zju.edu.cn?subject=CO-LAB%20Membership%20Application) with the following:
+<div class="text-center my-4">
+  <a href="https://wj.qq.com/s2/27124730/aaac/"
+     target="_blank"
+     style="display: inline-block; padding: 0.75rem 2rem; font-size: 1.05rem; font-weight: 600;
+            background: var(--global-theme-color); color: #fff; border-radius: 8px; text-decoration: none;">
+    Apply to Join →
+  </a>
+</div>
 
-| | |
-|---|---|
-| **Name** | Your full name |
-| **Discipline** | Physics, psychology, neuroscience, philosophy… |
-| **Affiliation** | Your university or research institute |
-| **Way to Consciousness** | A few paragraphs about how you think about consciousness, what drives your research, and why you want to join |
-| **Photo** | A portrait photo attached to the email |
-| **Anything else** | Links, questions, or just say hello |
+Or send an email directly to [**psychwangzihao@zju.edu.cn**](mailto:psychwangzihao@zju.edu.cn?subject=CO-LAB%20Membership%20Application).
 
 Your application will be shared with all CO-LAB members for review and voting.
 
@@ -39,6 +41,3 @@ Your application will be shared with all CO-LAB members for review and voting.
 
 We leave academic rank at the door. Disagreement is welcome; condescension is not. Every disciplinary approach to consciousness is respected, and no unedited discussion materials are shared without everyone's consent.
 
----
-
-📧 [**psychwangzihao@zju.edu.cn**](mailto:psychwangzihao@zju.edu.cn?subject=CO-LAB%20Membership%20Application)
