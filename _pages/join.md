@@ -20,6 +20,8 @@ We leave academic rank at the door. Disagreement is welcome; condescension is no
 
 ## Contact
 
-Reach out to any current member, or write to us at:
+Reach out to any current member directly, or email:
 
-📧 **psychwangzihao@zju.edu.cn**
+📧 [**psychwangzihao@zju.edu.cn**](mailto:psychwangzihao@zju.edu.cn?subject=CO-LAB%20Membership)
+
+*Messages are shared with all CO-LAB members.*

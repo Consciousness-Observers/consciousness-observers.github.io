@@ -1,7 +1,7 @@
 {% if site.data.members %}
 <div class="team-members">
   {% for member in site.data.members %}
-  <div class="team-member-card" style="margin-bottom: 2rem; padding: 1.75rem 1.5rem; border: 1px solid var(--global-divider-color); border-radius: 10px; background: var(--global-card-bg-color);">
+  <div class="team-member-card" id="{{ member.name | slugify }}" style="margin-bottom: 2rem; padding: 1.75rem 1.5rem; border: 1px solid var(--global-divider-color); border-radius: 10px; background: var(--global-card-bg-color);">
     <div class="row align-items-center">
       <!-- Left: Photo -->
       <div class="col-md-3 text-center mb-3 mb-md-0">
@@ -59,7 +59,7 @@
         <!-- Contact -->
         {% if member.contact %}
           <p style="font-size: 0.85rem; margin-bottom: 0.55rem; color: var(--global-text-color-light);">
-            📧 <a href="mailto:{{ member.contact }}" style="color: var(--global-text-color-light); text-decoration: none;">{{ member.contact }}</a>
+            📧 <a href="mailto:{{ member.contact }}?subject=CO-LAB" style="color: var(--global-text-color-light); text-decoration: none;">{{ member.contact }}</a>
           </p>
         {% endif %}
 
