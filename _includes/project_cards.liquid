@@ -11,7 +11,8 @@
 {% for project in site.data.projects %}
 {% if project.category == category %}
 {% assign has_project = true %}
-<div class="project-card" style="margin-bottom: 1.5rem; padding: 1.25rem 1.5rem; border: 1px solid var(--global-divider-color); border-radius: 8px; background: var(--global-card-bg-color);">
+<a href="/projects/{{ project.slug }}/" style="text-decoration: none; color: inherit;">
+<div class="project-card" style="margin-bottom: 1.5rem; padding: 1.25rem 1.5rem; border: 1px solid var(--global-divider-color); border-radius: 8px; background: var(--global-card-bg-color); cursor: pointer;">
 <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem;">
 {{ project.title }}
 {% if project.title_en %}
@@ -33,6 +34,7 @@
 <p style="font-size: 0.9rem; margin-bottom: 0; color: var(--global-text-color);">{{ project.description }}</p>
 {% endif %}
 </div>
+</a>
 {% endif %}
 {% endfor %}
 

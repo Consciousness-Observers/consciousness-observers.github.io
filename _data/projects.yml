@@ -2,6 +2,7 @@
 # Category: courses, workshops, outreach
 
 - title: "Concepts and Approaches in Psychology"
+  slug: concepts-approaches-psychology
   category: courses
   contacts:
     - Zihao Wang
@@ -11,6 +12,7 @@
   status: active
 
 - title: "3D Printing and Digital Brain Anatomy"
+  slug: 3d-printing-digital-brain-anatomy
   category: workshops
   contacts:
     - Zihao Wang
