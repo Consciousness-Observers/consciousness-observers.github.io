@@ -7,22 +7,46 @@ nav: true
 nav_order: 6
 ---
 
-## Who We're Looking For
+<div class="text-center my-4">
+  <a href="https://github.com/Consciousness-Observers/consciousness-observers.github.io/issues/new?template=join.yml"
+     style="display: inline-block; padding: 0.75rem 2rem; font-size: 1.05rem; font-weight: 600;
+            background: var(--global-theme-color); color: #fff; border-radius: 8px; text-decoration: none;">
+    Apply to Join →
+  </a>
+</div>
 
-You are affiliated with a university or research institute — a student at any level, a postdoc, a research assistant, an independent scholar — and you care deeply about consciousness. You are here because the question matters, not because it pays.
+---
 
-## How to Join
+### Who We're Looking For
 
-We invite prospective members to attend a few sessions first. After that, a current member recommends you, and everyone votes. Every vote counts — the process is complete only when all members have responded.
+You are affiliated with a university or research institute — a student at any level, a postdoc, a research assistant, an independent scholar — and you care deeply about consciousness. You come because the question matters, not because it pays.
 
-## How We Work Together
+### How It Works
 
-We leave academic rank at the door. Disagreement is welcome; condescension is not. We respect every disciplinary approach to consciousness, and we never share unedited discussion materials without everyone's consent.
+Prospective members attend a few sessions as observers. After that, a current member recommends you, and every member votes. Admission requires a majority, and the process concludes only when everyone has responded.
 
-## Contact
+### What You'll Need to Apply
 
-Reach out to any current member directly, or email:
+Click the button above to open an application form. You'll be asked for:
 
-📧 [**psychwangzihao@zju.edu.cn**](mailto:psychwangzihao@zju.edu.cn?subject=CO-LAB%20Membership)
+| Field | |
+|---|---|
+| **Name** | Your full name |
+| **Discipline** | Physics, psychology, neuroscience, philosophy… |
+| **Affiliation** | Your university or research institute |
+| **Email** | How we'll reach you |
+| **Way to Consciousness** | Your personal statement — how you think about consciousness, what drives your research, why you want to be here |
+| **Photo** | A portrait photo for your member profile (drag & drop) |
+| **Anything else** | Links, questions, or just a hello |
 
-*Messages are shared with all CO-LAB members.*
+Your application will be visible to all CO-LAB members, who will review and vote on it together.
+
+---
+
+### How We Work Together
+
+We leave academic rank at the door. Disagreement is welcome; condescension is not. Every disciplinary approach to consciousness is respected, and no unedited discussion materials are shared without everyone's consent. If that sounds like your kind of space — we'd love to hear from you.
+
+---
+
+📧 Direct questions to [**psychwangzihao@zju.edu.cn**](mailto:psychwangzihao@zju.edu.cn?subject=CO-LAB%20Membership)

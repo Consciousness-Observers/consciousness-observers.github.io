@@ -1,0 +1,76 @@
+name: Join CO-LAB
+description: Apply to become a member of Consciousness Observers (CO-LAB)
+title: "[Join] Your Name"
+labels: ["application"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Welcome! 🧠
+
+        Thank you for your interest in joining **Consciousness Observers (CO-LAB)**. Please fill out the form below. All current members will be notified and will review your application together.
+
+        Before applying, please make sure you've read our [Join page](https://consciousness-observers.github.io/join/) and understand our community norms.
+
+  - type: input
+    id: name
+    attributes:
+      label: Full Name
+      placeholder: e.g., Shijie Zhang
+    validations:
+      required: true
+
+  - type: input
+    id: background
+    attributes:
+      label: Discipline / Background
+      placeholder: e.g., Physics, Psychology, Neuroscience, Philosophy...
+    validations:
+      required: true
+
+  - type: input
+    id: affiliation
+    attributes:
+      label: Institution / Affiliation
+      placeholder: e.g., School of Physics, Zhejiang University
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: Email
+      placeholder: e.g., yourname@example.edu
+    validations:
+      required: true
+
+  - type: textarea
+    id: way_to_consciousness
+    attributes:
+      label: Way to Consciousness
+      description: |
+        Tell us how you approach the study of consciousness — your research perspective,
+        the questions that drive you, and why you want to be part of CO-LAB.
+        This will appear as your personal statement on the Members page.
+      placeholder: |
+        e.g., I approach consciousness from physics. Rather than asking which brain
+        processes correlate with experience, I am drawn to a more ontological question...
+    validations:
+      required: true
+
+  - type: textarea
+    id: photo
+    attributes:
+      label: Photo
+      description: |
+        Upload a photo of yourself (JPEG or PNG). Drag and drop the image file into
+        the text area below. This will appear as your profile photo on the Members page.
+      placeholder: "📷 Drag and drop your photo here"
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything Else?
+      description: Anything else you'd like to share with us — links, questions, or just say hello.
+    validations:
+      required: false
