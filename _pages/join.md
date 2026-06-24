@@ -22,4 +22,4 @@ We leave academic rank at the door. Disagreement is welcome; condescension is no
 
 Reach out to any current member, or write to us at:
 
-📧 **consciousness.observers@proton.me**
+📧 **psychwangzihao@zju.edu.cn**

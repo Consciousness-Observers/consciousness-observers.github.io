@@ -6,7 +6,7 @@ nav: true
 nav_order: 5
 ---
 
-This page collects peer-reviewed work published by CO-LAB members through their home institutions. CO-LAB itself does not produce publications — credit follows standard academic authorship norms.
+Peer-reviewed work by CO-LAB members, published through their home institutions.
 
 {% if site.data.publications %}
   {% bibliography %}
