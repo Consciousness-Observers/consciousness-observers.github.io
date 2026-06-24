@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Apply to Join CO-LAB
+    url: https://github.com/Consciousness-Observers/consciousness-observers.github.io/issues/new?template=join.yml
+    about: Fill out this form to apply for membership
+  - name: Direct Contact
+    url: mailto:psychwangzihao@zju.edu.cn
+    about: For questions that don't fit the application form
