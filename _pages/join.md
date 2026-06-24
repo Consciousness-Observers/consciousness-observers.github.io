@@ -13,10 +13,9 @@ You are affiliated with a university or research institute — a student at any 
 
 ### How It Works
 
-1. **Send an application** (see below)
-2. **Attend a few sessions** as an observer
-3. A current member **recommends** you
-4. Every member **votes** — admission requires a majority, and the process concludes only when everyone has responded
+1. **Apply** — fill out the form
+2. **Observe** — attend a few sessions and get to know us
+3. **Vote** — every member votes; admission requires a majority, and the process concludes only when everyone has responded
 
 ---
 
