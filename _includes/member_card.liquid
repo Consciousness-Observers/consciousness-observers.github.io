@@ -1,0 +1,86 @@
+{% if site.data.members %}
+<div class="team-members">
+  {% for member in site.data.members %}
+  <div class="team-member-card" style="margin-bottom: 2rem; padding: 1.75rem 1.5rem; border: 1px solid var(--global-divider-color); border-radius: 10px; background: var(--global-card-bg-color);">
+    <div class="row align-items-center">
+      <!-- Left: Photo -->
+      <div class="col-md-3 text-center mb-3 mb-md-0">
+        {% if member.image %}
+          {% assign member_image_path = member.image | prepend: 'assets/img/' %}
+          {% assign img_path_no_ext = member_image_path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | remove: '.tiff' | remove: '.gif' %}
+          <picture>
+            {% if site.imagemagick.enabled %}
+              <source
+                class="responsive-img-srcset"
+                srcset="{% for i in site.imagemagick.widths %}{{ img_path_no_ext | relative_url }}-{{ i }}.webp {{ i }}w,{% endfor %}"
+                type="image/webp"
+                sizes="150px"
+              >
+            {% endif %}
+            <img src="{{ member_image_path | relative_url }}" alt="{{ member.name }}"
+                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;"
+                 loading="eager"
+                 onerror="this.onerror=null; this.parentElement.querySelector('source.responsive-img-srcset').remove();">
+          </picture>
+        {% else %}
+          <div style="width: 150px; height: 150px; border-radius: 50%; background: var(--global-divider-color); display: inline-flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--global-text-color-light);">
+            {{ member.name | slice: 0, 1 }}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Right: Info -->
+      <div class="col-md-9">
+        <!-- Name (with optional personal page link) -->
+        <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem;">
+          {% if member.personal_page %}
+            <a href="{{ member.personal_page }}" target="_blank" style="color: var(--global-text-color); text-decoration: none;">
+              {{ member.name }} <span style="font-size: 0.7rem; color: var(--global-theme-color); opacity: 0.6;">🌐</span>
+            </a>
+          {% else %}
+            {{ member.name }}
+          {% endif %}
+        </p>
+
+        <!-- Background -->
+        {% if member.background %}
+          <p style="font-size: 0.95rem; margin-bottom: 0.15rem; color: var(--global-text-color);">
+            {{ member.background }}
+          </p>
+        {% endif %}
+
+        <!-- Institution -->
+        {% if member.institution %}
+          <p style="font-size: 0.9rem; margin-bottom: 0.3rem; color: var(--global-text-color-light);">
+            {{ member.institution }}
+          </p>
+        {% endif %}
+
+        <!-- Contact -->
+        {% if member.contact %}
+          <p style="font-size: 0.85rem; margin-bottom: 0.55rem; color: var(--global-text-color-light);">
+            📧 <a href="mailto:{{ member.contact }}" style="color: var(--global-text-color-light); text-decoration: none;">{{ member.contact }}</a>
+          </p>
+        {% endif %}
+
+        <!-- Research Focus (bold with accent left border) -->
+        {% if member.research_focus %}
+          <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0; padding: 0.4rem 0 0.4rem 0.85rem; border-left: 3px solid var(--global-theme-color);">
+            {{ member.research_focus }}
+          </p>
+        {% endif %}
+
+        <!-- Personal Statement (subtle, smaller text) -->
+        {% if member.statement %}
+          <p style="font-size: 0.85rem; margin-top: 0.5rem; margin-bottom: 0; color: var(--global-text-color-light); padding: 0.3rem 0 0.3rem 0.7rem; border-left: 2px solid var(--global-divider-color);">
+            {{ member.statement }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p><em>No members listed yet.</em></p>
+{% endif %}

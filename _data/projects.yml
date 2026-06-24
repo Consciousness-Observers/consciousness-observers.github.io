@@ -1,0 +1,25 @@
+# CO-LAB Projects
+# Category: courses, workshops, outreach
+
+- title: "心理学概念与途径"
+  title_en: "Psychological Concepts and Approaches"
+  category: courses
+  contacts:
+    - Zihao Wang
+  description: >
+    An open-access course exploring foundational concepts in psychology and their
+    connections to consciousness research. Designed for an interdisciplinary audience.
+  status: active
+
+- title: "3D打印与数字脑解剖"
+  title_en: "3D Printing and Digital Brain Anatomy"
+  category: workshops
+  contacts:
+    - Zihao Wang
+  description: >
+    A hands-on workshop series combining 3D printing technology with digital brain
+    anatomy, making neuroanatomy accessible and tangible for consciousness researchers
+    across disciplines.
+  status: active
+
+# Outreach category — no projects yet

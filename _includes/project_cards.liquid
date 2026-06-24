@@ -1,0 +1,46 @@
+{% if site.data.projects %}
+  {% assign categories = "courses,workshops,outreach" | split: "," %}
+  {% assign category_labels = "Courses,Workshops,Outreach" | split: "," %}
+
+  {% for cat_index in (0..2) %}
+    {% assign category = categories[cat_index] %}
+    {% assign category_label = category_labels[cat_index] %}
+
+    <h3 id="{{ category }}" style="margin-top: 2rem; margin-bottom: 1rem;">{{ category_label }}</h3>
+
+    {% assign has_project = false %}
+    {% for project in site.data.projects %}
+      {% if project.category == category %}
+        {% assign has_project = true %}
+        <div class="project-card" style="margin-bottom: 1.5rem; padding: 1.25rem 1.5rem; border: 1px solid var(--global-divider-color); border-radius: 8px; background: var(--global-card-bg-color);">
+          <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem;">
+            {{ project.title }}
+            {% if project.title_en %}
+              <span style="font-size: 0.85rem; font-weight: 400; color: var(--global-text-color-light);">· {{ project.title_en }}</span>
+            {% endif %}
+            {% if project.status == "active" %}
+              <span style="font-size: 0.7rem; background: var(--global-theme-color); color: #fff; padding: 0.15rem 0.5rem; border-radius: 12px; margin-left: 0.5rem; vertical-align: middle;">active</span>
+            {% endif %}
+          </p>
+
+          {% if project.contacts %}
+            <p style="font-size: 0.85rem; color: var(--global-text-color-light); margin-bottom: 0.5rem;">
+              <strong>Project Contact{% if project.contacts.size > 1 %}s{% endif %}:</strong>
+              {{ project.contacts | join: ", " }}
+            </p>
+          {% endif %}
+
+          {% if project.description %}
+            <p style="font-size: 0.9rem; margin-bottom: 0; color: var(--global-text-color);">{{ project.description }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% if has_project == false %}
+      <p style="color: var(--global-text-color-light); font-style: italic;">Nothing here yet — check back soon, or <a href="/join/">join us</a> and start one.</p>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  <p><em>No projects listed yet.</em></p>
+{% endif %}

@@ -1,0 +1,10 @@
+# CO-LAB Seminar Reports
+# Seminars will be added as they occur.
+# Fields: date, title, speaker, description, transcript_url (optional)
+#
+# Example:
+# - date: 2026-07-01
+#   title: "First CO-LAB Seminar"
+#   speaker: "Speaker Name"
+#   description: "Brief description of the discussion."
+#   transcript_url: /assets/transcripts/2026-07-01.pdf
