@@ -6,7 +6,7 @@ nav: true
 nav_order: 5
 ---
 
-CO-LAB itself does not produce publications — this page lists the individual peer-reviewed work of our members, published through their respective laboratories. CO-LAB is a platform for discussion and collaboration; publication credit follows standard academic norms and is determined by each member's home institution and research group.
+This page collects peer-reviewed work published by CO-LAB members through their home institutions. CO-LAB itself does not produce publications — credit follows standard academic authorship norms.
 
 {% if site.data.publications %}
   {% bibliography %}

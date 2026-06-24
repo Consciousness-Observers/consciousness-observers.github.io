@@ -6,10 +6,8 @@ nav: true
 nav_order: 2
 ---
 
-CO-LAB has no leaders, no chairs, and no hierarchy — only participants. Everyone listed below is an equal member of this community. A small group of volunteers maintain the website and moderate discussions, but the title means nothing outside the task they perform.
+Everyone here participates as an equal. A few volunteers handle logistics and website maintenance, but there are no roles, no ranks, and no hierarchy.
 
 {% include member_card.liquid %}
 
----
-
-*If you are interested in joining, visit the [Join](/join/) page.*
+*Interested in joining? Visit the [Join](/join/) page.*
