@@ -8,7 +8,7 @@ nav_order: 6
 ---
 
 <div class="text-center my-4">
-  <a href="https://github.com/Consciousness-Observers/consciousness-observers.github.io/issues/new?template=join.yml"
+  <a href="https://github.com/Consciousness-Observers/consciousness-observers.github.io/issues/new?template=join.md"
      style="display: inline-block; padding: 0.75rem 2rem; font-size: 1.05rem; font-weight: 600;
             background: var(--global-theme-color); color: #fff; border-radius: 8px; text-decoration: none;">
     Apply to Join →
