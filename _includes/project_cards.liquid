@@ -25,9 +25,7 @@
 {% if project.contacts %}
 <p style="font-size: 0.85rem; color: var(--global-text-color-light); margin-bottom: 0.5rem;">
 <strong>Project Contact{% if project.contacts.size > 1 %}s{% endif %}:</strong>
-{% for contact in project.contacts %}
-<a href="/members/#{{ contact | slugify }}">{{ contact }}</a>{% unless forloop.last %}, {% endunless %}
-{% endfor %}
+{{ project.contacts | join: ", " }}
 </p>
 {% endif %}
 {% if project.description %}
