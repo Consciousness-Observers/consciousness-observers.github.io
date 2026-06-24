@@ -1,34 +1,33 @@
 {% if site.data.seminars %}
-  {% assign seminars_by_year = site.data.seminars | group_by_exp: "item", "item.date | date: '%Y'" %}
-  {% assign sorted_years = seminars_by_year | sort: "name" | reverse %}
-
-  {% for year_group in sorted_years %}
-    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">{{ year_group.name }}</h3>
-    {% assign sorted_seminars = year_group.items | sort: "date" | reverse %}
-    {% for seminar in sorted_seminars %}
-      <div class="seminar-entry" style="margin-bottom: 1.25rem; padding: 1rem 1.25rem; border-left: 3px solid var(--global-divider-color);">
-        <p style="font-size: 0.9rem; color: var(--global-text-color-light); margin-bottom: 0.2rem;">
-          {{ seminar.date | date: "%B %d, %Y" }}
-        </p>
-        <p style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.2rem;">
-          {{ seminar.title }}
-        </p>
-        {% if seminar.speaker %}
-          <p style="font-size: 0.9rem; color: var(--global-text-color); margin-bottom: 0.3rem;">
-            {{ seminar.speaker }}
-          </p>
-        {% endif %}
-        {% if seminar.description %}
-          <p style="font-size: 0.9rem; color: var(--global-text-color-light); margin-bottom: 0.3rem;">
-            {{ seminar.description }}
-          </p>
-        {% endif %}
-        {% if seminar.transcript_url %}
-          <a href="{{ seminar.transcript_url | relative_url }}" style="font-size: 0.85rem;">📄 Read transcript</a>
-        {% endif %}
-      </div>
-    {% endfor %}
-  {% endfor %}
+{% assign seminars_by_year = site.data.seminars | group_by_exp: "item", "item.date | date: '%Y'" %}
+{% assign sorted_years = seminars_by_year | sort: "name" | reverse %}
+{% for year_group in sorted_years %}
+<h3 style="margin-top: 2rem; margin-bottom: 1rem;">{{ year_group.name }}</h3>
+{% assign sorted_seminars = year_group.items | sort: "date" | reverse %}
+{% for seminar in sorted_seminars %}
+<div class="seminar-entry" style="margin-bottom: 1.25rem; padding: 1rem 1.25rem; border-left: 3px solid var(--global-divider-color);">
+<p style="font-size: 0.9rem; color: var(--global-text-color-light); margin-bottom: 0.2rem;">
+{{ seminar.date | date: "%B %d, %Y" }}
+</p>
+<p style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.2rem;">
+{{ seminar.title }}
+</p>
+{% if seminar.speaker %}
+<p style="font-size: 0.9rem; color: var(--global-text-color); margin-bottom: 0.3rem;">
+{{ seminar.speaker }}
+</p>
+{% endif %}
+{% if seminar.description %}
+<p style="font-size: 0.9rem; color: var(--global-text-color-light); margin-bottom: 0.3rem;">
+{{ seminar.description }}
+</p>
+{% endif %}
+{% if seminar.transcript_url %}
+<a href="{{ seminar.transcript_url | relative_url }}" style="font-size: 0.85rem;">📄 Read transcript</a>
+{% endif %}
+</div>
+{% endfor %}
+{% endfor %}
 {% else %}
-  <p style="color: var(--global-text-color-light);">No seminars held yet. Our first session is coming soon. <a href="/join/">Join us</a> to be part of it.</p>
+<p style="color: var(--global-text-color-light);">No seminars held yet. Our first session is coming soon. <a href="/join/">Join us</a> to be part of it.</p>
 {% endif %}
