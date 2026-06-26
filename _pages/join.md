@@ -14,8 +14,9 @@ You are affiliated with a university or research institute — a student at any 
 ### How It Works
 
 1. **Apply** — fill out the form
-2. **Observe** — attend a few sessions and get to know us
-3. **Vote** — every member votes; admission requires a majority, and the process concludes only when everyone has responded
+2. **Observe** — attend one session as an observer
+3. **Present** — give a brief introduction at a second session (your research, your approach to consciousness — no need for a formal talk)
+4. **Vote** — all members vote after the second session; majority approval invites you to join
 
 ---
 
