@@ -18,9 +18,9 @@ _styles: >
 
 **Project Contact:** <a href="/members/#zihao-wang">Zihao Wang</a><br>
 **Instructors:** Zihao Wang (Psychology), Yixin Xu (Life Sciences), Shijie Zhang (Physics)<br>
-**Advisors:** Hu Yuzheng (Associate Professor), Xu Qinmei (Professor)<br>
+**Advisors:** Hu Yuzheng, Xu Qinmei<br>
 **Location:** Department of Psychology and Behavioral Sciences, Zhejiang University<br>
-**Host:** <span class="host-logo-light"><img src="/assets/img/zju-psych-light.png" alt="ZJU Psychology" style="height: 2.2rem; vertical-align: middle; margin-top: 0.4rem;"></span><span class="host-logo-dark"><img src="/assets/img/zju-psych-dark.png" alt="ZJU Psychology" style="height: 2.2rem; vertical-align: middle; margin-top: 0.4rem;"></span>
+<span class="host-logo-light"><img src="/assets/img/zju-psych-light.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span><span class="host-logo-dark"><img src="/assets/img/zju-psych-dark.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span>
 
 ---
 
