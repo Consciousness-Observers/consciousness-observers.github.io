@@ -3,6 +3,10 @@ layout: page
 title: 3D Printing and Digital Brain Anatomy
 permalink: /projects/3d-printing-digital-brain-anatomy/
 nav: false
+_styles: >
+  html[data-theme="dark"] .host-logo-light { display: none; }
+  html[data-theme="light"] .host-logo-dark { display: none; }
+  html:not([data-theme="dark"]):not([data-theme="light"]) .host-logo-dark { display: none; }
 ---
 
 <a href="/projects/" style="font-size: 0.9rem; color: var(--global-theme-color);">← Back to Projects</a>
@@ -14,7 +18,9 @@ nav: false
 
 **Project Contact:** <a href="/members/#zihao-wang">Zihao Wang</a><br>
 **Instructors:** Zihao Wang (Psychology), Yixin Xu (Life Sciences), Shijie Zhang (Physics)<br>
-**Location:** Department of Psychology and Behavioral Sciences, Zhejiang University
+**Advisors:** Hu Yuzheng (Associate Professor), Xu Qinmei (Professor)<br>
+**Location:** Department of Psychology and Behavioral Sciences, Zhejiang University<br>
+**Host:** <span class="host-logo-light"><img src="/assets/img/zju-psych-light.png" alt="ZJU Psychology" style="height: 2.2rem; vertical-align: middle; margin-top: 0.4rem;"></span><span class="host-logo-dark"><img src="/assets/img/zju-psych-dark.png" alt="ZJU Psychology" style="height: 2.2rem; vertical-align: middle; margin-top: 0.4rem;"></span>
 
 ---
 
