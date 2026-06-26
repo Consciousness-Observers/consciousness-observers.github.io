@@ -33,9 +33,9 @@ You are affiliated with a university or research institute — a student at any 
 
 Having trouble with the form? Contact [**psychwangzihao@zju.edu.cn**](mailto:psychwangzihao@zju.edu.cn?subject=CO-LAB%20Membership).
 
-Your application will be shared with all CO-LAB members for review and voting.
-
 ---
+
+
 
 ### How We Work Together
 
