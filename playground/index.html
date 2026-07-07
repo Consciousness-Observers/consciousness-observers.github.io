@@ -3,108 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3D Technology in Psychology — CO-LAB Playground</title>
+<title>3D Technology in Research — CO-LAB Workshop</title>
 <style>
   :root {
-    --bg: #08090d;
-    --surface: #111318;
-    --border: #1e2130;
-    --border-hover: #2a3050;
-    --text: #c8ccd4;
-    --text-dim: #6b7080;
-    --text-soft: #9095a3;
-    --accent: #003F88;
-    --accent-glow: #005bb8;
-    --step-bg: #141720;
+    --bg: #08090d; --surface: #111318; --border: #1e2130; --border-hover: #2a3050;
+    --text: #c8ccd4; --text-dim: #6b7080; --text-soft: #9095a3;
+    --accent: #003F88; --accent-glow: #005bb8; --step-bg: #141720;
     --insight-bg: rgba(0,95,184,0.06);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-    line-height: 1.7;
-    min-height: 100vh;
-  }
-  .container { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
-
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif; line-height: 1.9; min-height: 100vh; }
+  .container { max-width: 820px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
   .header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-  .header h1 { font-size: 1.85rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-  .header .subtitle { font-size: 0.92rem; color: var(--text-dim); margin-bottom: 1.5rem; }
-  .header .meta { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.3rem; }
-  .header .logo { margin-top: 1.4rem; }
-  .header .logo img { height: 2.4rem; }
-
-  .part { margin-bottom: 1rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); transition: border-color 0.2s; }
+  .header h1 { font-size: 1.9rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; }
+  .header .logo img { height: 2.6rem; }
+  .header .lang { margin-top: 0.8rem; } .header .lang a { color: var(--text-dim); font-size: 0.88rem; text-decoration: none; } .header .lang a:hover { color: var(--accent-glow); }
+  .part { margin-bottom: 1.2rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); transition: border-color 0.2s; }
   .part:hover { border-color: var(--border-hover); }
-  .part-header { padding: 1.15rem 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
-  .part-header h2 { font-size: 1.05rem; font-weight: 600; color: #e0e4ec; display: flex; align-items: center; gap: 0.6rem; }
-  .part-number { color: var(--accent-glow); font-weight: 700; font-size: 0.85rem; font-family: "SF Mono", "Fira Code", monospace; }
-  .part-arrow { font-size: 0.7rem; color: var(--text-dim); transition: transform 0.3s; }
+  .part-header { padding: 1.2rem 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
+  .part-header h2 { font-size: 1.1rem; font-weight: 600; color: #e0e4ec; display: flex; align-items: center; gap: 0.7rem; }
+  .part-number { color: var(--accent-glow); font-weight: 700; font-size: 0.88rem; font-family: "SF Mono", "Fira Code", monospace; }
+  .part-arrow { font-size: 0.75rem; color: var(--text-dim); transition: transform 0.3s; }
   .part.open .part-arrow { transform: rotate(90deg); }
-  .part-body { display: none; padding: 0 1.4rem 1.3rem; }
+  .part-body { display: none; padding: 0 1.5rem 1.5rem; }
   .part.open .part-body { display: block; }
-  .part-desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; }
-
-  .step { margin-bottom: 0.6rem; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; background: var(--step-bg); }
-  .step-header { padding: 0.75rem 1rem; cursor: pointer; display: flex; align-items: center; gap: 0.6rem; user-select: none; font-size: 0.9rem; font-weight: 500; color: #ccd0d8; }
-  .step-header:hover { background: rgba(255,255,255,0.02); }
-  .step-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-glow); flex-shrink: 0; }
-  .step-arrow { font-size: 0.6rem; color: var(--text-dim); margin-left: auto; transition: transform 0.3s; }
+  .part-desc { color: var(--text-dim); font-size: 0.93rem; margin-bottom: 1.2rem; }
+  .step { margin-bottom: 0.7rem; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; background: var(--step-bg); }
+  .step-header { padding: 0.8rem 1.1rem; cursor: pointer; display: flex; align-items: center; gap: 0.7rem; user-select: none; font-size: 0.93rem; font-weight: 500; color: #ccd0d8; }
+  .step-header:hover { background: rgba(255,255,255,0.03); }
+  .step-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-glow); flex-shrink: 0; }
+  .step-arrow { font-size: 0.65rem; color: var(--text-dim); margin-left: auto; transition: transform 0.3s; }
   .step.open .step-arrow { transform: rotate(90deg); }
-  .step-body { display: none; padding: 0 1rem 1rem 1.8rem; font-size: 0.88rem; color: var(--text-dim); line-height: 1.75; }
+  .step-body { display: none; padding: 0 1.1rem 1.1rem 2rem; font-size: 0.92rem; color: var(--text-dim); line-height: 1.9; }
   .step.open .step-body { display: block; }
-  .step-body a { color: var(--accent-glow); text-decoration: none; }
-  .step-body a:hover { text-decoration: underline; }
-  .step-body p, .step-body li { margin-bottom: 0.5rem; }
-  .step-body ul { padding-left: 1.2rem; margin-bottom: 0.5rem; }
-
-  .btn { display: inline-block; padding: 0.55rem 1.2rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; cursor: pointer; text-decoration: none; border: 1px solid var(--border); color: var(--text); background: var(--surface); transition: all 0.2s; margin: 0.25rem 0.35rem 0.25rem 0; text-align: center; }
+  .step-body a { color: var(--accent-glow); text-decoration: none; } .step-body a:hover { text-decoration: underline; }
+  .step-body p, .step-body li { margin-bottom: 0.55rem; }
+  .step-body ul { padding-left: 1.3rem; margin-bottom: 0.6rem; }
+  .btn { display: inline-block; padding: 0.6rem 1.3rem; border-radius: 6px; font-size: 0.88rem; font-weight: 500; cursor: pointer; text-decoration: none; border: 1px solid var(--border); color: var(--text); background: var(--surface); transition: all 0.2s; margin: 0.3rem 0.4rem 0.3rem 0; text-align: center; }
   .btn:hover { border-color: var(--accent-glow); color: #fff; background: rgba(0,95,184,0.08); }
   .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
   .btn.primary:hover { background: var(--accent-glow); border-color: var(--accent-glow); }
-  .btn.download { background: #0f1620; border-color: #1a3050; }
-  .btn.download:hover { border-color: #2a5080; }
-  .btn-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-  .bridge { margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid var(--accent-glow); background: var(--insight-bg); border-radius: 0 6px 6px 0; font-size: 0.89rem; color: #b0b8c4; line-height: 1.7; }
-  .bridge-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-glow); margin-bottom: 0.3rem; font-weight: 600; }
-
-  .resource { margin-top: 1rem; padding: 0.85rem 1.1rem; background: rgba(255,255,255,0.025); border-radius: 7px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.04); }
+  .btn.accent { border-color: var(--accent-glow); color: var(--accent-glow); font-weight: 600; background: rgba(0,95,184,0.08); }
+  .btn.accent:hover { background: rgba(0,95,184,0.15); color: #fff; }
+  .btn.download { background: #0f1620; border-color: #1a3050; } .btn.download:hover { border-color: #2a5080; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .bridge { margin-top: 1.2rem; padding: 1.1rem 1.3rem; border-left: 3px solid var(--accent-glow); background: var(--insight-bg); border-radius: 0 6px 6px 0; font-size: 0.92rem; color: #b0b8c4; line-height: 1.9; }
+  .bridge-label { font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent-glow); margin-bottom: 0.4rem; font-weight: 600; }
+  .resource { margin-top: 1rem; padding: 0.9rem 1.1rem; background: rgba(255,255,255,0.025); border-radius: 7px; font-size: 0.88rem; border: 1px solid rgba(255,255,255,0.04); }
   .resource a { color: var(--accent-glow); }
-
-  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; }
+  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.6rem; }
   @media (max-width: 600px) { .research-grid { grid-template-columns: 1fr; } }
-  .research-card { padding: 0.85rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.83rem; }
-  .research-card h4 { font-size: 0.85rem; color: #d0d6e0; margin-bottom: 0.35rem; }
-  .research-card p { color: var(--text-dim); font-size: 0.8rem; line-height: 1.55; }
-  .research-card .ref { color: var(--accent-glow); font-size: 0.75rem; margin-top: 0.3rem; display: inline-block; }
-
-  .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem; }
+  .research-card { padding: 0.9rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.86rem; }
+  .research-card h4 { font-size: 0.88rem; color: #d0d6e0; margin-bottom: 0.4rem; }
+  .research-card p { color: var(--text-dim); font-size: 0.83rem; line-height: 1.7; }
+  .research-card .ref { color: var(--accent-glow); font-size: 0.78rem; margin-top: 0.4rem; display: inline-block; }
+  .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 0.6rem; }
   @media (max-width: 600px) { .tool-grid { grid-template-columns: 1fr; } }
-  .tool-card { padding: 0.7rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.85rem; }
-  .tool-card strong { color: #d0d6e0; }
-  .tool-card .desc { font-size: 0.82rem; color: var(--text-dim); }
-
-  .coming-soon { color: var(--text-dim); font-size: 0.88rem; padding: 0.5rem 0; }
-
-  .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-dim); }
-  .footer a { color: var(--text-dim); }
-
-  .note { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.3rem; }
-  .lang { margin-top: 0.8rem; }
-  .lang a { color: var(--text-dim); font-size: 0.85rem; text-decoration: none; }
-  .lang a:hover { color: var(--accent-glow); }
-  .pipeline { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; color: var(--text-soft); background: rgba(0,0,0,0.3); padding: 0.6rem 0.8rem; border-radius: 5px; overflow-x: auto; }
+  .tool-card { padding: 0.75rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.88rem; }
+  .tool-card strong { color: #d0d6e0; } .tool-card .desc { font-size: 0.85rem; color: var(--text-dim); }
+  .model-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.4rem; margin-top: 0.5rem; }
+  @media (max-width: 600px) { .model-grid { grid-template-columns: 1fr 1fr; } }
+  .model-btn { padding: 0.5rem 0.3rem; font-size: 0.75rem; text-align: center; border-radius: 4px; border: 1px solid var(--border); color: var(--text-dim); background: var(--step-bg); cursor: pointer; text-decoration: none; display: block; transition: all 0.2s; }
+  .model-btn:hover { border-color: var(--accent-glow); color: #fff; background: rgba(0,95,184,0.1); }
+  .dataset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0.6rem 0; }
+  @media (max-width: 600px) { .dataset-grid { grid-template-columns: 1fr; } }
+  .dataset-card { padding: 0.6rem 0.8rem; border: 1px solid var(--border); border-radius: 6px; background: var(--step-bg); font-size: 0.84rem; }
+  .dataset-card strong { color: #ccd0d8; font-size: 0.86rem; } .dataset-card .desc { font-size: 0.8rem; color: var(--text-dim); }
+  .dataset-card a { color: var(--accent-glow); font-size: 0.8rem; }
+  .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--text-dim); }
+  .note { font-size: 0.82rem; color: var(--text-dim); margin-top: 0.35rem; }
+  .pipeline { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.85rem; color: var(--text-soft); background: rgba(0,0,0,0.3); padding: 0.7rem 0.9rem; border-radius: 5px; overflow-x: auto; margin: 0.5rem 0; }
 </style>
 </head>
 <body>
 <div class="container">
 
   <header class="header">
-    <h1>How 3D Technology Supports Psychology Research</h1>
-    <p class="subtitle">CO-LAB Workshop · July 9, 2026</p>
-    <p class="meta">Department of Psychology and Behavioral Sciences, Zhejiang University</p>
+    <h1>How 3D Technology Supports Research</h1>
     <div class="logo"><img src="/assets/img/zju-psych-dark.png" alt="ZJU Psychology"></div>
     <p class="lang"><a href="/playground/zh/">中文</a></p>
   </header>
@@ -112,78 +87,165 @@
   <!-- ==================== PART 1 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
-      <h2><span class="part-number">Part 1</span> 3D Imaging — Reading and Interpreting MRI Data</h2>
+      <h2><span class="part-number">Part 1</span> 3D Imaging — From MRI Principles to Data Processing</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">Structural MRI provides a three-dimensional representation of the living brain at millimeter resolution. This section introduces the standard data formats, viewing tools, and processing pipelines that make neuroimaging data accessible to researchers without a radiology background.</p>
+      <p class="part-desc">Understanding the basic principles and appropriate use of functional MRI is the first step in designing a brain imaging study. This section covers the full workflow: deciding whether to use fMRI, scheduling a scanner, acquiring data, and processing it.</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 1 — Obtain Standard Brain Templates<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 1 — MRI Fundamentals & Study Preparation<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>Standard brain templates provide a common coordinate system for comparing brains across studies and individuals. These atlases are the reference frame of nearly all neuroimaging research.</p>
+          <p><strong>How fMRI works</strong></p>
+          <p>fMRI measures the <strong>BOLD (Blood Oxygenation Level Dependent)</strong> signal — an indirect, vascular proxy for neural activity. When neurons fire, local blood flow increases, altering the ratio of oxygenated to deoxygenated hemoglobin. Deoxyhemoglobin is paramagnetic and reduces the MR signal; its washout causes the signal to rise. The BOLD response peaks roughly 5–10 seconds after neural activity, lagging by 1–2 seconds. fMRI therefore measures a hemodynamic response coupled to neural activity, not neural activity itself.</p>
+
+          <p style="margin-top:0.8rem;"><strong>When to use fMRI</strong></p>
           <ul>
-            <li><strong>MNI152</strong> — the most widely used standard-space template, averaged from T1-weighted scans of 152 healthy young adults. Defines the coordinate system (MNI space) used in the majority of published fMRI studies.</li>
-            <li><strong>Colin27</strong> — a high-resolution single-subject template produced by scanning one individual 27 times and averaging the acquisitions. Provides finer anatomical detail than MNI152.</li>
-            <li><strong>ICBM152</strong> — a probabilistic atlas developed by the International Consortium for Brain Mapping, combining T1, T2, and proton-density contrasts.</li>
+            <li><strong>Task-based fMRI:</strong> localizing cognitive functions to brain regions; testing hypotheses that predict specific regional activation; comparing brain activity across experimental conditions.</li>
+            <li><strong>Resting-state fMRI:</strong> identifying large-scale functional brain networks; studying populations unable to perform tasks (infants, Alzheimer's patients, etc.); large-scale population neuroscience.</li>
           </ul>
-          <a href="https://nist.mni.mcgill.ca/atlases/" target="_blank" class="btn primary">NIST Atlases at MNI →</a>
+
+          <p style="margin-top:0.8rem;"><strong>When NOT to use fMRI</strong></p>
+          <ul>
+            <li>Questions requiring causal inference (fMRI is correlational)</li>
+            <li>Millisecond-timescale neural dynamics (use EEG/MEG)</li>
+            <li>Single-subject clinical diagnosis (except pre-surgical mapping)</li>
+            <li>Constructs that cannot be effectively operationalized inside a scanner</li>
+            <li>Individual-difference studies with small samples (univariate methods may require N > 1,000)</li>
+          </ul>
+
+          <p style="margin-top:0.8rem;"><strong>Key limitations</strong></p>
+          <ul>
+            <li>Head motion artifacts, especially problematic in developmental, psychiatric, and pediatric populations</li>
+            <li>High within- and between-subject variability in the BOLD signal</li>
+            <li>Analytic flexibility — one systematic evaluation tested 768 fMRI pipelines and most failed to produce consistent results</li>
+            <li>Blood pressure, heart rate, caffeine, diet, and circadian phase all affect the BOLD signal</li>
+          </ul>
+
+          <p style="margin-top:0.8rem;"><strong>Scheduling an MRI session (Zhejiang University example)</strong></p>
+          <ul>
+            <li><strong>Scanner:</strong> 3T MRI system, university-level shared platform</li>
+            <li><strong>Location:</strong> Room 112, Central North Building, Huajiachi Campus, 268 Kaixuan Road, Hangzhou</li>
+            <li><strong>Booking:</strong> via the Analysis & Testing Platform (<a href="https://atc.zju.edu.cn/" target="_blank">atc.zju.edu.cn</a>) or the Instruments Sharing Platform (<a href="https://zjuequip.zju.edu.cn/" target="_blank">zjuequip.zju.edu.cn</a>, instrument ID 15003917)</li>
+            <li><strong>Training:</strong> safety and operational training required before use; sign up via DingTalk group "3T磁共振培训钉钉群"</li>
+            <li><strong>Contact:</strong> Mr. Ding / Mr. Zhang (Phone: 0571-86971875, Email: cbist@zju.edu.cn)</li>
+          </ul>
+
+          <p style="margin-top:0.8rem;"><strong>On the day of scanning</strong></p>
+          <ul>
+            <li><strong>Preparation:</strong> confirm ethics approval; prepare consent forms; run behavioral pilot testing to optimize task design before scanning</li>
+            <li><strong>Participant reception:</strong> explain the procedure, scan duration, and requirements clearly; ensure informed consent is signed</li>
+            <li><strong>Safety screening (critical):</strong> verify no metal implants (pacemakers, aneurysm clips, metal dental work, orthopedic hardware); remove all metal items (glasses, hairpins, jewelry, watches, belts, clothing with metal accessories); confirm no tattoos (some tattoo pigments contain metal)</li>
+            <li><strong>Scanning:</strong> performed by the MRI technician — researchers do not need to operate the scanner</li>
+            <li><strong>Data retrieval:</strong> collect DICOM-format raw data from the technician after scanning</li>
+          </ul>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 2 — View and Inspect MRI Data<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 2 — Obtain Data<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>MRI data are stored in two primary formats: <strong>DICOM</strong> (the raw output from the scanner, one file per slice) and <strong>NIfTI</strong> (a single file containing the full 3D or 4D volume, widely used in analysis). Several free, open-source viewers are available:</p>
+          <p><strong>Standard brain templates</strong> provide a common coordinate system for comparing brains across studies and individuals:</p>
+          <ul>
+            <li><strong>MNI152</strong> — the most widely used standard-space template, averaged from T1-weighted scans of 152 healthy young adults</li>
+            <li><strong>Colin27</strong> — high-resolution single-subject template (27 scans averaged), registered to MNI space</li>
+            <li><strong>ICBM152</strong> — probabilistic atlas from the International Consortium for Brain Mapping</li>
+          </ul>
+          <a href="https://nist.mni.mcgill.ca/atlases/" target="_blank" class="btn primary">MNI Official Templates</a>
+          <a href="https://nist.mni.mcgill.ca/colin-27-average-brain-2008/" target="_blank" class="btn">Colin27 Info</a>
+
+          <p style="margin-top:1.2rem;"><strong>Major open MRI datasets</strong></p>
+          <div class="dataset-grid">
+            <div class="dataset-card"><strong>OpenNeuro</strong><div class="desc">The largest BIDS-compliant open data repository, covering multiple modalities.</div><a href="https://openneuro.org/" target="_blank">openneuro.org</a></div>
+            <div class="dataset-card"><strong>Human Connectome Project</strong><div class="desc">Large-scale multi-modal human connectome data: structural, task, and resting-state fMRI, diffusion MRI.</div><a href="https://www.humanconnectome.org/" target="_blank">humanconnectome.org</a></div>
+            <div class="dataset-card"><strong>UK Biobank</strong><div class="desc">One of the world's largest biomedical databases, with over 40,000 brain MRI scans.</div><a href="https://www.ukbiobank.ac.uk/" target="_blank">ukbiobank.ac.uk</a></div>
+            <div class="dataset-card"><strong>ABCD Study</strong><div class="desc">Adolescent Brain Cognitive Development study: longitudinal MRI and behavioral data from over 11,000 children.</div><a href="https://abcdstudy.org/" target="_blank">abcdstudy.org</a></div>
+          </div>
+
+          <div style="margin-top:0.8rem;">
+            <a href="#" class="btn accent" id="toydata-btn">📦 Workshop Dataset (coming soon)</a>
+            <p class="note">A toy DICOM dataset for hands-on practice will be available for download before the workshop.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>Step 3 — MRI Analysis Tools<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>After acquiring data, you need analysis software. These are the most widely used tools:</p>
           <div class="tool-grid">
             <div class="tool-card">
-              <strong>3D Slicer</strong>
-              <div class="desc">Comprehensive platform for visualization, manual and semi-automatic segmentation, and 3D model export. Supports DICOM, NIfTI, and numerous other formats.</div>
-              <a href="https://www.slicer.org/" target="_blank">slicer.org</a>
+              <strong>SPM</strong>
+              <div class="desc">Developed at UCL. MATLAB-based, voxel-wise GLM. The most widely used fMRI analysis tool, with extensive tutorials and community support.</div>
+              <a href="https://www.fil.ion.ucl.ac.uk/spm/" target="_blank">Website</a> &nbsp; <a href="https://www.fil.ion.ucl.ac.uk/spm/docs/" target="_blank">Docs</a> &nbsp; <a href="https://github.com/spm/spm/releases/download/25.01.02/spm_25.01.02.zip" target="_blank">Download</a>
             </div>
             <div class="tool-card">
-              <strong>MRIcroGL</strong>
-              <div class="desc">Lightweight viewer with GPU-accelerated 3D rendering. Rapid loading of NIfTI files; suitable for quick inspection and publication-quality screenshots.</div>
-              <a href="https://www.nitrc.org/projects/mricron" target="_blank">nitrc.org</a>
+              <strong>FSL</strong>
+              <div class="desc">Oxford FMRIB. Supports structural, fMRI, and DTI analysis. Standalone — no MATLAB required. FEAT (task fMRI) and MELODIC (ICA) are widely used.</div>
+              <a href="https://fsl.fmrib.ox.ac.uk/fsl/" target="_blank">fsl.fmrib.ox.ac.uk</a>
             </div>
             <div class="tool-card">
-              <strong>FSLeyes</strong>
-              <div class="desc">Part of the FSL analysis suite. Supports simultaneous overlay of multiple modalities (T1, fMRI statistical maps, DTI) with linked cursor navigation.</div>
-              <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLeyes" target="_blank">fsl.fmrib.ox.ac.uk</a>
+              <strong>FreeSurfer</strong>
+              <div class="desc">Harvard Martinos Center. Specialized in cortical surface reconstruction and automated volumetric segmentation. The recon-all pipeline is the standard tool for cortical analysis.</div>
+              <a href="https://surfer.nmr.mgh.harvard.edu/" target="_blank">surfer.nmr.mgh.harvard.edu</a>
             </div>
             <div class="tool-card">
-              <strong>ITK-SNAP</strong>
-              <div class="desc">Designed for semi-automatic segmentation using active contour methods. Useful for delineating regions of interest and exporting labeled volumetric data.</div>
-              <a href="http://www.itksnap.org/" target="_blank">itksnap.org</a>
+              <strong>AFNI</strong>
+              <div class="desc">Developed at NIMH. Strengths in time-series analysis and flexible statistical modeling. Fully open-source, no MATLAB dependency.</div>
+              <a href="https://afni.nimh.nih.gov/" target="_blank">afni.nimh.nih.gov</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 3 — From MRI Volume to 3D Surface Model<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 4 — From MRI to 3D Brain Model<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>The standard pipeline for converting a structural T1-weighted MRI scan into a 3D-printable brain model proceeds through the following stages:</p>
-          <p class="pipeline">DICOM → NIfTI (dcm2niix) → Cortical Segmentation (FreeSurfer recon-all) → Surface Extraction (pial surface) → Mesh Conversion (STL) → Mesh Cleanup (MeshLab/Blender) → 3D Print</p>
-          <p style="margin-top:0.7rem;"><strong>Primary tools in this pipeline:</strong></p>
-          <ul>
-            <li><strong>FreeSurfer</strong> — performs automated volumetric segmentation and cortical surface reconstruction from T1-weighted images. The standard tool for extracting the pial surface and gray/white boundary. Computationally intensive (~10–24 hours per subject).</li>
-            <li><strong>3D Slicer</strong> — provides a more accessible entry point for manual or semi-automatic segmentation and direct STL export without command-line operation.</li>
-            <li><strong>MeshLab</strong> — open-source mesh processing tool for repair, smoothing, decimation, and merging of surface files before printing.</li>
-            <li><strong>dcm2niix</strong> — converts DICOM series to NIfTI format. An essential preprocessing utility included with MRIcron.</li>
-          </ul>
-          <a href="https://fordburles.com/3d-print-brain-guide.html" target="_blank" class="btn primary">Complete Pipeline Guide (Burles, 2024)</a>
-          <a href="http://www.columbia.edu/~rem2178/assets/HowtoMakea3Dbrainmodel.pdf" target="_blank" class="btn">Columbia Quick-Start Guide (PDF)</a>
+          <p>The standard pipeline for converting a structural MRI scan into a 3D-printable brain model:</p>
+          <p class="pipeline">DICOM → NIfTI (dcm2niix) → Segmentation (FreeSurfer recon-all) → Surface Extraction → Mesh Conversion (STL) → Mesh Cleanup (MeshLab/Blender) → 3D Print</p>
+
+          <p style="margin-top:0.8rem;"><strong>Pipeline tutorials</strong></p>
+          <div class="btn-row">
+            <a href="https://fordburles.com/3d-print-brain-guide.html" target="_blank" class="btn primary">Burles Complete Guide (2024)</a>
+            <a href="http://www.columbia.edu/~rem2178/assets/HowtoMakea3Dbrainmodel.pdf" target="_blank" class="btn">Columbia Quick Guide (PDF)</a>
+          </div>
+
+          <p style="margin-top:1.2rem;"><strong>PittBrains3D: Free 3D Brain Models</strong></p>
+          <p>Open educational resource from the University of Pittsburgh. Twelve high-quality STL models — whole brain, hemisected views, subcortical structures, vasculature — freely available for download and printing.</p>
+          <div class="btn-row">
+            <a href="https://oercommons.org/courseware/lesson/123307/student/?section=8" target="_blank" class="btn">PittBrains3D Website</a>
+            <a href="#" class="btn accent" id="toggle-models" onclick="event.stopPropagation(); var p=document.getElementById('model-panel'); p.style.display=p.style.display==='none'?'block':'none'; return false;">📥 Download All 12 Models</a>
+          </div>
+          <div id="model-panel" style="display:none; margin-top:0.6rem;">
+            <div class="model-grid">
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Whole_brain_and_hemisected_brain/Whole%20brain.stl" class="model-btn" download>Whole Brain</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Whole_brain_and_hemisected_brain/Hemisected%20brain.stl" class="model-btn" download>Hemisected Brain</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Subcortical_forebrain_structures/Brainstem.stl" class="model-btn" download>Brainstem</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Brainstem/Brainstem%20%2B%20cranial%20nerves.stl" class="model-btn" download>Brainstem + Nerves</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Subcortical_forebrain_structures/Corpus%20callosum.stl" class="model-btn" download>Corpus Callosum</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Subcortical_forebrain_structures/Striatum.stl" class="model-btn" download>Striatum</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Subcortical_forebrain_structures/Thalami.stl" class="model-btn" download>Thalami</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Subcortical_forebrain_structures/Hippocampus%20%2B%20commissure%20%2B%20amygdala.stl" class="model-btn" download>Hippocampus + Amygdala</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Subcortical_forebrain_structures/Ventricles.stl" class="model-btn" download>Ventricles</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Vasculature_sinuses_dural_reflections/Cerebral%20arteries.stl" class="model-btn" download>Cerebral Arteries</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Vasculature_sinuses_dural_reflections/Cerebral%20veins.stl" class="model-btn" download>Cerebral Veins</a>
+              <a href="https://raw.githubusercontent.com/PittBrains3D/PittBrains3D---Digital-3D-Models-for-Neuroanatomy-Instruction/main/Vasculature_sinuses_dural_reflections/Dural%20sinuses%20and%20reflections.stl" class="model-btn" download>Dural Sinuses</a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="resource">
-        <strong>Recommended reference:</strong> <a href="https://andysbrainbook.readthedocs.io/en/latest/index.html" target="_blank">Andy's Brain Book</a> — a comprehensive open-access introduction to MRI data analysis, covering tool installation, preprocessing, and statistical analysis with step-by-step tutorials.
+        <strong>Web-based alternative:</strong> <a href="https://brain2print.org/" target="_blank">Brain2Print</a> — upload and view NIfTI files directly in your browser, with one-click conversion to 3D-printable models. A convenient fallback if the local toolchain isn't set up.
+      </div>
+
+      <div class="resource">
+        <strong>Essential reference:</strong> <a href="https://andysbrainbook.readthedocs.io/en/latest/index.html" target="_blank">Andy's Brain Book</a> — a comprehensive open-access introduction to MRI data analysis, with step-by-step tutorials from tool installation to statistical modeling.
       </div>
 
       <div class="bridge">
         <div class="bridge-label">From Part 1 to Part 2</div>
-        Acquiring and viewing MRI data is a technical achievement, but it does not by itself confer anatomical understanding. A researcher can load a NIfTI volume in 3D Slicer and navigate to any coordinate in MNI space — yet still lack the spatial intuition to interpret what a given voxel represents. The limiting factor is typically not access to data or software; it is the absence of a robust three-dimensional mental model of brain anatomy. The following section addresses this gap.
+        Acquiring and viewing MRI data clears a technical hurdle, but it does not confer anatomical understanding on its own. The limiting factor is rarely the data or the software — it is the absence of a robust three-dimensional spatial understanding of brain anatomy. The next section addresses this gap.
       </div>
     </div>
   </div>
@@ -198,42 +260,42 @@
       <p class="part-desc">Neuroimaging papers routinely reference brain regions by anatomical or functional labels. Navigating this literature requires more than name recognition — it demands a spatial representation of where structures sit relative to one another in three dimensions.</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 1 — How Brain Regions Are Defined and Labeled<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 1 — How Brain Regions Are Defined & Labeled<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>Multiple parcellation schemes exist, each dividing the brain into regions according to different principles: cytoarchitecture (Brodmann areas), gross anatomy (gyral and sulcal landmarks), or functional connectivity. These schemes do not always align, and a single anatomical location may carry several labels across different atlases.</p>
-          <p><strong>Major parcellation atlases used in neuroimaging:</strong></p>
+          <p>Multiple parcellation schemes exist, each dividing the brain according to different principles: cytoarchitecture (Brodmann areas), gross anatomy (gyral and sulcal landmarks), or functional connectivity. These schemes do not always align — the same anatomical location can carry different labels across atlases.</p>
+          <p><strong>Commonly used parcellation atlases:</strong></p>
           <ul>
-            <li><strong>AAL (Automated Anatomical Labeling)</strong> — 116 regions (90 cortical, 26 cerebellar). The most frequently cited parcellation in fMRI literature, used for region-of-interest analyses and meta-analytic labeling.</li>
-            <li><strong>Harvard-Oxford Atlas</strong> — a probabilistic atlas distributed with FSL. Each voxel carries a probability of belonging to a given structure, reflecting inter-subject variability.</li>
-            <li><strong>Desikan-Killiany</strong> — 68 cortical regions (34 per hemisphere). The default cortical parcellation output by FreeSurfer's recon-all pipeline.</li>
-            <li><strong>HCP-MMP 1.0</strong> — 180 areas per hemisphere, derived from multi-modal data (cortical architecture, function, connectivity, and topography) in the Human Connectome Project. A more recent and finer-grained alternative.</li>
+            <li><strong>AAL</strong> — 116 regions (90 cortical, 26 cerebellar). The most frequently cited parcellation in the fMRI literature.</li>
+            <li><strong>Harvard-Oxford</strong> — a probabilistic atlas distributed with FSL. Each voxel carries a probability of belonging to a given structure.</li>
+            <li><strong>Desikan-Killiany</strong> — 68 cortical regions (34 per hemisphere). The default FreeSurfer recon-all output.</li>
+            <li><strong>HCP-MMP 1.0</strong> — 180 areas per hemisphere, derived from multi-modal Human Connectome Project data.</li>
           </ul>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 2 — Interactive Tools for Learning Brain Anatomy in 3D<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 2 — Interactive Tools for Learning 3D Brain Anatomy<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>Traditional neuroanatomy instruction relies on two-dimensional representations — textbook plates, stained sections, or orthogonal MRI views. These are informative but do not convey the spatial relationships that become immediately apparent when the brain is rendered as a manipulable three-dimensional object. The following interactive atlases allow direct exploration of brain structures through rotation, depth peeling, and selective highlighting:</p>
+          <p>Traditional neuroanatomy instruction relies on two-dimensional representations. These interactive atlases allow direct exploration through rotation, depth peeling, and selective highlighting:</p>
           <div class="tool-grid">
             <div class="tool-card">
-              <strong>3D Brain (Cold Spring Harbor Laboratory)</strong>
-              <div class="desc">29 labeled interactive structures with concise functional summaries. Browser-based; no installation required. The primary reference tool used in this workshop.</div>
+              <strong>3D Brain (Cold Spring Harbor Lab)</strong>
+              <div class="desc">29 labeled interactive structures with functional summaries. Browser-based, no installation.</div>
               <a href="https://www.g2conline.org/3dbrain/" target="_blank">g2conline.org/3dbrain</a>
             </div>
             <div class="tool-card">
-              <strong>BrainFacts.org 3D Brain</strong>
-              <div class="desc">Interactive atlas with detailed descriptions of each structure's function and associated clinical conditions.</div>
+              <strong>BrainFacts 3D Brain</strong>
+              <div class="desc">Interactive atlas with detailed structural descriptions and associated clinical conditions.</div>
               <a href="https://www.brainfacts.org/3d-brain" target="_blank">brainfacts.org/3d-brain</a>
             </div>
             <div class="tool-card">
               <strong>MSU Human Brain Atlas</strong>
-              <div class="desc">High-resolution histological sections correlated with MRI. Useful for understanding the cytoarchitectonic basis of signal variation in structural images.</div>
+              <div class="desc">High-resolution histological sections correlated with MRI. Useful for understanding cytoarchitectonic signal variation.</div>
               <a href="https://brains.anatomy.msu.edu/brains/human/index.html" target="_blank">brains.anatomy.msu.edu</a>
             </div>
             <div class="tool-card">
               <strong>Neuroglancer</strong>
-              <div class="desc">WebGL-based viewer capable of rendering petabyte-scale volumetric data. Supports browsing of electron microscopy volumes at synaptic resolution alongside MRI data.</div>
+              <div class="desc">WebGL-based viewer for petabyte-scale volumetric data. Browse electron microscopy volumes at synaptic resolution.</div>
               <a href="https://neuroglancer-demo.appspot.com/" target="_blank">neuroglancer-demo.appspot.com</a>
             </div>
           </div>
@@ -242,7 +304,7 @@
 
       <div class="bridge">
         <div class="bridge-label">From Part 2 to Part 3</div>
-        Three-dimensional atlases build spatial knowledge, but knowledge remains abstract until it is tested through production. When a researcher segments a brain region and converts it into a physical object — checking whether the printed model matches anatomical expectation — the learning becomes self-correcting. The transition from digital exploration to physical fabrication is not merely additive; it closes a feedback loop in which spatial understanding is continuously refined through the act of making. The following section introduces the tools and methods for this transition.
+        Three-dimensional atlases build spatial knowledge, but knowledge remains abstract until tested through production. When a researcher segments a brain region from data and converts it into a physical object — checking whether the printed model matches anatomical expectation — learning becomes self-correcting. The transition from digital exploration to physical fabrication closes a feedback loop. The next section introduces the tools for this transition.
       </div>
     </div>
   </div>
@@ -254,42 +316,22 @@
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">The digital brain models produced in Part 1, now anatomically understood through Part 2, can be materialized through 3D printing. This section surveys the research applications of 3D printing in psychology and provides the practical tools to begin.</p>
+      <p class="part-desc">The digital brain models generated in Part 1, now anatomically understood through Part 2, can be materialized through 3D printing. This section surveys research applications and provides practical tools to get started.</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 1 — Research Applications of 3D Printing in Psychology<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 1 — Research Applications of 3D Printing<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>3D printing has been applied across several domains of psychological research. Representative findings are summarized below.</p>
+          <p>3D printing has been applied across several research domains. Representative findings with accessible sources:</p>
           <div class="research-grid">
             <div class="research-card">
-              <h4>Neuroanatomy Education</h4>
-              <p>Multiple controlled studies demonstrate that students who physically manipulate 3D-printed brain models achieve superior spatial understanding compared to those using textbooks or screen-based 3D renderings alone. The tactile component appears to confer a distinct learning advantage.</p>
-              <span class="ref">Aridan et al., 2024; Minear et al., 2022; Lee et al., 2026</span>
-            </div>
-            <div class="research-card">
               <h4>Prenatal Attachment</h4>
-              <p>A randomized controlled trial (n = 184) found that 3D-printed fetal models significantly improved maternal and paternal prenatal attachment scores and reduced depression and pregnancy-related anxiety. The effect was observed for both 3D-printed models and 3D-printed pictures.</p>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/36940782/" target="_blank" class="ref">JOGNN, 2023</a>
-            </div>
-            <div class="research-card">
-              <h4>Youth Physical Activity Behavior</h4>
-              <p>Adolescents given 3D-printed models representing their personal physical activity data displayed the models as identity markers, compared them with peers, and reported increased self-reflection on exercise habits. The physical artifact served as a locus of behavioral identity.</p>
-              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9861837/" target="_blank" class="ref">IJERPH, 2023</a>
+              <p>An RCT (n = 184) found that 3D-printed fetal models and 3D pictures both significantly improved prenatal attachment scores and reduced depression and anxiety in expectant parents.</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/36940782/" target="_blank" class="ref">Coté et al., 2023, JOGNN</a>
             </div>
             <div class="research-card">
               <h4>Reminiscence Therapy</h4>
-              <p>3D-printed replicas of personally meaningful objects served as effective memory cues in reminiscence therapy with older adults. Multisensory engagement provided retrieval advantages beyond those observed with photographs alone.</p>
-              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11620962/" target="_blank" class="ref">J. Applied Gerontology, 2024</a>
-            </div>
-            <div class="research-card">
-              <h4>Inclusive Classroom Interaction</h4>
-              <p>3D printing used as a cooperative learning tool improved peer communication and knowledge retention among students with and without disabilities. Students expressed a preference for 3D-printing-based lessons over traditional formats.</p>
-              <span class="ref">Intl. J. Disability, Dev. & Education, 2024</span>
-            </div>
-            <div class="research-card">
-              <h4>Pediatric Prosthetics</h4>
-              <p>Customized 3D-printed myoelectric prostheses with personalized aesthetic design improved psychological well-being in pediatric amputees. Personalization of the device's appearance was rated as important as its mechanical function.</p>
-              <span class="ref">Lecture Notes in Networks and Systems, 2024</span>
+              <p>3D-printed replicas of personally meaningful objects served as effective multisensory memory cues in reminiscence therapy with older adults, providing retrieval advantages over photographs alone.</p>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11620962/" target="_blank" class="ref">Anderson et al., 2024, J. Applied Gerontology</a>
             </div>
           </div>
         </div>
@@ -298,39 +340,39 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>Step 2 — 3D Modeling Software<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>Creating or editing a 3D model requires modeling software. <strong>Tinkercad</strong> is recommended as the starting point: it operates entirely within a web browser, requires no prior experience, and uses direct manipulation (drag, resize, group) rather than parametric definition. This makes it accessible to first-time users while still capable of producing models suitable for printing.</p>
+          <p><strong>Tinkercad</strong> runs in your browser, uses direct manipulation (drag, resize, group), and requires no prior experience — recommended as the starting point. Other tools, each with distinct strengths:</p>
           <div class="btn-row">
-            <a href="https://www.tinkercad.com/" target="_blank" class="btn primary" style="font-size:0.92rem; padding:0.65rem 1.6rem;">Tinkercad (Recommended)</a>
-          </div>
-          <p style="margin:0.7rem 0 0.4rem; font-size:0.83rem; color:var(--text-dim);">Additional platforms, each suited to different modeling paradigms:</p>
-          <div class="btn-row">
-            <a href="https://makerworld.com.cn/zh" target="_blank" class="btn">MakerWorld</a>
+            <a href="https://www.tinkercad.com/" target="_blank" class="btn primary">Tinkercad (Recommended)</a>
+            <a href="https://www.blender.org/" target="_blank" class="btn">Blender</a>
+            <a href="https://www.meshlab.net/" target="_blank" class="btn">MeshLab</a>
+            <a href="https://www.autodesk.com/products/fusion-360/" target="_blank" class="btn">Fusion 360</a>
             <a href="https://www.freecad.org/downloads.php?lang=zh_CN" target="_blank" class="btn">FreeCAD</a>
             <a href="https://openscad.org/" target="_blank" class="btn">OpenSCAD</a>
+            <a href="https://www.meshmixer.com/" target="_blank" class="btn">MeshMixer</a>
             <a href="https://3d.hunyuan.tencent.com/" target="_blank" class="btn">Hunyuan3D</a>
           </div>
-          <p class="note">FreeCAD and OpenSCAD are parametric modelers (geometry defined by constraints and scripts). Hunyuan3D generates 3D models from text descriptions or images using deep learning. MakerWorld is a community platform for sharing and remixing printable models. For most workshop participants, Tinkercad will be the most direct path from concept to printable file.</p>
+          <p class="note"><strong>Blender:</strong> professional open-source 3D suite (modeling, sculpting, rendering). <strong>MeshLab:</strong> mesh processing — repair, smoothing, decimation. <strong>MeshMixer:</strong> print preparation — hollowing and support generation. <strong>Fusion 360:</strong> professional CAD/CAM, free for education. <strong>FreeCAD / OpenSCAD:</strong> parametric modeling. <strong>Hunyuan3D:</strong> AI-generated 3D models from text or images.</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>Step 3 — 3D Printing Workflow<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>Printing a 3D model requires two components: the printer hardware and slicing software that translates the model into machine instructions.</p>
-          <div style="margin-bottom:0.8rem;">
+          <p>Printing requires two components: the printer hardware and slicing software that translates your model into machine instructions.</p>
+          <div style="margin:0.8rem 0;">
             <a href="/assets/files/JGAurora-A6-Manual.pdf" class="btn download" download>JGAurora A6 Printer Manual (PDF)</a>
-            <p class="note">The JGAurora A6 is the fused deposition modeling (FDM) printer available at the Department of Psychology, Zhejiang University. This document describes its operation and specifications. Users working with other printer models should consult the documentation for their specific device; the general workflow described here — model preparation, slicing, printing — is common to all FDM printers.</p>
+            <p class="note">The JGAurora A6 is the FDM printer available at the Department of Psychology, ZJU. Users with other printer models should consult their device's documentation; the general workflow described here applies to all FDM printers.</p>
           </div>
-          <div style="margin-top:0.8rem;">
+          <div>
             <a href="https://ultimaker.com/software/ultimaker-cura/" target="_blank" class="btn">Ultimaker Cura — Slicing Software</a>
-            <p class="note">Cura converts a 3D model (STL, OBJ, or 3MF format) into G-code — the low-level set of instructions that controls the printer's movements, temperatures, and extrusion. It provides control over layer height, infill density, support structures, and print speed. Despite its name, Cura is compatible with most FDM printers, not only Ultimaker machines.</p>
+            <p class="note">Cura converts 3D models (STL, OBJ, 3MF) into G-code — the instructions that control printer movement, temperature, and extrusion. Compatible with most FDM printers.</p>
           </div>
         </div>
       </div>
 
       <div class="bridge">
         <div class="bridge-label">From Part 3 to Part 4</div>
-        Three-dimensional printing brings anatomical models into physical space, where they can be handled, annotated, and shared. But 3D technology also operates in the reverse direction: rather than materializing digital objects, it can immerse a participant within a fully synthetic environment. Virtual and augmented reality extend the logic of the previous sections — spatial understanding, digital modeling, real-time interaction — into the domain of experimental psychology, where environmental variables can be controlled with a precision unattainable in physical laboratories.
+        3D printing brings anatomical models into physical space. But 3D technology also works in the reverse direction: immersing a participant within a fully synthetic environment. Virtual reality extends the logic of the previous sections — spatial understanding, digital modeling, real-time interaction — into the domain of experimental research, where environmental variables can be controlled with precision unattainable in physical laboratories.
       </div>
     </div>
   </div>
@@ -338,50 +380,140 @@
   <!-- ==================== PART 4 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
-      <h2><span class="part-number">Part 4</span> Experiments in 3D Space — Virtual &amp; Augmented Reality</h2>
+      <h2><span class="part-number">Part 4</span> Experiments in 3D Space — A Practical Introduction to VR</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">Virtual reality (VR) enables the construction of fully controlled three-dimensional experimental environments. Augmented reality (AR) overlays digital information onto the physical world. Both technologies extend the principles introduced in the previous sections — spatial representation, digital modeling, and real-time 3D interaction — into the domain of psychological experimentation.</p>
+      <p class="part-desc">Virtual reality (VR) head-mounted displays enable the construction of fully controlled three-dimensional experimental environments. This section provides a practical guide, from deciding whether VR is the right tool to building and running your first VR experiment.</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Spatial Navigation and Episodic Memory<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 1 — Why VR in Research<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>VR has become the standard method for studying human spatial navigation. Participants can be placed in large-scale virtual environments — city blocks, radial mazes, natural landscapes — while their path, gaze, and physiological responses are recorded with millisecond precision. The experimenter controls every landmark, the geometry of the space, and the availability of distal cues, achieving a level of experimental control that is impossible in real-world navigation studies. This methodology has been central to the study of grid-cell-like representations in humans (Doeller et al., 2010) and to identifying age-related changes in navigational strategies.</p>
+          <p><strong>Key advantages:</strong> real-time head tracking, binocular disparity for genuine depth perception, the ability to construct environments that do not exist in reality, and safe presentation of hazardous scenarios. When these benefits outweigh the limitations, VR is the appropriate method.</p>
+          <p style="margin-top:0.6rem;"><strong>Main limitations:</strong> cybersickness; headset weight and comfort; distance compression (perceived distances are systematically shorter than physical distances); incompatibility with fMRI scanners.</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Social Cognition in Immersive Environments<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 2 — Setting Up Unity for VR Development<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>VR enables the systematic manipulation of social cues — gaze direction, interpersonal distance, facial expression, and avatar appearance — while maintaining experimental confounds to a minimum. This has been applied to the study of social anxiety, where participants interact with virtual audiences or conversation partners whose behavior can be parametrically varied. It has also been used to investigate phenomena such as personal space regulation and the perceptual processes underlying implicit racial bias, where the experimenter can independently manipulate skin tone, facial morphology, and behavioral mannerisms.</p>
+          <p>After completing these steps, you will have a working VR scene you can test immediately.</p>
+          <p style="margin-top:0.5rem;"><strong>1. Install Unity</strong> via Unity Hub (2022 LTS or later). <strong>2. Create a project</strong> using the 3D Core template. <strong>3. Configure OpenXR</strong>: Edit → Project Settings → XR Plugin Management → Install and enable OpenXR → click Fix All. <strong>4. Add controller profiles</strong> under Interaction Profiles (HTC Vive / Oculus Touch). <strong>5. Install XR Interaction Toolkit</strong>: Package Manager → add <code>com.unity.xr.interaction.toolkit</code> → import Starter Assets. <strong>6. Create XR Origin</strong>: Hierarchy → XR → XR Origin (Action-based) → drag Starter Assets controller presets onto the Inspector. <strong>7. Test interaction</strong>: create a Cube → add XR Grab Interactable → Play → press Grip to grab.</p>
+          <p style="margin-top:0.6rem;">XRI's interaction architecture has three roles: <strong>Interactor</strong> (the initiator — controller rays and hand colliders), <strong>Interactable</strong> (the object being interacted with), and <strong>Interaction Manager</strong> (coordinates all pairs).</p>
+          <div class="btn-row" style="margin-top:0.6rem;">
+            <a href="https://learn.u3d.cn/tutorial/vr-museum-2" target="_blank" class="btn primary">Unity VR Tutorial (Official)</a>
+            <a href="https://interaction-lab.wiki.utwente.nl/xr:tutorial_xr_interaction_toolkit" target="_blank" class="btn">U. Twente Setup Guide</a>
+            <a href="https://createxr.co.uk/virtual-reality/creating-a-virtual-reality-scene-with-unitys-xr-interaction-toolkit/" target="_blank" class="btn">CreateXR Tutorial</a>
+          </div>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Exposure Therapy and Clinical Applications<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 3 — VR Development Workflow<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>VR-based exposure therapy is among the most extensively validated clinical applications of immersive technology. Randomized controlled trials have demonstrated its efficacy for specific phobias (fear of heights, flying, spiders), post-traumatic stress disorder, and social anxiety disorder. The key advantage is dose control: the therapist can titrate the intensity of the feared stimulus with a precision unattainable in vivo, and the session can be terminated immediately if distress exceeds a manageable threshold. Meta-analyses indicate effect sizes comparable to in-vivo exposure, with lower dropout rates in some populations.</p>
+          <p>Once the environment is set up, a full VR program goes through four stages:</p>
+          <p style="margin-top:0.5rem;"><strong>1. Build the scene</strong> — model from scratch (Blender, etc.) or use existing assets (Unity Asset Store, Sketchfab). Start with greyboxing: use simple geometric stand-ins to validate layout and interaction before importing detailed models.</p>
+          <p style="margin-top:0.5rem;"><strong>2. Add interaction logic</strong> — attach scripts to objects to define how controller input maps to object behavior. Three basic patterns: ray interaction (distant pointing and selection), grab interaction (nearby pickup and manipulation), and collision detection (area-based triggers).</p>
+          <p style="margin-top:0.5rem;"><strong>3. Connect the hardware</strong> — power on the headset and controllers → launch SteamVR → ensure Unity uses OpenXR → place XR Origin in the scene → press Play to preview in the headset.</p>
+          <p style="margin-top:0.5rem;"><strong>4. Build and deploy</strong> — PC VR exports as .exe (or run directly in the Unity Editor). Standalone headsets (Meta Quest, Pico) build to APK for sideloading.</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>AR for Behavioral Annotation and Augmented Perception<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 4 — Research-Ready VR Frameworks<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>Augmented reality presents distinct experimental possibilities from VR. Because AR overlays digital content onto the participant's actual environment, it is suited for studies in which ecological validity is paramount: real-time annotation of social interactions, augmented perceptual cues superimposed on physical objects, and context-aware prompting in naturalistic settings. Current research is exploring AR-based interventions for visuospatial neglect and for Parkinson's disease, where visual cues projected into the patient's field of view can modulate gait parameters in real time.</p>
+          <p>Building a VR experiment from scratch is time-intensive. These frameworks provide pre-built experiment structures (Session → Block → Trial), many usable with minimal coding.</p>
+          <div class="tool-grid">
+            <div class="tool-card">
+              <strong>UXF</strong>
+              <div class="desc">Top recommendation for beginners. Complete experiment hierarchy, extensive documentation, video tutorials. Free and open-source.</div>
+              <a href="https://github.com/immersivecognition/unity-experiment-framework" target="_blank">GitHub</a>
+            </div>
+            <div class="tool-card">
+              <strong>PTVR</strong>
+              <div class="desc">Built on Unity but programmed in Python. Ideal for researchers comfortable with Python (e.g., PsychoPy users) who want Unity's rendering capabilities.</div>
+            </div>
+            <div class="tool-card">
+              <strong>VRthreat</strong>
+              <div class="desc">Purpose-built for threat avoidance and fear conditioning. Includes 14 animated threats, eye-tracking, and full-body recording. Published in Behavior Research Methods (2024).</div>
+              <a href="https://github.com/bachlab/vrthreat" target="_blank">GitHub</a>
+            </div>
+            <div class="tool-card">
+              <strong>XR MUSE</strong>
+              <div class="desc">Published 2024. Multi-user XR framework for collaborative experiments. Suitable for group behavior and social cognition studies.</div>
+              <a href="https://github.com/vrar-lab/XRMUSE" target="_blank">GitHub</a>
+            </div>
+          </div>
+          <p class="note">Recommended path: start with <strong>UXF</strong> for general-purpose experiments; use <strong>VRthreat</strong> for threat/anxiety research; Python users should consider <strong>PTVR</strong>.</p>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>Step 5 — VR Engines & 3D Modeling Tools<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p><strong>Development engines</strong></p>
+          <div class="tool-grid">
+            <div class="tool-card"><strong>Unity</strong><div class="desc">Most widely used. C# scripting, rich Asset Store. Recommended starting point.</div><a href="https://unity.com/" target="_blank">unity.com</a></div>
+            <div class="tool-card"><strong>Unreal Engine</strong><div class="desc">Blueprint visual scripting, superior rendering. Higher hardware requirements.</div><a href="https://www.unrealengine.com/" target="_blank">unrealengine.com</a></div>
+            <div class="tool-card"><strong>Vizard</strong><div class="desc">Lightweight, research-focused. Python interface. Requires a paid license.</div><a href="https://www.worldviz.com/vizard" target="_blank">worldviz.com</a></div>
+            <div class="tool-card"><strong>Godot</strong><div class="desc">Fully open-source, lightweight and free. Documentation is less comprehensive.</div><a href="https://godotengine.org/" target="_blank">godotengine.org</a></div>
+          </div>
+          <p style="margin-top:0.8rem;"><strong>3D modeling tools</strong></p>
+          <div class="btn-row">
+            <a href="https://www.blender.org/" target="_blank" class="btn primary">Blender (Free, Recommended)</a>
+            <a href="https://www.autodesk.com/products/3ds-max/" target="_blank" class="btn">3ds Max</a>
+            <a href="https://www.autodesk.com/products/maya/" target="_blank" class="btn">Maya</a>
+            <a href="https://www.maxon.net/cinema-4d" target="_blank" class="btn">Cinema 4D</a>
+            <a href="https://unity.com/features/probuilder" target="_blank" class="btn">ProBuilder</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>Step 6 — VR Hardware<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p><strong>Available at Zhejiang University, Dept. of Psychology:</strong></p>
+          <ul>
+            <li><strong>HTC VIVE (1st gen):</strong> East 4 Building, Zijingang. 1080×1200 per eye, 110° FOV. Suitable for basic development and testing.</li>
+            <li><strong>HTC VIVE Pro 2:</strong> Department Building, Zijingang. 2448×2448 per eye, 120° FOV. Suitable for experiments requiring fine visual detail.</li>
+          </ul>
+          <p style="margin-top:0.7rem;"><strong>PC VR vs. standalone:</strong> PC VR (HTC VIVE, Varjo XR-4) relies on the computer's GPU for rendering — powerful but tethered. Standalone headsets (Meta Quest, Pico, Vision Pro) use inside-out tracking via onboard cameras — portable, but performance is limited by integrated hardware.</p>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>Step 7 — Major Research Applications<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <div class="research-grid">
+            <div class="research-card">
+              <h4>Spatial Navigation & Episodic Memory</h4>
+              <p>VR has become a standard method for studying human spatial navigation, with experimenters controlling every landmark and spatial cue precisely. This methodology played an important role in the discovery of grid-cell-like representations in humans (Doeller et al., 2010, Nature).</p>
+            </div>
+            <div class="research-card">
+              <h4>Social Cognition</h4>
+              <p>VR enables systematic manipulation of social cues — gaze direction, interpersonal distance, facial expressions, and avatar appearance — while tightly controlling confounds. Applied in social anxiety research and implicit bias studies.</p>
+            </div>
+            <div class="research-card">
+              <h4>Exposure Therapy</h4>
+              <p>VR exposure therapy is among the most mature clinical applications of immersive technology. RCT evidence supports its efficacy for acrophobia, flight phobia, spider phobia, PTSD, and social anxiety. The key advantage is precise dose control.</p>
+            </div>
+            <div class="research-card">
+              <h4>Risk Decision-Making</h4>
+              <p>VR can present genuinely hazardous scenarios (fire evacuation, traffic accidents) in a zero-risk environment — enabling the study of emergency decision processes that cannot be examined in reality for obvious ethical reasons.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="footer">
-    <a href="https://consciousness-observers.github.io">Consciousness Observers (CO-LAB)</a> · Playground
-  </footer>
+  <footer class="footer">July 9, 2026 · Department of Psychology and Behavioral Sciences, Zhejiang University</footer>
 </div>
 
 <script>
 function togglePart(el) { el.classList.toggle('open'); }
 function toggleStep(el, event) { event.stopPropagation(); el.classList.toggle('open'); }
+document.getElementById('toydata-btn').addEventListener('click', function(e){ e.stopPropagation(); e.preventDefault(); });
 </script>
 </body>
 </html>
