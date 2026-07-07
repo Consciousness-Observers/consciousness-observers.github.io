@@ -6,110 +6,74 @@
 <title>三维技术在科学研究中的应用 — CO-LAB 工作坊</title>
 <style>
   :root {
-    --bg: #08090d;
-    --surface: #111318;
-    --border: #1e2130;
-    --border-hover: #2a3050;
-    --text: #c8ccd4;
-    --text-dim: #6b7080;
-    --text-soft: #9095a3;
-    --accent: #003F88;
-    --accent-glow: #005bb8;
-    --step-bg: #141720;
+    --bg: #08090d; --surface: #111318; --border: #1e2130; --border-hover: #2a3050;
+    --text: #c8ccd4; --text-dim: #6b7080; --text-soft: #9095a3;
+    --accent: #003F88; --accent-glow: #005bb8; --step-bg: #141720;
     --insight-bg: rgba(0,95,184,0.06);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-    line-height: 1.85;
-    min-height: 100vh;
-  }
-  .container { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
-
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "SF Pro Display", "Segoe UI", Roboto, sans-serif; line-height: 1.9; min-height: 100vh; }
+  .container { max-width: 820px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
   .header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-  .header h1 { font-size: 1.85rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
-  .header .logo img { height: 2.4rem; }
-  .header .lang { margin-top: 0.8rem; }
-  .header .lang a { color: var(--text-dim); font-size: 0.85rem; text-decoration: none; }
-  .header .lang a:hover { color: var(--accent-glow); }
-
-  .part { margin-bottom: 1rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); transition: border-color 0.2s; }
+  .header h1 { font-size: 1.9rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; }
+  .header .logo img { height: 2.6rem; }
+  .header .lang { margin-top: 0.8rem; } .header .lang a { color: var(--text-dim); font-size: 0.88rem; text-decoration: none; } .header .lang a:hover { color: var(--accent-glow); }
+  .part { margin-bottom: 1.2rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); transition: border-color 0.2s; }
   .part:hover { border-color: var(--border-hover); }
-  .part-header { padding: 1.15rem 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
-  .part-header h2 { font-size: 1.05rem; font-weight: 600; color: #e0e4ec; display: flex; align-items: center; gap: 0.6rem; }
-  .part-number { color: var(--accent-glow); font-weight: 700; font-size: 0.85rem; font-family: "SF Mono", "Fira Code", monospace; }
-  .part-arrow { font-size: 0.7rem; color: var(--text-dim); transition: transform 0.3s; }
+  .part-header { padding: 1.2rem 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
+  .part-header h2 { font-size: 1.1rem; font-weight: 600; color: #e0e4ec; display: flex; align-items: center; gap: 0.7rem; }
+  .part-number { color: var(--accent-glow); font-weight: 700; font-size: 0.88rem; font-family: "SF Mono", "Fira Code", monospace; }
+  .part-arrow { font-size: 0.75rem; color: var(--text-dim); transition: transform 0.3s; }
   .part.open .part-arrow { transform: rotate(90deg); }
-  .part-body { display: none; padding: 0 1.4rem 1.3rem; }
+  .part-body { display: none; padding: 0 1.5rem 1.5rem; }
   .part.open .part-body { display: block; }
-  .part-desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; }
-
-  .step { margin-bottom: 0.6rem; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; background: var(--step-bg); }
-  .step-header { padding: 0.75rem 1rem; cursor: pointer; display: flex; align-items: center; gap: 0.6rem; user-select: none; font-size: 0.9rem; font-weight: 500; color: #ccd0d8; }
-  .step-header:hover { background: rgba(255,255,255,0.02); }
-  .step-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-glow); flex-shrink: 0; }
-  .step-arrow { font-size: 0.6rem; color: var(--text-dim); margin-left: auto; transition: transform 0.3s; }
+  .part-desc { color: var(--text-dim); font-size: 0.93rem; margin-bottom: 1.2rem; }
+  .step { margin-bottom: 0.7rem; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; background: var(--step-bg); }
+  .step-header { padding: 0.8rem 1.1rem; cursor: pointer; display: flex; align-items: center; gap: 0.7rem; user-select: none; font-size: 0.93rem; font-weight: 500; color: #ccd0d8; }
+  .step-header:hover { background: rgba(255,255,255,0.03); }
+  .step-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-glow); flex-shrink: 0; }
+  .step-arrow { font-size: 0.65rem; color: var(--text-dim); margin-left: auto; transition: transform 0.3s; }
   .step.open .step-arrow { transform: rotate(90deg); }
-  .step-body { display: none; padding: 0 1rem 1rem 1.8rem; font-size: 0.88rem; color: var(--text-dim); line-height: 1.85; }
+  .step-body { display: none; padding: 0 1.1rem 1.1rem 2rem; font-size: 0.92rem; color: var(--text-dim); line-height: 1.9; }
   .step.open .step-body { display: block; }
-  .step-body a { color: var(--accent-glow); text-decoration: none; }
-  .step-body a:hover { text-decoration: underline; }
-  .step-body p, .step-body li { margin-bottom: 0.5rem; }
-  .step-body ul { padding-left: 1.2rem; margin-bottom: 0.5rem; }
-
-  .btn { display: inline-block; padding: 0.55rem 1.2rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; cursor: pointer; text-decoration: none; border: 1px solid var(--border); color: var(--text); background: var(--surface); transition: all 0.2s; margin: 0.25rem 0.35rem 0.25rem 0; text-align: center; }
+  .step-body a { color: var(--accent-glow); text-decoration: none; } .step-body a:hover { text-decoration: underline; }
+  .step-body p, .step-body li { margin-bottom: 0.55rem; }
+  .step-body ul { padding-left: 1.3rem; margin-bottom: 0.6rem; }
+  .btn { display: inline-block; padding: 0.6rem 1.3rem; border-radius: 6px; font-size: 0.88rem; font-weight: 500; cursor: pointer; text-decoration: none; border: 1px solid var(--border); color: var(--text); background: var(--surface); transition: all 0.2s; margin: 0.3rem 0.4rem 0.3rem 0; text-align: center; }
   .btn:hover { border-color: var(--accent-glow); color: #fff; background: rgba(0,95,184,0.08); }
   .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
   .btn.primary:hover { background: var(--accent-glow); border-color: var(--accent-glow); }
   .btn.accent { border-color: var(--accent-glow); color: var(--accent-glow); font-weight: 600; background: rgba(0,95,184,0.08); }
   .btn.accent:hover { background: rgba(0,95,184,0.15); color: #fff; }
-  .btn.download { background: #0f1620; border-color: #1a3050; }
-  .btn.download:hover { border-color: #2a5080; }
-  .btn.small { padding: 0.4rem 0.8rem; font-size: 0.78rem; }
-  .btn-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-  .bridge { margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid var(--accent-glow); background: var(--insight-bg); border-radius: 0 6px 6px 0; font-size: 0.89rem; color: #b0b8c4; line-height: 1.85; }
-  .bridge-label { font-size: 0.75rem; letter-spacing: 0.08em; color: var(--accent-glow); margin-bottom: 0.3rem; font-weight: 600; }
-
-  .resource { margin-top: 1rem; padding: 0.85rem 1.1rem; background: rgba(255,255,255,0.025); border-radius: 7px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.04); }
+  .btn.download { background: #0f1620; border-color: #1a3050; } .btn.download:hover { border-color: #2a5080; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .bridge { margin-top: 1.2rem; padding: 1.1rem 1.3rem; border-left: 3px solid var(--accent-glow); background: var(--insight-bg); border-radius: 0 6px 6px 0; font-size: 0.92rem; color: #b0b8c4; line-height: 1.9; }
+  .bridge-label { font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent-glow); margin-bottom: 0.4rem; font-weight: 600; }
+  .resource { margin-top: 1rem; padding: 0.9rem 1.1rem; background: rgba(255,255,255,0.025); border-radius: 7px; font-size: 0.88rem; border: 1px solid rgba(255,255,255,0.04); }
   .resource a { color: var(--accent-glow); }
-
-  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; }
+  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.6rem; }
   @media (max-width: 600px) { .research-grid { grid-template-columns: 1fr; } }
-  .research-card { padding: 0.85rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.83rem; }
-  .research-card h4 { font-size: 0.85rem; color: #d0d6e0; margin-bottom: 0.35rem; }
-  .research-card p { color: var(--text-dim); font-size: 0.8rem; line-height: 1.7; }
-  .research-card .ref { color: var(--accent-glow); font-size: 0.75rem; margin-top: 0.3rem; display: inline-block; }
-
-  .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem; }
+  .research-card { padding: 0.9rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.86rem; }
+  .research-card h4 { font-size: 0.88rem; color: #d0d6e0; margin-bottom: 0.4rem; }
+  .research-card p { color: var(--text-dim); font-size: 0.83rem; line-height: 1.7; }
+  .research-card .ref { color: var(--accent-glow); font-size: 0.78rem; margin-top: 0.4rem; display: inline-block; }
+  .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 0.6rem; }
   @media (max-width: 600px) { .tool-grid { grid-template-columns: 1fr; } }
-  .tool-card { padding: 0.7rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.85rem; }
-  .tool-card strong { color: #d0d6e0; }
-  .tool-card .desc { font-size: 0.82rem; color: var(--text-dim); }
-
+  .tool-card { padding: 0.75rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.88rem; }
+  .tool-card strong { color: #d0d6e0; } .tool-card .desc { font-size: 0.85rem; color: var(--text-dim); }
   .model-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.4rem; margin-top: 0.5rem; }
   @media (max-width: 600px) { .model-grid { grid-template-columns: 1fr 1fr; } }
-  .model-btn { padding: 0.45rem 0.3rem; font-size: 0.72rem; text-align: center; border-radius: 4px; border: 1px solid var(--border); color: var(--text-dim); background: var(--step-bg); cursor: pointer; text-decoration: none; display: block; transition: all 0.2s; }
+  .model-btn { padding: 0.5rem 0.3rem; font-size: 0.75rem; text-align: center; border-radius: 4px; border: 1px solid var(--border); color: var(--text-dim); background: var(--step-bg); cursor: pointer; text-decoration: none; display: block; transition: all 0.2s; }
   .model-btn:hover { border-color: var(--accent-glow); color: #fff; background: rgba(0,95,184,0.1); }
-
-  .dataset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin: 0.5rem 0; }
+  .dataset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0.6rem 0; }
   @media (max-width: 600px) { .dataset-grid { grid-template-columns: 1fr; } }
-  .dataset-card { padding: 0.55rem 0.7rem; border: 1px solid var(--border); border-radius: 6px; background: var(--step-bg); font-size: 0.8rem; }
-  .dataset-card strong { color: #ccd0d8; font-size: 0.82rem; }
-  .dataset-card .desc { font-size: 0.76rem; color: var(--text-dim); }
-  .dataset-card a { color: var(--accent-glow); font-size: 0.76rem; }
-
-  .coming-soon { color: var(--text-dim); font-size: 0.88rem; padding: 0.5rem 0; }
-
-  .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-dim); }
-
-  .note { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.3rem; }
-  .pipeline { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; color: var(--text-soft); background: rgba(0,0,0,0.3); padding: 0.6rem 0.8rem; border-radius: 5px; overflow-x: auto; }
-  .lang { margin-top: 0.8rem; }
-  .lang a { color: var(--text-dim); font-size: 0.85rem; text-decoration: none; }
-  .lang a:hover { color: var(--accent-glow); }
+  .dataset-card { padding: 0.6rem 0.8rem; border: 1px solid var(--border); border-radius: 6px; background: var(--step-bg); font-size: 0.84rem; }
+  .dataset-card strong { color: #ccd0d8; font-size: 0.86rem; } .dataset-card .desc { font-size: 0.8rem; color: var(--text-dim); }
+  .dataset-card a { color: var(--accent-glow); font-size: 0.8rem; }
+  .coming-soon { color: var(--text-dim); font-size: 0.92rem; padding: 0.5rem 0; }
+  .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--text-dim); }
+  .note { font-size: 0.82rem; color: var(--text-dim); margin-top: 0.35rem; }
+  .pipeline { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.85rem; color: var(--text-soft); background: rgba(0,0,0,0.3); padding: 0.7rem 0.9rem; border-radius: 5px; overflow-x: auto; margin: 0.5rem 0; }
 </style>
 </head>
 <body>
@@ -121,7 +85,7 @@
     <p class="lang"><a href="/playground/">English</a></p>
   </header>
 
-  <!-- ==================== 第一部分 ==================== -->
+  <!-- ==================== PART 1 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
       <h2><span class="part-number">第一部分</span> 三维影像——从磁共振原理到数据处理</h2>
@@ -133,50 +97,48 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第一步——MRI技术基本原理与实验准备<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p><strong>功能磁共振成像（fMRI）的基本原理</strong></p>
+          <p><strong>fMRI的基本原理</strong></p>
           <p>fMRI通过测量<strong>血氧水平依赖（BOLD）</strong>信号间接反映神经活动。当神经元集群发放动作电位时，局部脑血流和耗氧量增加，引起脱氧血红蛋白与氧合血红蛋白比例的改变——脱氧血红蛋白为顺磁性物质，会降低局部MR信号；其浓度的下降导致信号增强。BOLD信号的峰值出现在神经活动后约5–10秒，滞后于真实神经事件约1–2秒。这意味着fMRI测量的是与神经活动耦合的血管响应，而非神经活动本身。</p>
 
           <p style="margin-top:0.8rem;"><strong>fMRI适用于哪些研究问题</strong></p>
           <ul>
-            <li><strong>任务态fMRI：</strong>定位特定认知功能的脑区（如工作记忆、语言、运动控制）；检验明确预测脑区激活的理论假设；比较不同实验条件下的脑激活差异（被试内设计）</li>
-            <li><strong>静息态fMRI：</strong>识别大尺度脑功能网络（默认模式网络、突显网络、执行控制网络等）；在无法执行任务的群体中使用（婴儿、阿尔茨海默病患者、严重精神疾病患者）；大规模群体神经科学研究（ABCD研究、UK Biobank、人类连接组计划）</li>
+            <li><strong>任务态fMRI：</strong>定位特定认知功能的脑区（如工作记忆、语言、运动控制）；检验明确预测脑区激活的理论假设；比较不同实验条件下的脑激活差异。</li>
+            <li><strong>静息态fMRI：</strong>识别大尺度脑功能网络；在无法执行任务的群体中使用（婴儿、阿尔茨海默病患者等）；大规模群体神经科学研究。</li>
           </ul>
 
           <p style="margin-top:0.8rem;"><strong>fMRI不适用于哪些问题</strong></p>
           <ul>
-            <li>需要因果推断的脑-行为关系问题（fMRI为相关性方法，需结合TMS、脑损伤研究等补充手段）</li>
+            <li>需要因果推断的脑-行为关系问题（fMRI为相关性方法）</li>
             <li>毫秒级神经动态过程（EEG/MEG更适合）</li>
             <li>单一被试的临床诊断（术前功能定位除外）</li>
-            <li>直接测量神经递质系统活动（PET/SPECT更适合）</li>
             <li>无法在扫描仪中有效操作的研究构念</li>
             <li>小样本的脑-行为个体差异检测（单变量分析方法通常需要千人级样本量）</li>
           </ul>
 
-          <p style="margin-top:0.8rem;"><strong>主要局限与潜在风险</strong></p>
+          <p style="margin-top:0.8rem;"><strong>主要局限与注意事项</strong></p>
           <ul>
             <li>头动伪影在发育、精神疾病和儿童群体中尤为严重</li>
-            <li>BOLD信号的个体内和个体间变异性大，信度不足以支持单人诊断</li>
-            <li>分析流程的灵活性（一项系统性评估测试了768种fMRI分析流程，大多数无法产生一致结果）</li>
-            <li>反向推断（从脑激活模式推断心理状态）存在逻辑缺陷</li>
+            <li>BOLD信号的个体内和个体间变异性大</li>
+            <li>分析流程的灵活性大——一项系统性评估测试了768种fMRI分析流程，大多数无法产生一致结果</li>
             <li>血压、心率、咖啡因、饮食、昼夜节律等均影响BOLD信号</li>
           </ul>
 
-          <p style="margin-top:0.8rem;"><strong>实验准备：预约浙江大学磁共振实验室</strong></p>
+          <p style="margin-top:0.8rem;"><strong>预约浙江大学磁共振实验室（示例）</strong></p>
           <ul>
-            <li><strong>设备：</strong>3T磁共振成像系统，校级公共平台，依托生物医学工程与仪器科学学院（脑影像科学技术中心）</li>
+            <li><strong>设备：</strong>3T磁共振成像系统，校级公共平台</li>
             <li><strong>地点：</strong>杭州市凯旋路268号浙江大学华家池校区 中心北楼112</li>
-            <li><strong>预约：</strong>通过分析测试管理服务平台（<a href="https://atc.zju.edu.cn/" target="_blank">atc.zju.edu.cn</a>）或浙江大学大型仪器共享服务平台（<a href="https://zjuequip.zju.edu.cn/" target="_blank">zjuequip.zju.edu.cn</a>，搜索仪器编号15003917）进行机时预约</li>
-            <li><strong>培训：</strong>使用前须参加安全及上机操作培训，可通过钉钉群"3T磁共振培训钉钉群"报名。培训地点为华家池校区中心北楼112，每次不超过10人</li>
+            <li><strong>预约：</strong>分析测试管理服务平台（<a href="https://atc.zju.edu.cn/" target="_blank">atc.zju.edu.cn</a>）或仪器共享平台（<a href="https://zjuequip.zju.edu.cn/" target="_blank">zjuequip.zju.edu.cn</a>，搜索仪器编号15003917）</li>
+            <li><strong>培训：</strong>使用前须参加安全及上机操作培训，通过钉钉群"3T磁共振培训钉钉群"报名</li>
             <li><strong>联系方式：</strong>丁老师、张老师（电话：0571-86971875，邮箱：cbist@zju.edu.cn）</li>
           </ul>
 
-          <p style="margin-top:0.8rem;"><strong>实验当天注意事项</strong></p>
+          <p style="margin-top:0.8rem;"><strong>实验当天流程</strong></p>
           <ul>
-            <li><strong>前期准备：</strong>确认实验方案已通过伦理审查；准备被试知情同意书；在扫描前完成行为预实验以优化任务设计</li>
-            <li><strong>被试接待：</strong>提前向被试详细说明实验流程、扫描时长和注意事项；确保被试充分理解并签署知情同意书</li>
-            <li><strong>安全检查（关键步骤）：</strong>在进入扫描间之前，逐一确认被试（及陪同人员）体内无金属植入物（心脏起搏器、动脉瘤夹、金属假牙、骨科内固定物等）；移除所有金属物品（眼镜、发夹、首饰、手表、皮带扣、含金属的衣物配饰）；确认被试无纹身（部分纹身颜料含金属成分）</li>
-            <li><strong>具体扫描操作：</strong>由磁共振实验室的专业技师执行，研究者无需掌握机器操作细节</li>
-            <li><strong>数据获取：</strong>扫描结束后，从技师处获取DICOM格式的原始数据</li>
+            <li><strong>前期准备：</strong>确认实验方案已通过伦理审查；准备知情同意书；在扫描前完成行为预实验以优化任务设计</li>
+            <li><strong>被试接待：</strong>提前向被试详细说明实验流程和注意事项；确保被试充分理解并签署知情同意书</li>
+            <li><strong>安全检查（关键步骤）：</strong>在进入扫描间之前，逐一确认被试体内无金属植入物（心脏起搏器、动脉瘤夹、金属假牙、骨科内固定物等）；移除所有金属物品（眼镜、发夹、首饰、手表、皮带扣等）；确认被试无纹身（部分纹身颜料含金属成分）</li>
+            <li><strong>扫描操作：</strong>由磁共振实验室的专业技师执行——研究者无需掌握机器操作细节</li>
+            <li><strong>获取数据：</strong>扫描结束后，从技师处获取DICOM格式的原始数据</li>
           </ul>
         </div>
       </div>
@@ -184,34 +146,26 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第二步——获取数据<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p><strong>标准脑模板</strong></p>
-          <p>标准脑模板为跨研究和跨个体的脑影像比较提供统一的坐标系统。以下为最常用的三种模板：</p>
+          <p><strong>标准脑模板</strong>为跨研究和跨个体的脑影像比较提供了统一的坐标系统：</p>
           <ul>
-            <li><strong>MNI152</strong>——使用最广泛的标准空间模板，由152名健康青年被试的T1加权像平均而成。定义了绝大多数fMRI研究使用的MNI坐标空间。</li>
-            <li><strong>Colin27</strong>——高分辨率单人模板，通过对同一被试进行27次扫描并平均获得，解剖细节优于MNI152，已配准至MNI空间。</li>
-            <li><strong>ICBM152</strong>——国际脑图谱联盟概率图谱，整合了T1、T2和质子密度信息。</li>
+            <li><strong>MNI152</strong>——使用最广泛的标准空间模板，由152名健康青年的T1加权像平均而成</li>
+            <li><strong>Colin27</strong>——高分辨率单人模板，对同一被试进行27次扫描并平均获得，已配准至MNI空间</li>
+            <li><strong>ICBM152</strong>——国际脑图谱联盟的概率图谱，整合了T1、T2和质子密度信息</li>
           </ul>
-          <div class="btn-row">
-            <a href="https://nist.mni.mcgill.ca/atlases/" target="_blank" class="btn primary">MNI Atlases 官方下载</a>
-            <a href="https://nist.mni.mcgill.ca/colin-27-average-brain-2008/" target="_blank" class="btn">Colin27 详情</a>
-          </div>
+          <a href="https://nist.mni.mcgill.ca/atlases/" target="_blank" class="btn primary">MNI官方模板下载</a>
+          <a href="https://nist.mni.mcgill.ca/colin-27-average-brain-2008/" target="_blank" class="btn">Colin27详情</a>
 
-          <p style="margin-top:1rem;"><strong>开放MRI数据集</strong></p>
-          <p>除标准模板外，大量经过预处理和标注的公开数据集可直接用于研究。以下为主要开放数据平台：</p>
+          <p style="margin-top:1.2rem;"><strong>主要的开放MRI数据集</strong></p>
           <div class="dataset-grid">
-            <div class="dataset-card"><strong>OpenNeuro</strong><div class="desc">最大的BIDS标准开放数据集平台，涵盖MRI、PET、MEG、EEG等多种模态。</div><a href="https://openneuro.org/" target="_blank">openneuro.org</a></div>
-            <div class="dataset-card"><strong>NITRC</strong><div class="desc">神经影像工具与资源协作平台，含1000 Functional Connectomes、COBRE等经典数据集。</div><a href="https://www.nitrc.org/" target="_blank">nitrc.org</a></div>
-            <div class="dataset-card"><strong>Human Connectome Project</strong><div class="desc">大规模多模态人脑连接组数据，含结构MRI、任务态与静息态fMRI、扩散MRI。</div><a href="https://www.humanconnectome.org/" target="_blank">humanconnectome.org</a></div>
-            <div class="dataset-card"><strong>UK Biobank</strong><div class="desc">全球最大的生物医学数据库之一，含超过40,000例脑MRI扫描数据。</div><a href="https://www.ukbiobank.ac.uk/" target="_blank">ukbiobank.ac.uk</a></div>
+            <div class="dataset-card"><strong>OpenNeuro</strong><div class="desc">最大的BIDS标准开放数据集平台，覆盖多种模态。</div><a href="https://openneuro.org/" target="_blank">openneuro.org</a></div>
+            <div class="dataset-card"><strong>Human Connectome Project</strong><div class="desc">大规模多模态人脑连接组数据，含结构像、任务态和静息态fMRI、扩散MRI。</div><a href="https://www.humanconnectome.org/" target="_blank">humanconnectome.org</a></div>
+            <div class="dataset-card"><strong>UK Biobank</strong><div class="desc">全球最大的生物医学数据库之一，含超过40,000例脑MRI扫描。</div><a href="https://www.ukbiobank.ac.uk/" target="_blank">ukbiobank.ac.uk</a></div>
             <div class="dataset-card"><strong>ABCD Study</strong><div class="desc">青少年脑认知发育研究，超过11,000名儿童的纵向MRI和行为数据。</div><a href="https://abcdstudy.org/" target="_blank">abcdstudy.org</a></div>
-            <div class="dataset-card"><strong>Brain Image Library</strong><div class="desc">全脑显微成像与脑影像数据档案库。</div><a href="https://www.brainimagelibrary.org/" target="_blank">brainimagelibrary.org</a></div>
-            <div class="dataset-card"><strong>NeuroVault</strong><div class="desc">未设定阈值的统计图公共存储库，支持元分析和结果共享。</div><a href="https://neurovault.org/" target="_blank">neurovault.org</a></div>
-            <div class="dataset-card"><strong>DANDI Archive</strong><div class="desc">细胞与系统神经生理学数据档案，支持BIDS标准。</div><a href="https://www.dandiarchive.org/" target="_blank">dandiarchive.org</a></div>
           </div>
 
           <div style="margin-top:0.8rem;">
             <a href="#" class="btn accent" id="toydata-btn">📦 工作坊练习数据集（即将提供）</a>
-            <p class="note">该按钮将在工作坊前激活，届时可一键下载本工作坊使用的toy dataset（DICOM格式压缩包）。</p>
+            <p class="note">该按钮将在工作坊前激活，届时可一键下载本工作坊使用的DICOM格式练习数据。</p>
           </div>
         </div>
       </div>
@@ -219,30 +173,29 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第三步——主流MRI数据分析工具<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>获取数据后，需要使用专业软件进行分析处理。以下为功能磁共振成像领域使用最广泛的几款分析工具：</p>
+          <p>获取数据后，需要使用专业软件进行分析处理。以下是使用最广泛的几款工具：</p>
           <div class="tool-grid">
             <div class="tool-card">
-              <strong>SPM（Statistical Parametric Mapping）</strong>
-              <div class="desc">由伦敦大学学院（UCL）Wellcome人类神经影像中心开发，基于MATLAB。是fMRI领域使用最广泛的统计分析方法之一，采用基于体素的一般线性模型（GLM）。</div>
+              <strong>SPM</strong>
+              <div class="desc">伦敦大学学院开发，基于MATLAB。fMRI领域使用最广泛的统计分析方法之一，采用基于体素的一般线性模型。教程资源丰富，社区支持成熟。</div>
               <a href="https://www.fil.ion.ucl.ac.uk/spm/" target="_blank">官网</a> &nbsp; <a href="https://www.fil.ion.ucl.ac.uk/spm/docs/" target="_blank">教程</a> &nbsp; <a href="https://github.com/spm/spm/releases/download/25.01.02/spm_25.01.02.zip" target="_blank">下载</a>
             </div>
             <div class="tool-card">
-              <strong>FSL（FMRIB Software Library）</strong>
-              <div class="desc">由牛津大学FMRIB中心开发，支持结构MRI、fMRI、DTI等多种模态的分析。独立运行，不依赖MATLAB。以FEAT（任务fMRI）和MELODIC（ICA）最为常用。</div>
+              <strong>FSL</strong>
+              <div class="desc">牛津大学FMRIB中心开发，支持结构像、fMRI、DTI等多种模态。独立运行，不依赖MATLAB。FEAT（任务fMRI）和MELODIC（ICA）最为常用。</div>
               <a href="https://fsl.fmrib.ox.ac.uk/fsl/" target="_blank">fsl.fmrib.ox.ac.uk</a>
             </div>
             <div class="tool-card">
               <strong>FreeSurfer</strong>
-              <div class="desc">由哈佛大学Martinos生物医学影像中心开发，专长于皮层表面重建和自动体积分割。recon-all流程是皮层厚度分析和表面配准的标准工具。</div>
+              <div class="desc">哈佛大学Martinos中心开发，专长于皮层表面重建和自动体积分割。recon-all流程是皮层分析的标准工具。</div>
               <a href="https://surfer.nmr.mgh.harvard.edu/" target="_blank">surfer.nmr.mgh.harvard.edu</a>
             </div>
             <div class="tool-card">
               <strong>AFNI</strong>
-              <div class="desc">由美国NIMH开发，在时间序列分析和统计分析方面具有独特优势。完全免费开源，独立于MATLAB。特别适合高级用户进行灵活的数据处理。</div>
+              <div class="desc">美国NIMH开发，在时间序列分析和统计分析方面有独特优势。完全免费开源，适合高级用户进行灵活的数据处理。</div>
               <a href="https://afni.nimh.nih.gov/" target="_blank">afni.nimh.nih.gov</a>
             </div>
           </div>
-          <p class="note">选择建议：SPM拥有最丰富的教程资源和社区支持，是国内fMRI研究中使用最广泛的工具之一；FSL在扩散成像和ICA分析方面有优势；FreeSurfer是皮层分析的标准工具。本工作坊使用SPM作为主要演示工具。</p>
         </div>
       </div>
 
@@ -250,19 +203,19 @@
         <div class="step-header"><span class="step-dot"></span>第四步——从MRI数据到三维脑模型<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>将结构MRI扫描转换为可用于三维打印的脑模型，通常遵循以下流程：</p>
-          <p class="pipeline">DICOM → NIfTI（dcm2niix）→ 皮层分割（FreeSurfer recon-all）→ 表面提取（软脑膜表面）→ 网格转换（STL）→ 网格修复（MeshLab/Blender）→ 三维打印</p>
+          <p class="pipeline">DICOM → NIfTI（dcm2niix）→ 皮层分割（FreeSurfer recon-all）→ 表面提取 → 网格转换（STL）→ 网格修复（MeshLab/Blender）→ 三维打印</p>
 
           <p style="margin-top:0.8rem;"><strong>完整流程教程</strong></p>
           <div class="btn-row">
-            <a href="https://fordburles.com/3d-print-brain-guide.html" target="_blank" class="btn primary">Burles 完整流程指南（2024）</a>
+            <a href="https://fordburles.com/3d-print-brain-guide.html" target="_blank" class="btn primary">Burles 完整流程（2024）</a>
             <a href="http://www.columbia.edu/~rem2178/assets/HowtoMakea3Dbrainmodel.pdf" target="_blank" class="btn">Columbia 简明指南（PDF）</a>
           </div>
 
-          <p style="margin-top:1rem;"><strong>PittBrains3D：免费三维脑模型资源</strong></p>
+          <p style="margin-top:1.2rem;"><strong>PittBrains3D：免费三维脑模型</strong></p>
           <p>匹兹堡大学提供的开放教育资源，包含全脑、半脑、冠状/水平/矢状切面、皮层下结构、脑血管系统等十二个高质量STL模型，可自由下载和打印。</p>
           <div class="btn-row">
             <a href="https://oercommons.org/courseware/lesson/123307/student/?section=8" target="_blank" class="btn">PittBrains3D 网站</a>
-            <a href="#" class="btn accent" id="toggle-models" onclick="event.stopPropagation(); document.getElementById('model-panel').style.display = document.getElementById('model-panel').style.display === 'none' ? 'block' : 'none'; return false;">📥 下载十二个脑区模型</a>
+            <a href="#" class="btn accent" id="toggle-models" onclick="event.stopPropagation(); var p=document.getElementById('model-panel'); p.style.display=p.style.display==='none'?'block':'none'; return false;">📥 下载十二个脑区模型</a>
           </div>
           <div id="model-panel" style="display:none; margin-top:0.6rem;">
             <div class="model-grid">
@@ -284,39 +237,39 @@
       </div>
 
       <div class="resource">
-        <strong>网页替代方案：</strong><a href="https://brain2print.org/" target="_blank">Brain2Print</a>——如果上面的软件暂时安装不上，可以直接在浏览器中上传并查看MRI数据（NIfTI格式），还能一键将脑影像转换为3D可打印模型，跳过FreeSurfer等本地工具链的安装配置。
+        <strong>网页替代方案：</strong><a href="https://brain2print.org/" target="_blank">Brain2Print</a>——如果上面的软件暂时安装不上，可以直接在浏览器中上传并查看MRI数据（NIfTI格式），还能一键将脑影像转换为3D可打印模型。
       </div>
 
       <div class="resource">
-        <strong>推荐参考：</strong><a href="https://andysbrainbook.readthedocs.io/en/latest/index.html" target="_blank">Andy's Brain Book</a>——全面开放获取的MRI数据分析入门教材，涵盖从工具安装到预处理和统计分析的逐步教程。
+        <strong>推荐参考：</strong><a href="https://andysbrainbook.readthedocs.io/en/latest/index.html" target="_blank">Andy's Brain Book</a>——全面开放获取的MRI数据分析入门教材，从工具安装到统计分析均有逐步教程。
       </div>
 
       <div class="bridge">
         <div class="bridge-label">从第一部分到第二部分</div>
-        获取和查看MRI数据是一项技术成就，但它本身并不赋予解剖学理解。研究者可以在3D Slicer中加载NIfTI文件并导航至MNI空间中的任意坐标，却仍可能缺乏理解某一体素所代表含义的空间直觉。制约因素通常并非数据获取或软件使用的困难，而是缺乏对脑解剖结构的坚实三维空间表征。下一节正是为了弥补这一缺口。
+        获取和查看MRI数据是一项技术门槛，但它本身并不赋予解剖学理解。制约因素通常并非数据或软件，而是缺乏对脑解剖结构的坚实三维空间认识。下一节正是为了弥补这一缺口。
       </div>
     </div>
   </div>
 
-  <!-- ==================== 第二部分 ==================== -->
+  <!-- ==================== PART 2 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
       <h2><span class="part-number">第二部分</span> 三维脑解剖——建立空间理解</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">神经影像学论文通常以解剖或功能标签指代脑区。阅读此类文献需要的不只是名称识别——更需要一种空间表征能力，理解各结构在三维空间中的相对位置关系。</p>
+      <p class="part-desc">神经影像论文通常以解剖或功能标签指代脑区。阅读这类文献需要的不只是名称识别——更需要理解各结构在三维空间中的相对位置关系。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第一步——脑区如何被定义与标记<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>存在多种脑区分割方案，各自依据不同的原则对大脑进行划分：细胞构筑（Brodmann分区）、大体解剖（脑回与脑沟标志）或功能连接。这些方案之间并不总能对齐，同一解剖位置在不同图谱中可能对应不同的标签。</p>
-          <p><strong>神经影像学中常用的主要分割图谱：</strong></p>
+          <p>存在多种脑区分割方案，各自依据不同的原则对大脑进行划分：细胞构筑（Brodmann分区）、大体解剖（脑回与脑沟标志）或功能连接。这些方案之间并不总能对齐——同一解剖位置在不同图谱中可能对应不同的标签。</p>
+          <p><strong>常用的分割图谱：</strong></p>
           <ul>
-            <li><strong>AAL（自动解剖标记图谱）</strong>——共116个区域（90个皮层区，26个小脑区）。fMRI文献中引用最多的分割方案。</li>
-            <li><strong>Harvard-Oxford图谱</strong>——随FSL发布的概率图谱，每个体素携带属于某一结构的概率值。</li>
-            <li><strong>Desikan-Killiany图谱</strong>——68个皮层区（每半球34个）。FreeSurfer recon-all流程的默认皮层分割输出。</li>
-            <li><strong>HCP-MMP 1.0</strong>——每半球180个区域，基于人类连接组计划的多模态数据推导得出。</li>
+            <li><strong>AAL</strong>——116个区域（90个皮层区，26个小脑区），fMRI文献中引用最多</li>
+            <li><strong>Harvard-Oxford</strong>——随FSL发布的概率图谱，每个体素携带属于某一结构的概率值</li>
+            <li><strong>Desikan-Killiany</strong>——68个皮层区（每半球34个），FreeSurfer的默认输出</li>
+            <li><strong>HCP-MMP 1.0</strong>——每半球180个区域，基于人类连接组计划的多模态数据</li>
           </ul>
         </div>
       </div>
@@ -324,26 +277,26 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第二步——利用交互工具学习三维脑解剖<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>传统的神经解剖教学依赖二维表征。以下交互式图谱允许通过旋转、深度剥离和选择性高亮来直接探索脑结构：</p>
+          <p>传统神经解剖教学依赖二维表征。以下交互式图谱允许通过旋转、剥离和选择来直接探索脑结构：</p>
           <div class="tool-grid">
             <div class="tool-card">
               <strong>3D Brain（冷泉港实验室）</strong>
-              <div class="desc">29个带标签的交互式结构，附有简洁的功能说明。基于浏览器，无需安装。本工作坊使用的主要参考工具。</div>
+              <div class="desc">29个带标签的交互式结构，附功能说明。基于浏览器，无需安装。</div>
               <a href="https://www.g2conline.org/3dbrain/" target="_blank">g2conline.org/3dbrain</a>
             </div>
             <div class="tool-card">
-              <strong>BrainFacts.org 3D Brain</strong>
+              <strong>BrainFacts 3D Brain</strong>
               <div class="desc">交互式图谱，包含各结构功能和相关临床状况的详细描述。</div>
               <a href="https://www.brainfacts.org/3d-brain" target="_blank">brainfacts.org/3d-brain</a>
             </div>
             <div class="tool-card">
               <strong>MSU Human Brain Atlas</strong>
-              <div class="desc">高分辨率组织学切片与MRI对照。有助于理解结构影像中信号变化的细胞构筑基础。</div>
+              <div class="desc">高分辨率组织学切片与MRI对照。有助于理解影像信号变化的细胞构筑基础。</div>
               <a href="https://brains.anatomy.msu.edu/brains/human/index.html" target="_blank">brains.anatomy.msu.edu</a>
             </div>
             <div class="tool-card">
               <strong>Neuroglancer</strong>
-              <div class="desc">基于WebGL的浏览器，可渲染拍字节级三维数据，支持在突触分辨率下浏览脑体积数据。</div>
+              <div class="desc">基于WebGL，可渲染拍字节级三维数据，支持浏览突触分辨率的脑体积数据。</div>
               <a href="https://neuroglancer-demo.appspot.com/" target="_blank">neuroglancer-demo.appspot.com</a>
             </div>
           </div>
@@ -352,53 +305,53 @@
 
       <div class="bridge">
         <div class="bridge-label">从第二部分到第三部分</div>
-        三维图谱构建了空间知识，但知识在被产出所检验之前仍停留在抽象层面。当研究者将某一脑区从数据中分割出来，并将其转化为物理实体时——学习便具备了自我修正的性质。从数字探索到物理制造的转变闭合了一条反馈环路：空间理解在"制作"这一行为中持续得到检验和深化。下一节介绍实现这一转变所需的工具和方法。
+        三维图谱构建了空间知识，但知识在被产出检验之前仍停留在抽象层面。当研究者将脑区从数据中分割出来并转化为物理实体时——学习便具有了自我修正的性质。从数字探索到物理制造的转变闭合了一条反馈环路。下一节介绍实现这一转变所需的工具和方法。
       </div>
     </div>
   </div>
 
-  <!-- ==================== 第三部分 ==================== -->
+  <!-- ==================== PART 3 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
       <h2><span class="part-number">第三部分</span> 三维建模与三维打印——从数字模型到物理实体</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">第一部分生成的数字脑模型，经第二部分获得解剖学理解后，可通过三维打印实现物质化。本节概述三维打印在研究中的应用，并提供实操工具。</p>
+      <p class="part-desc">第一部分生成的数字脑模型，经第二部分获得解剖学理解后，可通过三维打印实现物质化。本节概述三维打印的研究应用，并提供实操工具。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第一步——三维打印的研究应用<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>三维打印已在多个学科的研究中获得了应用。以下为经核实的代表性案例：</p>
+          <p>三维打印已在多个学科的研究中获得应用。以下为经核实的代表性案例：</p>
           <div class="research-grid">
             <div class="research-card">
               <h4>神经解剖教学</h4>
-              <p>多项对照研究表明，通过物理操作三维打印脑模型进行学习的学生，其空间理解水平显著优于仅使用教材或屏幕三维渲染的同辈。VR学习同样表现出空间理解的增益。</p>
-              <span class="ref">Aridan et al., 2024, Anatomical Sciences Education; Minear et al., 2022, JUNE; Lee et al., 2026, JEEHP</span>
+              <p>多项对照研究表明，通过物理操作三维打印脑模型学习的学生，其空间理解水平显著优于仅使用教材或屏幕三维渲染的同辈。</p>
+              <span class="ref">Aridan et al., 2024, ASE; Minear et al., 2022, JUNE; Lee et al., 2026, JEEHP</span>
             </div>
             <div class="research-card">
-              <h4>产前依恋与心理健康</h4>
-              <p>一项随机对照试验（n = 184）发现，三维打印胎儿模型和三维打印图片均显著提升了产前依恋评分，并降低了抑郁和妊娠相关焦虑水平。</p>
+              <h4>产前依恋</h4>
+              <p>随机对照试验（n=184）发现，三维打印胎儿模型和三维打印图片均显著提升了父母产前依恋评分，并降低了抑郁和焦虑水平。</p>
               <a href="https://pubmed.ncbi.nlm.nih.gov/36940782/" target="_blank" class="ref">Coté et al., 2023, JOGNN</a>
             </div>
             <div class="research-card">
-              <h4>青少年身体活动行为改变</h4>
-              <p>获得三维打印身体活动数据模型的青少年将模型作为身份标识进行展示，与同伴比较，并报告了更高的运动习惯自我反思水平。</p>
+              <h4>青少年行为改变</h4>
+              <p>获得三维打印身体活动数据模型的青少年将模型作为身份标识展示，与同伴比较，并报告了更高的自我反思水平。</p>
               <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9861837/" target="_blank" class="ref">McNarry et al., 2023, IJERPH</a>
             </div>
             <div class="research-card">
               <h4>回忆疗法</h4>
-              <p>三维打印的个人意义物品复制品在回忆疗法中充当了有效的多感官记忆线索，触觉深度提供了超越照片的提取优势。</p>
+              <p>三维打印的个人物品复制品在回忆疗法中充当了有效的多感官记忆线索，触觉深度提供了超越照片的提取优势。</p>
               <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11620962/" target="_blank" class="ref">Anderson et al., 2024, J. Applied Gerontology</a>
             </div>
             <div class="research-card">
-              <h4>融合课堂中的同伴互动</h4>
+              <h4>融合课堂</h4>
               <p>三维打印作为合作学习工具，改善了残障学生与非残障学生之间的同伴沟通、知识保持和社会互动。</p>
               <span class="ref">Intl. J. Disability, Dev. & Education, 2024</span>
             </div>
             <div class="research-card">
-              <h4>儿童假肢与心理健康</h4>
-              <p>定制化三维打印肌电假肢配合个性化外观设计，显著提升了儿童截肢者的心理健康水平。外观个性化被评价为与机械功能同等重要。</p>
+              <h4>儿童假肢</h4>
+              <p>定制化三维打印肌电假肢配合个性化外观设计，显著提升了儿童截肢者的心理健康水平。</p>
               <span class="ref">Lecture Notes in Networks and Systems, 2024</span>
             </div>
           </div>
@@ -408,115 +361,69 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第二步——三维建模软件<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>下方列出了常用的三维建模与网格处理工具，每个平台适用于不同的建模需求。其中<strong>Tinkercad</strong>最适合零基础用户，推荐作为入门首选。</p>
+          <p><strong>Tinkercad</strong> 基于浏览器，直接拖拽操作，无需安装和任何先前经验，推荐入门首选。以下是其他常用工具，各有侧重：</p>
           <div class="btn-row">
-            <a href="https://www.tinkercad.com/" target="_blank" class="btn primary" style="font-size:0.92rem; padding:0.65rem 1.6rem;">Tinkercad（推荐入门）</a>
-          </div>
-          <p style="margin:0.7rem 0 0.4rem; font-size:0.83rem; color:var(--text-dim);">其他建模与网格处理平台：</p>
-          <div class="btn-row">
+            <a href="https://www.tinkercad.com/" target="_blank" class="btn primary">Tinkercad（推荐入门）</a>
             <a href="https://www.blender.org/" target="_blank" class="btn">Blender</a>
             <a href="https://www.meshlab.net/" target="_blank" class="btn">MeshLab</a>
+            <a href="https://www.autodesk.com/products/fusion-360/" target="_blank" class="btn">Fusion 360</a>
             <a href="https://www.freecad.org/downloads.php?lang=zh_CN" target="_blank" class="btn">FreeCAD</a>
             <a href="https://openscad.org/" target="_blank" class="btn">OpenSCAD</a>
-            <a href="https://www.autodesk.com/products/fusion-360/" target="_blank" class="btn">Fusion 360</a>
             <a href="https://www.meshmixer.com/" target="_blank" class="btn">MeshMixer</a>
-            <a href="https://makerworld.com.cn/zh" target="_blank" class="btn">MakerWorld</a>
             <a href="https://3d.hunyuan.tencent.com/" target="_blank" class="btn">Hunyuan3D</a>
           </div>
-          <p class="note"><strong>Tinkercad</strong>：基于浏览器的直接操作式建模工具（拖拽、缩放、组合），无需安装。适合入门和快速原型设计。<strong>Blender</strong>：专业级开源三维创作套件，功能全面（建模、雕刻、渲染、动画），学习曲线较陡。<strong>MeshLab</strong>：开源网格处理系统，专长于修复、平滑、面片精简和格式转换，是打印前处理的必备工具。<strong>MeshMixer</strong>：Autodesk出品，专注于三维打印前的模型优化，尤其擅长挖空和生成支撑结构。<strong>FreeCAD / OpenSCAD</strong>：参数化建模工具（通过约束和脚本定义几何形状）。<strong>Fusion 360</strong>：Autodesk出品的专业级CAD/CAM平台，教育版免费。<strong>Hunyuan3D</strong>：利用深度学习从文字或图像生成三维模型。</p>
+          <p class="note"><strong>Blender</strong>：专业级开源三维创作套件（建模、雕刻、渲染），功能全面。 <strong>MeshLab</strong>：网格处理工具，专长修复、平滑和格式转换，打印前处理的必备。 <strong>MeshMixer</strong>：Autodesk出品，专攻模型挖空和支撑生成。 <strong>Fusion 360</strong>：专业CAD/CAM平台，教育版免费。 <strong>FreeCAD / OpenSCAD</strong>：参数化建模。 <strong>Hunyuan3D</strong>：AI生成三维模型。</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第三步——三维打印工作流程<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>打印三维模型需要两个组成部分：打印机硬件以及将模型转换为机器指令的切片软件。</p>
-          <div style="margin-bottom:0.8rem;">
+          <p>打印需要两项准备：打印机硬件 + 切片软件（将模型转为机器指令）。</p>
+          <div style="margin:0.8rem 0;">
             <a href="/assets/files/JGAurora-A6-Manual.pdf" class="btn download" download>JGAurora A6 打印机手册（PDF）</a>
-            <p class="note">JGAurora A6是浙江大学心理与行为科学系配备的熔融沉积成型打印机。使用其他型号打印机的用户应查阅相应设备的说明文档；此处描述的通用工作流程适用于所有FDM打印机。</p>
+            <p class="note">JGAurora A6是浙大心理系配备的FDM打印机。使用其他型号打印机的用户应查阅相应设备的说明文档；通用工作流程适用于所有FDM打印机。</p>
           </div>
-          <div style="margin-top:0.8rem;">
+          <div>
             <a href="https://ultimaker.com/software/ultimaker-cura/" target="_blank" class="btn">Ultimaker Cura——切片软件</a>
-            <p class="note">Cura将三维模型（STL、OBJ或3MF格式）转换为G代码——控制打印机运动、温度和挤出的机器指令。尽管软件名中包含"Ultimaker"，Cura与大多数FDM打印机兼容。</p>
+            <p class="note">Cura将三维模型（STL、OBJ、3MF格式）转换为G代码，控制打印机运动、温度和挤出。与大多数FDM打印机兼容。</p>
           </div>
         </div>
       </div>
 
       <div class="bridge">
         <div class="bridge-label">从第三部分到第四部分</div>
-        三维打印将解剖模型带入物理空间，使其可被触摸、标注和共享。但三维技术同样可以沿相反方向运作：不是将数字对象物质化，而是使参与者沉浸在完全由计算机构建的环境中。虚拟现实和增强现实将之前各节所论述的逻辑——空间理解、数字建模、实时交互——延伸至实验研究领域，使环境变量能够以物理实验室无法达到的精度加以控制。
+        三维打印将解剖模型带入物理空间，使其可被触摸和共享。但三维技术同样可以沿相反方向运作：使参与者沉浸在虚拟环境中。虚拟现实将之前各节所论述的逻辑——空间理解、数字建模、实时交互——延伸至实验研究领域。
       </div>
     </div>
   </div>
 
-  <!-- ==================== 第四部分 ==================== -->
+  <!-- ==================== PART 4 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
       <h2><span class="part-number">第四部分</span> 三维空间中的实验——虚拟现实技术入门</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">虚拟现实（VR）头戴式显示器使研究者能够构建完全受控的三维实验环境。本节从方法论决策出发，提供从环境搭建到实验开发的操作指南，并介绍可直接使用的科研VR框架。</p>
+      <p class="part-desc">虚拟现实（VR）头戴式显示器使研究者能够构建完全受控的三维实验环境。本节从方法论决策出发，提供从环境搭建到实验开发的操作指南。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第一步——研究中为什么需要VR<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>VR相较于传统二维显示屏和真实环境，具有以下关键优势：</p>
-          <ul>
-            <li><strong>追踪自身运动：</strong>头戴式显示器实时追踪头部位置与朝向，提供自然的视角变化。</li>
-            <li><strong>引入深度线索：</strong>双目视差和运动视差共同提供真实的深度感知。</li>
-            <li><strong>创造现实中不可能出现的环境：</strong>研究者可构建现实中不存在或难以复现的场景——变形空间、矛盾几何、虚拟社交化身。</li>
-            <li><strong>在绝对安全的前提下体验危险环境：</strong>恐高、火灾逃生等情境可在零风险下呈现。</li>
-          </ul>
-          <p style="margin-top:0.7rem;"><strong>VR的局限：</strong>晕动症；头戴设备重量与佩戴不适；空间压缩（感知距离系统性短于真实距离）；无法在fMRI扫描仪中使用。通常，当VR的优势大于上述局限时使用VR——这一条件在偏应用的研究中尤其容易满足。</p>
+          <p><strong>核心优势：</strong>实时追踪头部运动、双目视差提供真实深度感知、可构建现实中不存在的场景、安全呈现危险情境。当这些优势超过其局限时，VR是最合适的方法。</p>
+          <p style="margin-top:0.6rem;"><strong>主要局限：</strong>晕动症；设备重量与佩戴舒适度；空间压缩（感知距离短于真实距离）；无法在fMRI扫描仪中使用。</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第二步——从零开始：Unity VR环境搭建（详细操作指南）<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第二步——从零搭建Unity VR环境<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>以下是使用Unity + OpenXR + XR Interaction Toolkit搭建VR开发环境的具体步骤。完成这些操作后，你将拥有一个可运行的基础VR场景。</p>
-          <p style="margin-top:0.5rem;"><strong>1. 创建项目</strong></p>
-          <ul>
-            <li>安装Unity Hub，使用Unity 2022 LTS或更高版本</li>
-            <li>新建项目，选择<strong>3D Core模板</strong>（不要使用VR模板——从普通3D项目开始更有助于理解各项配置）</li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>2. 安装OpenXR插件</strong></p>
-          <ul>
-            <li>Edit → Project Settings → XR Plugin Management → 点击 Install XR Plugin Management</li>
-            <li>在插件列表中<strong>勾选OpenXR</strong></li>
-            <li>Unity会提示切换到新的Input System，选择Yes</li>
-            <li>点击OpenXR旁的黄色警告图标 → 打开XR Project Validation → 点击Fix All修复所有配置冲突</li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>3. 添加交互控制器配置</strong></p>
-          <ul>
-            <li>在OpenXR子选项卡中找到Interaction Profiles列表</li>
-            <li>点击+添加目标硬件对应的配置（HTC Vive Controller Profile / Oculus Touch Controller Profile等）</li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>4. 安装XR Interaction Toolkit（XRI）</strong></p>
-          <ul>
-            <li>Window → Package Manager → 左上角+ → Add package by name</li>
-            <li>输入：<strong>com.unity.xr.interaction.toolkit</strong> → Add</li>
-            <li>安装后，在Package Manager中选中XRI → 打开Samples选项卡 → 导入<strong>Starter Assets</strong></li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>5. 创建XR Origin</strong></p>
-          <ul>
-            <li>Hierarchy窗口右键 → XR → <strong>XR Origin (Action-based)</strong></li>
-            <li>该预设体自动包含Main Camera（映射为头显视角）和左右手柄控制器</li>
-            <li>将Starter Assets中的XRI Default Left/Right Controller预设拖到对应手柄的Inspector上</li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>6. 创建第一个可交互物体</strong></p>
-          <ul>
-            <li>创建3D Cube → 添加Rigidbody组件 + Box Collider</li>
-            <li>添加<strong>XR Grab Interactable</strong>组件</li>
-            <li>点击Play运行测试：手柄靠近Cube → 按Grip键抓取 → 移动并释放</li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>7. 关键概念速查</strong></p>
-          <p>XRI的交互架构由三个核心角色构成：<strong>Interactor</strong>（交互发起者，如手柄射线和手部碰撞体）、<strong>Interactable</strong>（被交互的物体）、<strong>Interaction Manager</strong>（统一管理所有交互对）。三种主要的Interactor类型：XR Direct Interactor（近距离物理碰撞）、XR Ray Interactor（远距离射线选择）、XR Socket Interactor（固定插槽放置）。</p>
-          <p style="margin-top:0.5rem;"><strong>8. 学习资源</strong></p>
-          <div class="btn-row">
+          <p>以下步骤完成后，你将拥有一个可运行的基础VR场景。</p>
+          <p style="margin-top:0.5rem;"><strong>1. 安装Unity</strong>：通过Unity Hub安装Unity 2022 LTS或更高版本。 <strong>2. 创建项目</strong>：选择3D Core模板（不选VR模板）。 <strong>3. 配置OpenXR</strong>：Edit → Project Settings → XR Plugin Management → 安装并勾选OpenXR → 点击Fix All。 <strong>4. 添加控制器配置</strong>：在Interaction Profiles中添加对应硬件（HTC Vive / Oculus Touch）。 <strong>5. 安装XR Interaction Toolkit</strong>：Package Manager → 添加 <code>com.unity.xr.interaction.toolkit</code> → 导入Starter Assets。 <strong>6. 创建XR Origin</strong>：Hierarchy右键 → XR → XR Origin (Action-based) → 将Starter Assets中的左右手柄预设拖到对应Inspector上。 <strong>7. 测试交互</strong>：创建Cube → 添加XR Grab Interactable组件 → Play → 手柄靠近按Grip键抓取。</p>
+          <p style="margin-top:0.6rem;">XRI的交互架构由三个角色构成：<strong>Interactor</strong>（交互发起者——手柄射线和手部碰撞体）、<strong>Interactable</strong>（被交互物体）、<strong>Interaction Manager</strong>（统一管理）。</p>
+          <div class="btn-row" style="margin-top:0.6rem;">
             <a href="https://learn.u3d.cn/tutorial/vr-museum-2" target="_blank" class="btn primary">Unity中文VR教程（官方）</a>
-            <a href="https://interaction-lab.wiki.utwente.nl/xr:tutorial_xr_interaction_toolkit" target="_blank" class="btn">特温特大学XRI配置指南</a>
+            <a href="https://interaction-lab.wiki.utwente.nl/xr:tutorial_xr_interaction_toolkit" target="_blank" class="btn">特温特大学配置指南</a>
             <a href="https://createxr.co.uk/virtual-reality/creating-a-virtual-reality-scene-with-unitys-xr-interaction-toolkit/" target="_blank" class="btn">CreateXR教程（英文）</a>
           </div>
         </div>
@@ -525,98 +432,62 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第三步——VR程序开发流程<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>环境搭建完成后，一个完整的VR程序从构想到运行需经历四个阶段：</p>
-          <p style="margin-top:0.5rem;"><strong>1. 搭建场景</strong></p>
-          <ul>
-            <li><strong>路径A——自己建模：</strong>使用Blender、3ds Max、Maya等软件从零创建场景。Blender免费开源，推荐作为入门工具。</li>
-            <li><strong>路径B——利用现成资产：</strong>Unity Asset Store、Sketchfab、TurboSquid等平台提供大量可直接使用的三维素材，显著缩短开发周期。</li>
-            <li><strong>白模测试（greyboxing）：</strong>在精细模型完成之前，使用简单的替代几何体搭建场景基本布局，优先验证交互逻辑和空间尺度的合理性。</li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>2. 添加交互逻辑</strong></p>
-          <p>基本思路是<strong>面向对象编程</strong>：将脚本挂载在场景物体上，定义手柄操作与物体响应之间的关系。三种基本交互模式：</p>
-          <ul>
-            <li><strong>射线交互：</strong>手柄发出虚拟射线，指向远处物体并与之交互。适用于远距离选择和菜单操作。</li>
-            <li><strong>抓取交互：</strong>手柄靠近物体，按Grip键抓取并操控。适用于近身物体的拿起、移动和旋转。</li>
-            <li><strong>碰撞交互：</strong>手柄或头部进入碰撞盒，触发预定义的逻辑事件（区域进入/离开判断、空间触发等）。</li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>3. 连接设备</strong></p>
-          <ul>
-            <li>启动VR硬件（头显、手柄、定位基站）</li>
-            <li>启动SteamVR运行环境</li>
-            <li>确保Unity项目启用了OpenXR——跨设备的通用VR接口标准，同一程序兼容HTC VIVE、Meta Quest、Pico等</li>
-            <li>在场景中放置XR Origin预设体（已打包VR所需的"眼睛"和"手"，可直接在此基础上构建交互）</li>
-            <li>点击Play即可在头显中实时预览</li>
-          </ul>
-          <p style="margin-top:0.5rem;"><strong>4. 打包发布</strong></p>
-          <ul>
-            <li>PC VR：File → Build Settings → 生成.exe可执行文件。也可不打包，直接在Unity编辑器中连接头显运行。</li>
-            <li>一体机（Meta Quest、Pico等）：切换到Android平台 → 生成APK文件部署至设备。</li>
-          </ul>
+          <p>环境搭建完成后，一个完整的VR程序经历四个阶段：</p>
+          <p style="margin-top:0.5rem;"><strong>1. 搭建场景</strong>——自己建模（Blender等）或利用现成素材（Unity Asset Store、Sketchfab）。先用简单的几何体做白模测试，验证交互逻辑后再替换精细模型。</p>
+          <p style="margin-top:0.5rem;"><strong>2. 添加交互</strong>——将脚本挂载在物体上，定义手柄操作与物体响应。三种基本模式：射线交互（远距离选择）、抓取交互（近身拿起操控）、碰撞交互（区域触发）。</p>
+          <p style="margin-top:0.5rem;"><strong>3. 连接设备</strong>——启动硬件和SteamVR → 确保Unity启用OpenXR → 场景中放置XR Origin → 点击Play在头显中实时预览。</p>
+          <p style="margin-top:0.5rem;"><strong>4. 打包发布</strong>——PC VR生成.exe（也可直接在Unity中运行），一体机生成APK部署。</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第四步——科研专用VR实验框架<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第四步——科研VR实验框架<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>对于初次接触VR的研究者，从零编写实验程序是很大的时间投入。以下框架提供了预置的实验结构（Session → Block → Trial），许多无需或仅需少量编程即可使用。华东师范大学2024年发表于<em>心理科学进展</em>的综述对此进行了系统梳理（Han & Kuai, 2024）。</p>
+          <p>从零编写VR实验程序耗时较大。以下框架提供了预置的实验结构（Session → Block → Trial），多数无需或仅需少量编程即可使用。</p>
           <div class="tool-grid">
             <div class="tool-card">
-              <strong>UXF — Unity Experiment Framework</strong>
-              <div class="desc">最推荐的入门框架。提供完整的Session→Block→Trial层级结构，文档详尽，配有视频教程。开源免费，适合通用VR行为实验。</div>
+              <strong>UXF</strong>
+              <div class="desc">最推荐的入门框架。完整的实验层级结构，文档详尽，配有视频教程。开源免费。</div>
               <a href="https://github.com/immersivecognition/unity-experiment-framework" target="_blank">GitHub</a>
             </div>
             <div class="tool-card">
-              <strong>bmlTUX</strong>
-              <div class="desc">专为因子设计实验优化的Unity插件。安装轻量，适合需要快速搭建多因素实验的研究者。</div>
-              <a href="https://github.com/BiomotionLab/bmlTUX" target="_blank">GitHub</a>
-            </div>
-            <div class="tool-card">
               <strong>PTVR</strong>
-              <div class="desc">基于Unity但使用Python编程的VR实验工具箱。对于熟悉Python（PsychoPy等）的研究者，可在保留Python工作流的同时利用Unity的3D渲染能力。</div>
-              <a href="https://www.sciengine.com/APS2/doi/10.3724/SP.J.1042.2024.01800" target="_blank">综述</a>
+              <div class="desc">基于Unity但使用Python编程。适合熟悉Python（PsychoPy等）的研究者，同时利用Unity的3D能力。</div>
             </div>
             <div class="tool-card">
-              <strong>VRthreat Toolkit</strong>
-              <div class="desc">专门为威胁回避和恐惧条件实验设计的开源工具包。包含14种自然威胁+1种人工威胁的动画、眼动追踪和全身运动记录，发表于Behavior Research Methods (2024)。</div>
+              <strong>VRthreat</strong>
+              <div class="desc">专为威胁回避和恐惧条件实验设计的开源工具包，含14种威胁动画和眼动追踪。发表于Behavior Research Methods (2024)。</div>
               <a href="https://github.com/bachlab/vrthreat" target="_blank">GitHub</a>
             </div>
             <div class="tool-card">
               <strong>XR MUSE</strong>
-              <div class="desc">2024年发布的多用户XR实验框架，支持多人协同实验。适合社会认知和群体行为研究。</div>
+              <div class="desc">2024年发布的多用户XR实验框架，支持多人协同实验。适合群体行为和社会认知研究。</div>
               <a href="https://github.com/vrar-lab/XRMUSE" target="_blank">GitHub</a>
             </div>
-            <div class="tool-card">
-              <strong>VREX</strong>
-              <div class="desc">随机生成房间和物体，用于记忆和变化盲视实验。无需编程即可使用，独立运行。</div>
-            </div>
           </div>
-          <p class="note">推荐路径：如果做通用VR实验，从<strong>UXF</strong>开始——它的文档最全、学习成本最低。如果研究威胁/焦虑/恐惧，使用<strong>VRthreat</strong>可以直接获得经过验证的实验方法。Python用户可以考虑<strong>PTVR</strong>。</p>
+          <p class="note">推荐路径：通用VR实验从<strong>UXF</strong>开始；威胁/焦虑研究使用<strong>VRthreat</strong>；Python用户考虑<strong>PTVR</strong>。</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第五步——编程引擎与三维建模工具<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第五步——VR开发引擎与建模工具<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p><strong>VR开发引擎</strong></p>
+          <p><strong>开发引擎</strong></p>
           <div class="tool-grid">
             <div class="tool-card">
-              <strong>Unity</strong>
-              <div class="desc">VR开发中使用最广泛的引擎。功能全面，Asset Store资源丰富，社区支持成熟。C#编程。推荐入门首选。</div>
+              <strong>Unity</strong><div class="desc">使用最广泛。C#编程，Asset Store资源丰富。推荐入门。</div>
               <a href="https://unity.com/" target="_blank">unity.com</a>
             </div>
             <div class="tool-card">
-              <strong>Unreal Engine</strong>
-              <div class="desc">蓝图式可视化编程，图形渲染能力突出。对配置要求高，适合追求高画质的项目。</div>
+              <strong>Unreal Engine</strong><div class="desc">蓝图式可视化编程，渲染能力突出。对配置要求较高。</div>
               <a href="https://www.unrealengine.com/" target="_blank">unrealengine.com</a>
             </div>
             <div class="tool-card">
-              <strong>Vizard</strong>
-              <div class="desc">专为科研设计的轻量化VR平台，Python接口。非免费，需购买许可证。</div>
+              <strong>Vizard</strong><div class="desc">专为科研设计的轻量化平台，Python接口。需购买许可证。</div>
               <a href="https://www.worldviz.com/vizard" target="_blank">worldviz.com</a>
             </div>
             <div class="tool-card">
-              <strong>Godot</strong>
-              <div class="desc">完全开源的游戏引擎，轻量免费。支持VR，但文档相对不够齐全。</div>
+              <strong>Godot</strong><div class="desc">完全开源，轻量免费。文档相对不够齐全。</div>
               <a href="https://godotengine.org/" target="_blank">godotengine.org</a>
             </div>
           </div>
@@ -626,8 +497,7 @@
             <a href="https://www.autodesk.com/products/3ds-max/" target="_blank" class="btn">3ds Max</a>
             <a href="https://www.autodesk.com/products/maya/" target="_blank" class="btn">Maya</a>
             <a href="https://www.maxon.net/cinema-4d" target="_blank" class="btn">Cinema 4D</a>
-            <a href="https://www.autodesk.com/products/autocad/" target="_blank" class="btn">AutoCAD</a>
-            <a href="https://unity.com/features/probuilder" target="_blank" class="btn">ProBuilder (Unity)</a>
+            <a href="https://unity.com/features/probuilder" target="_blank" class="btn">ProBuilder</a>
           </div>
         </div>
       </div>
@@ -635,44 +505,33 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第六步——VR硬件设备<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p><strong>浙江大学心理系可用设备</strong></p>
+          <p><strong>浙大心理系可用设备：</strong></p>
           <ul>
-            <li><strong>HTC VIVE（一代）：</strong>位于紫金港校区东四教学楼。单眼分辨率1080×1200，视场角110°。适合基础的VR行为实验开发和测试。</li>
-            <li><strong>HTC VIVE Pro 2：</strong>位于紫金港校区系楼。单眼分辨率2448×2448，视场角120°。高分辨率适合需要精细视觉细节的实验方法。</li>
+            <li><strong>HTC VIVE（一代）：</strong>紫金港东四。单眼1080×1200，视场角110°。适合基础开发和测试。</li>
+            <li><strong>HTC VIVE Pro 2：</strong>紫金港系楼。单眼2448×2448，视场角120°。适合需要精细视觉细节的实验。</li>
           </ul>
-          <p style="margin-top:0.7rem;"><strong>PC VR与一体机对比</strong></p>
-          <div class="tool-grid">
-            <div class="tool-card">
-              <strong>PC VR（HTC VIVE、Varjo XR-4等）</strong>
-              <div class="desc">依赖电脑显卡渲染，性能强大。外部定位基站实现高精度追踪。适合高画质、复杂计算的实验。</div>
-            </div>
-            <div class="tool-card">
-              <strong>一体机（Meta Quest、Pico、Vision Pro）</strong>
-              <div class="desc">inside-out定位：依靠头盔摄像头主动定位，无需外部基站，可随地部署。性能因硬件集成而受限。</div>
-            </div>
-          </div>
+          <p style="margin-top:0.7rem;"><strong>PC VR vs 一体机：</strong>PC VR（HTC VIVE等）依赖电脑显卡渲染，性能强大；一体机（Meta Quest、Pico等）采用头盔摄像头定位，可随地部署，但性能因硬件集成而受限。</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第七步——VR在科学研究中的主要应用<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第七步——VR的主要应用方向<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>VR在科研中已有若干成熟的应用方向：</p>
           <div class="research-grid">
             <div class="research-card">
               <h4>空间导航与情景记忆</h4>
-              <p>VR已成为研究人类空间导航的标准方法。参与者在虚拟环境中导航，实验者以毫秒精度控制地标和空间线索。该方法在网格细胞样表征的发现（Doeller et al., 2010, Nature）中起到了重要作用。</p>
+              <p>VR已成为研究人类空间导航的常用方法，实验者可以精确控制每一个地标和空间线索。该方法在网格细胞样表征的发现中起到了重要作用（Doeller et al., 2010, Nature）。</p>
             </div>
             <div class="research-card">
-              <h4>社会认知与沉浸式社交</h4>
-              <p>VR可系统性操控注视方向、人际距离、面部表情和虚拟化身外观，同时严格控制混淆变量。已应用于社交焦虑和内隐社会偏见研究。</p>
+              <h4>社会认知</h4>
+              <p>VR可系统性操控注视方向、人际距离、面部表情和化身外观，同时严格控制混淆变量。已应用于社交焦虑和内隐社会偏见研究。</p>
             </div>
             <div class="research-card">
               <h4>暴露疗法</h4>
-              <p>VR暴露疗法是最成熟的沉浸式临床应用之一。RCT证据支持其对恐高症、飞行恐惧、PTSD和社交焦虑的疗效。关键优势在于剂量可精确控制。</p>
+              <p>VR暴露疗法是沉浸式技术最成熟的临床应用之一。RCT证据支持其对恐高症、飞行恐惧、PTSD和社交焦虑的疗效。关键优势在于剂量可精确控制。</p>
             </div>
             <div class="research-card">
-              <h4>风险决策与安全模拟</h4>
+              <h4>风险决策</h4>
               <p>VR可在零风险环境中呈现高度危险情境（火灾逃生、交通事故），用于研究紧急决策过程——这在现实中因伦理原因无法实现。</p>
             </div>
           </div>
@@ -681,18 +540,13 @@
     </div>
   </div>
 
-  <footer class="footer">
-    2026年7月9日 · 浙江大学心理与行为科学系
-  </footer>
+  <footer class="footer">2026年7月9日 · 浙江大学心理与行为科学系</footer>
 </div>
 
 <script>
 function togglePart(el) { el.classList.toggle('open'); }
 function toggleStep(el, event) { event.stopPropagation(); el.classList.toggle('open'); }
-document.getElementById('toydata-btn').addEventListener('click', function(e) {
-  e.stopPropagation();
-  e.preventDefault();
-});
+document.getElementById('toydata-btn').addEventListener('click', function(e){ e.stopPropagation(); e.preventDefault(); });
 </script>
 </body>
 </html>
