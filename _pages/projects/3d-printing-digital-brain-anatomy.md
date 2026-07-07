@@ -23,7 +23,8 @@ _styles: >
 <span class="host-logo-light"><img src="/assets/img/zju-psych-light.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span><span class="host-logo-dark"><img src="/assets/img/zju-psych-dark.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span>
 
 <div style="margin: 1.2rem 0;">
-  <a href="/playground/" target="_blank" style="display: inline-block; padding: 0.65rem 1.6rem; font-size: 0.95rem; font-weight: 600; background: #003F88; color: #fff; border-radius: 7px; text-decoration: none;">Enter Playground →</a>
+  <a href="/playground/" target="_blank" style="display: inline-block; padding: 0.65rem 1.8rem; font-size: 0.95rem; font-weight: 600; background: #003F88; color: #fff; border-radius: 7px; text-decoration: none;">English</a>
+  <a href="/playground/zh/" target="_blank" style="display: inline-block; padding: 0.65rem 1.8rem; font-size: 0.95rem; font-weight: 600; border: 2px solid #003F88; color: #003F88; border-radius: 7px; text-decoration: none; margin-left: 0.5rem;">中文</a>
   <span style="font-size: 0.82rem; color: var(--global-text-color-light); margin-left: 0.6rem;">Interactive tutorial (opens in new tab)</span>
 </div>
 
