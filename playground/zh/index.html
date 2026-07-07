@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>三维技术在心理学研究中的应用 — CO-LAB 工作坊</title>
+<title>三维技术在科学研究中的应用 — CO-LAB 工作坊</title>
 <style>
   :root {
     --bg: #08090d;
@@ -116,7 +116,7 @@
 <div class="container">
 
   <header class="header">
-    <h1>三维技术如何支持心理学研究</h1>
+    <h1>三维技术如何支持科学研究</h1>
     <div class="logo"><img src="/assets/img/zju-psych-dark.png" alt="浙江大学心理系"></div>
     <p class="lang"><a href="/playground/">English</a></p>
   </header>
@@ -128,7 +128,7 @@
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">理解功能磁共振成像的基本原理与适用范围，是设计心理学实验的第一步。本节覆盖从研究方法决策、实验室预约到数据获取和处理的完整流程。</p>
+      <p class="part-desc">理解功能磁共振成像的基本原理与适用范围，是设计脑成像实验的第一步。本节覆盖从研究方法决策、实验室预约到数据获取和处理的完整流程。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第一步——MRI技术基本原理与实验准备<span class="step-arrow">▶</span></div>
@@ -138,7 +138,7 @@
 
           <p style="margin-top:0.8rem;"><strong>fMRI适用于哪些研究问题</strong></p>
           <ul>
-            <li><strong>任务态fMRI：</strong>定位特定认知功能的脑区（如工作记忆、语言、运动控制）；检验明确预测脑区激活的心理学理论；比较不同实验条件下的脑激活差异（被试内设计）</li>
+            <li><strong>任务态fMRI：</strong>定位特定认知功能的脑区（如工作记忆、语言、运动控制）；检验明确预测脑区激活的理论假设；比较不同实验条件下的脑激活差异（被试内设计）</li>
             <li><strong>静息态fMRI：</strong>识别大尺度脑功能网络（默认模式网络、突显网络、执行控制网络等）；在无法执行任务的群体中使用（婴儿、阿尔茨海默病患者、严重精神疾病患者）；大规模群体神经科学研究（ABCD研究、UK Biobank、人类连接组计划）</li>
           </ul>
 
@@ -148,8 +148,8 @@
             <li>毫秒级神经动态过程（EEG/MEG更适合）</li>
             <li>单一被试的临床诊断（术前功能定位除外）</li>
             <li>直接测量神经递质系统活动（PET/SPECT更适合）</li>
-            <li>无法在扫描仪中有效操作的心理学构念</li>
-            <li>小样本的脑-行为个体差异检测（单变量方法可能需要N > 1,000）</li>
+            <li>无法在扫描仪中有效操作的研究构念</li>
+            <li>小样本的脑-行为个体差异检测（单变量分析方法通常需要千人级样本量）</li>
           </ul>
 
           <p style="margin-top:0.8rem;"><strong>主要局限与潜在风险</strong></p>
@@ -242,7 +242,7 @@
               <a href="https://afni.nimh.nih.gov/" target="_blank">afni.nimh.nih.gov</a>
             </div>
           </div>
-          <p class="note">选择建议：SPM拥有最丰富的教程资源和社区支持，是国内心理学fMRI研究中使用最广泛的工具；FSL在扩散成像和ICA分析方面有优势；FreeSurfer是皮层分析的黄金标准。本工作坊使用SPM作为主要演示工具。</p>
+          <p class="note">选择建议：SPM拥有最丰富的教程资源和社区支持，是国内fMRI研究中使用最广泛的工具之一；FSL在扩散成像和ICA分析方面有优势；FreeSurfer是皮层分析的黄金标准。本工作坊使用SPM作为主要演示工具。</p>
         </div>
       </div>
 
@@ -289,7 +289,7 @@
 
       <div class="bridge">
         <div class="bridge-label">从第一部分到第二部分</div>
-        获取和查看MRI数据是一项技术成就，但它本身并不赋予解剖学理解。研究者可以在3D Slicer中加载NIfTI文件并导航至MNI空间中的任意坐标，却仍可能缺乏理解某一体素所代表含义的空间直觉。制约因素通常并非数据获取或软件使用的困难，而是缺乏对脑解剖结构的坚实三维心理表征。下一节正是为了弥补这一缺口。
+        获取和查看MRI数据是一项技术成就，但它本身并不赋予解剖学理解。研究者可以在3D Slicer中加载NIfTI文件并导航至MNI空间中的任意坐标，却仍可能缺乏理解某一体素所代表含义的空间直觉。制约因素通常并非数据获取或软件使用的困难，而是缺乏对脑解剖结构的坚实三维空间表征。下一节正是为了弥补这一缺口。
       </div>
     </div>
   </div>
@@ -360,12 +360,12 @@
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">第一部分生成的数字脑模型，经第二部分获得解剖学理解后，可通过三维打印实现物质化。本节概述三维打印在心理学中的研究应用，并提供实操工具。</p>
+      <p class="part-desc">第一部分生成的数字脑模型，经第二部分获得解剖学理解后，可通过三维打印实现物质化。本节概述三维打印在研究中的应用，并提供实操工具。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第一步——三维打印在心理学研究中的应用<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第一步——三维打印的研究应用<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>三维打印已在心理学研究的多个领域中获得了应用。以下为经核实的研究案例：</p>
+          <p>三维打印已在多个学科的研究中获得了应用。以下为经核实的代表性案例：</p>
           <div class="research-grid">
             <div class="research-card">
               <h4>神经解剖教学</h4>
@@ -440,7 +440,7 @@
 
       <div class="bridge">
         <div class="bridge-label">从第三部分到第四部分</div>
-        三维打印将解剖模型带入物理空间，使其可被触摸、标注和共享。但三维技术同样可以沿相反方向运作：不是将数字对象物质化，而是使参与者沉浸在完全由计算机构建的环境中。虚拟现实和增强现实将之前各节所论述的逻辑——空间理解、数字建模、实时交互——延伸至实验心理学领域，使环境变量能够以物理实验室无法达到的精度加以控制。
+        三维打印将解剖模型带入物理空间，使其可被触摸、标注和共享。但三维技术同样可以沿相反方向运作：不是将数字对象物质化，而是使参与者沉浸在完全由计算机构建的环境中。虚拟现实和增强现实将之前各节所论述的逻辑——空间理解、数字建模、实时交互——延伸至实验研究领域，使环境变量能够以物理实验室无法达到的精度加以控制。
       </div>
     </div>
   </div>
@@ -452,7 +452,7 @@
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">虚拟现实（VR）头戴式显示器使研究者能够构建完全受控的三维实验环境。本节从方法论决策出发，提供从环境搭建到实验开发的操作指南，并介绍可直接使用的心理学专用VR框架。</p>
+      <p class="part-desc">虚拟现实（VR）头戴式显示器使研究者能够构建完全受控的三维实验环境。本节从方法论决策出发，提供从环境搭建到实验开发的操作指南，并介绍可直接使用的科研VR框架。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第一步——研究中为什么需要VR<span class="step-arrow">▶</span></div>
@@ -552,13 +552,13 @@
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第四步——心理学专用VR实验框架<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第四步——科研专用VR实验框架<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>对于心理学研究者，从零编写VR实验程序是巨大的时间投入。以下框架提供了预置的实验结构（Session → Block → Trial），许多无需或仅需少量编程即可使用。华东师范大学2024年发表于<em>心理科学进展</em>的综述对此进行了系统梳理（Han & Kuai, 2024）。</p>
+          <p>对于初次接触VR的研究者，从零编写实验程序是很大的时间投入。以下框架提供了预置的实验结构（Session → Block → Trial），许多无需或仅需少量编程即可使用。华东师范大学2024年发表于<em>心理科学进展</em>的综述对此进行了系统梳理（Han & Kuai, 2024）。</p>
           <div class="tool-grid">
             <div class="tool-card">
               <strong>UXF — Unity Experiment Framework</strong>
-              <div class="desc">最推荐的入门框架。提供完整的Session→Block→Trial层级结构，文档详尽，配有视频教程。开源免费，适合通用VR心理学实验。</div>
+              <div class="desc">最推荐的入门框架。提供完整的Session→Block→Trial层级结构，文档详尽，配有视频教程。开源免费，适合通用VR行为实验。</div>
               <a href="https://github.com/immersivecognition/unity-experiment-framework" target="_blank">GitHub</a>
             </div>
             <div class="tool-card">
@@ -633,7 +633,7 @@
         <div class="step-body">
           <p><strong>浙江大学心理系可用设备</strong></p>
           <ul>
-            <li><strong>HTC VIVE（一代）：</strong>位于紫金港校区东四教学楼。单眼分辨率1080×1200，视场角110°。适合基础的VR心理实验开发和测试。</li>
+            <li><strong>HTC VIVE（一代）：</strong>位于紫金港校区东四教学楼。单眼分辨率1080×1200，视场角110°。适合基础的VR行为实验开发和测试。</li>
             <li><strong>HTC VIVE Pro 2：</strong>位于紫金港校区系楼。单眼分辨率2448×2448，视场角120°。高分辨率适合需要精细视觉细节的实验范式。</li>
           </ul>
           <p style="margin-top:0.7rem;"><strong>PC VR与一体机对比</strong></p>
@@ -651,9 +651,9 @@
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第七步——VR在心理学研究中的主要应用<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第七步——VR在科学研究中的主要应用<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>VR在心理学研究中已有若干成熟的应用方向：</p>
+          <p>VR在科研中已有若干成熟的应用方向：</p>
           <div class="research-grid">
             <div class="research-card">
               <h4>空间导航与情景记忆</h4>
