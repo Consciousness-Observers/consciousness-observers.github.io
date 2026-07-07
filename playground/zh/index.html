@@ -29,10 +29,7 @@
   .container { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
 
   .header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-  .header h1 { font-size: 1.85rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-  .header .subtitle { font-size: 0.92rem; color: var(--text-dim); margin-bottom: 1.5rem; }
-  .header .meta { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.3rem; }
-  .header .logo { margin-top: 1.4rem; }
+  .header h1 { font-size: 1.85rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
   .header .logo img { height: 2.4rem; }
   .header .lang { margin-top: 0.8rem; }
   .header .lang a { color: var(--text-dim); font-size: 0.85rem; text-decoration: none; }
@@ -66,8 +63,11 @@
   .btn:hover { border-color: var(--accent-glow); color: #fff; background: rgba(0,95,184,0.08); }
   .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
   .btn.primary:hover { background: var(--accent-glow); border-color: var(--accent-glow); }
+  .btn.accent { border-color: var(--accent-glow); color: var(--accent-glow); font-weight: 600; background: rgba(0,95,184,0.08); }
+  .btn.accent:hover { background: rgba(0,95,184,0.15); color: #fff; }
   .btn.download { background: #0f1620; border-color: #1a3050; }
   .btn.download:hover { border-color: #2a5080; }
+  .btn.small { padding: 0.4rem 0.8rem; font-size: 0.78rem; }
   .btn-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
   .bridge { margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid var(--accent-glow); background: var(--insight-bg); border-radius: 0 6px 6px 0; font-size: 0.89rem; color: #b0b8c4; line-height: 1.85; }
@@ -89,13 +89,27 @@
   .tool-card strong { color: #d0d6e0; }
   .tool-card .desc { font-size: 0.82rem; color: var(--text-dim); }
 
+  .model-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.4rem; margin-top: 0.5rem; }
+  @media (max-width: 600px) { .model-grid { grid-template-columns: 1fr 1fr; } }
+  .model-btn { padding: 0.45rem 0.3rem; font-size: 0.72rem; text-align: center; border-radius: 4px; border: 1px solid var(--border); color: var(--text-dim); background: var(--step-bg); cursor: pointer; text-decoration: none; display: block; transition: all 0.2s; }
+  .model-btn:hover { border-color: var(--accent-glow); color: #fff; background: rgba(0,95,184,0.1); }
+
+  .dataset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin: 0.5rem 0; }
+  @media (max-width: 600px) { .dataset-grid { grid-template-columns: 1fr; } }
+  .dataset-card { padding: 0.55rem 0.7rem; border: 1px solid var(--border); border-radius: 6px; background: var(--step-bg); font-size: 0.8rem; }
+  .dataset-card strong { color: #ccd0d8; font-size: 0.82rem; }
+  .dataset-card .desc { font-size: 0.76rem; color: var(--text-dim); }
+  .dataset-card a { color: var(--accent-glow); font-size: 0.76rem; }
+
   .coming-soon { color: var(--text-dim); font-size: 0.88rem; padding: 0.5rem 0; }
 
   .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-dim); }
-  .footer a { color: var(--text-dim); }
 
   .note { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.3rem; }
   .pipeline { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; color: var(--text-soft); background: rgba(0,0,0,0.3); padding: 0.6rem 0.8rem; border-radius: 5px; overflow-x: auto; }
+  .lang { margin-top: 0.8rem; }
+  .lang a { color: var(--text-dim); font-size: 0.85rem; text-decoration: none; }
+  .lang a:hover { color: var(--accent-glow); }
 </style>
 </head>
 <body>
@@ -103,8 +117,6 @@
 
   <header class="header">
     <h1>三维技术如何支持心理学研究</h1>
-    <p class="subtitle">CO-LAB 工作坊 · 2026年7月9日</p>
-    <p class="meta">浙江大学心理与行为科学系</p>
     <div class="logo"><img src="/assets/img/zju-psych-dark.png" alt="浙江大学心理系"></div>
     <p class="lang"><a href="/playground/">English</a></p>
   </header>
@@ -112,73 +124,167 @@
   <!-- ==================== 第一部分 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
-      <h2><span class="part-number">第一部分</span> 三维影像——如何阅读与处理磁共振数据</h2>
+      <h2><span class="part-number">第一部分</span> 三维影像——从磁共振原理到数据处理</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">结构磁共振成像以毫米级分辨率提供活体大脑的三维表征。本节介绍标准数据格式、查看工具和处理流程，使不具备放射学背景的研究者也能访问和操作神经影像数据。</p>
+      <p class="part-desc">理解功能磁共振成像的基本原理与适用范围，是设计心理学实验的第一步。本节覆盖从研究方法决策、实验室预约到数据获取和处理的完整流程。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第一步——获取标准脑模板<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第一步——MRI技术基本原理与实验准备<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>标准脑模板为跨研究和跨个体的脑影像比较提供了统一的坐标系统。这些模板是几乎所有神经影像研究的参照框架。</p>
+          <p><strong>功能磁共振成像（fMRI）的基本原理</strong></p>
+          <p>fMRI通过测量<strong>血氧水平依赖（BOLD）</strong>信号间接反映神经活动。当神经元集群发放动作电位时，局部脑血流和耗氧量增加，引起脱氧血红蛋白与氧合血红蛋白比例的改变——脱氧血红蛋白为顺磁性物质，会降低局部MR信号；其浓度的下降导致信号增强。BOLD信号的峰值出现在神经活动后约5–10秒，滞后于真实神经事件约1–2秒。这意味着fMRI测量的是与神经活动耦合的血管响应，而非神经活动本身。</p>
+
+          <p style="margin-top:0.8rem;"><strong>fMRI适用于哪些研究问题</strong></p>
           <ul>
-            <li><strong>MNI152</strong>——使用最广泛的标准空间模板，由152名健康青年被试的T1加权像平均而成。定义了绝大多数已发表fMRI研究中所使用的坐标系统（MNI空间）。</li>
-            <li><strong>Colin27</strong>——高分辨率单人模板，通过对同一被试进行27次扫描并平均获得，解剖细节优于MNI152。</li>
-            <li><strong>ICBM152</strong>——由国际脑图谱联盟开发的概率图谱，整合了T1、T2和质子密度等多种对比度信息。</li>
+            <li><strong>任务态fMRI：</strong>定位特定认知功能的脑区（如工作记忆、语言、运动控制）；检验明确预测脑区激活的心理学理论；比较不同实验条件下的脑激活差异（被试内设计）</li>
+            <li><strong>静息态fMRI：</strong>识别大尺度脑功能网络（默认模式网络、突显网络、执行控制网络等）；在无法执行任务的群体中使用（婴儿、阿尔茨海默病患者、严重精神疾病患者）；大规模群体神经科学研究（ABCD研究、UK Biobank、人类连接组计划）</li>
           </ul>
-          <a href="https://nist.mni.mcgill.ca/atlases/" target="_blank" class="btn primary">NIST Atlases at MNI →</a>
+
+          <p style="margin-top:0.8rem;"><strong>fMRI不适用于哪些问题</strong></p>
+          <ul>
+            <li>需要因果推断的脑-行为关系问题（fMRI为相关性方法，需结合TMS、脑损伤研究等补充手段）</li>
+            <li>毫秒级神经动态过程（EEG/MEG更适合）</li>
+            <li>单一被试的临床诊断（术前功能定位除外）</li>
+            <li>直接测量神经递质系统活动（PET/SPECT更适合）</li>
+            <li>无法在扫描仪中有效操作的心理学构念</li>
+            <li>小样本的脑-行为个体差异检测（单变量方法可能需要N > 1,000）</li>
+          </ul>
+
+          <p style="margin-top:0.8rem;"><strong>主要局限与潜在风险</strong></p>
+          <ul>
+            <li>头动伪影在发育、精神疾病和儿童群体中尤为严重</li>
+            <li>BOLD信号的个体内和个体间变异性大，信度不足以支持单人诊断</li>
+            <li>分析流程的灵活性（一项系统性评估测试了768种fMRI分析流程，大多数无法产生一致结果）</li>
+            <li>反向推断（从脑激活模式推断心理状态）存在逻辑缺陷</li>
+            <li>血压、心率、咖啡因、饮食、昼夜节律等均影响BOLD信号</li>
+          </ul>
+
+          <p style="margin-top:0.8rem;"><strong>实验准备：预约浙江大学磁共振实验室</strong></p>
+          <ul>
+            <li><strong>设备：</strong>3T磁共振成像系统，校级公共平台，依托生物医学工程与仪器科学学院（脑影像科学技术中心）</li>
+            <li><strong>地点：</strong>杭州市凯旋路268号浙江大学华家池校区 中心北楼112</li>
+            <li><strong>预约：</strong>通过分析测试管理服务平台（<a href="https://atc.zju.edu.cn/" target="_blank">atc.zju.edu.cn</a>）或浙江大学大型仪器共享服务平台（<a href="https://zjuequip.zju.edu.cn/" target="_blank">zjuequip.zju.edu.cn</a>，搜索仪器编号15003917）进行机时预约</li>
+            <li><strong>培训：</strong>使用前须参加安全及上机操作培训，可通过钉钉群"3T磁共振培训钉钉群"报名。培训地点为华家池校区中心北楼112，每次不超过10人</li>
+            <li><strong>联系方式：</strong>丁老师、张老师（电话：0571-86971875，邮箱：cbist@zju.edu.cn）</li>
+          </ul>
+
+          <p style="margin-top:0.8rem;"><strong>实验当天注意事项</strong></p>
+          <ul>
+            <li><strong>前期准备：</strong>确认实验方案已通过伦理审查；准备被试知情同意书；在扫描前完成行为预实验以优化任务设计</li>
+            <li><strong>被试接待：</strong>提前向被试详细说明实验流程、扫描时长和注意事项；确保被试充分理解并签署知情同意书</li>
+            <li><strong>安全检查（关键步骤）：</strong>在进入扫描间之前，逐一确认被试（及陪同人员）体内无金属植入物（心脏起搏器、动脉瘤夹、金属假牙、骨科内固定物等）；移除所有金属物品（眼镜、发夹、首饰、手表、皮带扣、含金属的衣物配饰）；确认被试无纹身（部分纹身颜料含金属成分）</li>
+            <li><strong>具体扫描操作：</strong>由磁共振实验室的专业技师执行，研究者无需掌握机器操作细节</li>
+            <li><strong>数据获取：</strong>扫描结束后，从技师处获取DICOM格式的原始数据</li>
+          </ul>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第二步——查看与检视MRI数据<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第二步——获取数据<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>MRI数据主要有两种存储格式：<strong>DICOM</strong>（扫描仪直接输出，每层一个文件）与<strong>NIfTI</strong>（单个文件包含完整的三维或四维数据，广泛用于分析）。以下为常用的免费开源查看工具：</p>
-          <div class="tool-grid">
-            <div class="tool-card">
-              <strong>3D Slicer</strong>
-              <div class="desc">综合性平台，支持可视化、手动与半自动分割及三维模型导出。兼容DICOM、NIfTI等多种格式。</div>
-              <a href="https://www.slicer.org/" target="_blank">slicer.org</a>
-            </div>
-            <div class="tool-card">
-              <strong>MRIcroGL</strong>
-              <div class="desc">轻量级查看器，支持GPU加速的三维渲染。加载NIfTI文件速度快，适合快速检视和制作发表级别的截图。</div>
-              <a href="https://www.nitrc.org/projects/mricron" target="_blank">nitrc.org</a>
-            </div>
-            <div class="tool-card">
-              <strong>FSLeyes</strong>
-              <div class="desc">FSL分析套件的一部分，支持多种模态（T1、fMRI统计图、DTI）的同时叠加显示和联动浏览。</div>
-              <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLeyes" target="_blank">fsl.fmrib.ox.ac.uk</a>
-            </div>
-            <div class="tool-card">
-              <strong>ITK-SNAP</strong>
-              <div class="desc">专注于基于主动轮廓方法的半自动分割。适用于勾画感兴趣区并导出标记后的体积数据。</div>
-              <a href="http://www.itksnap.org/" target="_blank">itksnap.org</a>
-            </div>
+          <p><strong>标准脑模板</strong></p>
+          <p>标准脑模板为跨研究和跨个体的脑影像比较提供统一的坐标系统。以下为最常用的三种模板：</p>
+          <ul>
+            <li><strong>MNI152</strong>——使用最广泛的标准空间模板，由152名健康青年被试的T1加权像平均而成。定义了绝大多数fMRI研究使用的MNI坐标空间。</li>
+            <li><strong>Colin27</strong>——高分辨率单人模板，通过对同一被试进行27次扫描并平均获得，解剖细节优于MNI152，已配准至MNI空间。</li>
+            <li><strong>ICBM152</strong>——国际脑图谱联盟概率图谱，整合了T1、T2和质子密度信息。</li>
+          </ul>
+          <div class="btn-row">
+            <a href="https://nist.mni.mcgill.ca/atlases/" target="_blank" class="btn primary">MNI Atlases 官方下载</a>
+            <a href="https://nist.mni.mcgill.ca/colin-27-average-brain-2008/" target="_blank" class="btn">Colin27 详情</a>
+          </div>
+
+          <p style="margin-top:1rem;"><strong>开放MRI数据集</strong></p>
+          <p>除标准模板外，大量经过预处理和标注的公开数据集可直接用于研究。以下为主要开放数据平台：</p>
+          <div class="dataset-grid">
+            <div class="dataset-card"><strong>OpenNeuro</strong><div class="desc">最大的BIDS标准开放数据集平台，涵盖MRI、PET、MEG、EEG等多种模态。</div><a href="https://openneuro.org/" target="_blank">openneuro.org</a></div>
+            <div class="dataset-card"><strong>NITRC</strong><div class="desc">神经影像工具与资源协作平台，含1000 Functional Connectomes、COBRE等经典数据集。</div><a href="https://www.nitrc.org/" target="_blank">nitrc.org</a></div>
+            <div class="dataset-card"><strong>Human Connectome Project</strong><div class="desc">大规模多模态人脑连接组数据，含结构MRI、任务态与静息态fMRI、扩散MRI。</div><a href="https://www.humanconnectome.org/" target="_blank">humanconnectome.org</a></div>
+            <div class="dataset-card"><strong>UK Biobank</strong><div class="desc">全球最大的生物医学数据库之一，含超过40,000例脑MRI扫描数据。</div><a href="https://www.ukbiobank.ac.uk/" target="_blank">ukbiobank.ac.uk</a></div>
+            <div class="dataset-card"><strong>ABCD Study</strong><div class="desc">青少年脑认知发育研究，超过11,000名儿童的纵向MRI和行为数据。</div><a href="https://abcdstudy.org/" target="_blank">abcdstudy.org</a></div>
+            <div class="dataset-card"><strong>Brain Image Library</strong><div class="desc">全脑显微成像与脑影像数据档案库。</div><a href="https://www.brainimagelibrary.org/" target="_blank">brainimagelibrary.org</a></div>
+            <div class="dataset-card"><strong>NeuroVault</strong><div class="desc">未设定阈值的统计图公共存储库，支持元分析和结果共享。</div><a href="https://neurovault.org/" target="_blank">neurovault.org</a></div>
+            <div class="dataset-card"><strong>DANDI Archive</strong><div class="desc">细胞与系统神经生理学数据档案，支持BIDS标准。</div><a href="https://www.dandiarchive.org/" target="_blank">dandiarchive.org</a></div>
+          </div>
+
+          <div style="margin-top:0.8rem;">
+            <a href="#" class="btn accent" id="toydata-btn">📦 工作坊练习数据集（即将提供）</a>
+            <p class="note">该按钮将在工作坊前激活，届时可一键下载本工作坊使用的toy dataset（DICOM格式压缩包）。</p>
           </div>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第三步——从MRI体数据到三维表面模型<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第三步——主流MRI数据分析工具<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>将结构T1加权MRI扫描转换为可用于三维打印的脑模型，通常遵循以下流程：</p>
+          <p>获取数据后，需要使用专业软件进行分析处理。以下为功能磁共振成像领域使用最广泛的几款分析工具：</p>
+          <div class="tool-grid">
+            <div class="tool-card">
+              <strong>SPM（Statistical Parametric Mapping）</strong>
+              <div class="desc">由伦敦大学学院（UCL）Wellcome人类神经影像中心开发，基于MATLAB。是fMRI领域使用最广泛的统计分析方法之一，采用基于体素的一般线性模型（GLM）。</div>
+              <a href="https://www.fil.ion.ucl.ac.uk/spm/" target="_blank">官网</a> &nbsp; <a href="https://www.fil.ion.ucl.ac.uk/spm/docs/" target="_blank">教程</a> &nbsp; <a href="https://www.fil.ion.ucl.ac.uk/spm/download/" target="_blank">下载</a>
+            </div>
+            <div class="tool-card">
+              <strong>FSL（FMRIB Software Library）</strong>
+              <div class="desc">由牛津大学FMRIB中心开发，支持结构MRI、fMRI、DTI等多种模态的分析。独立运行，不依赖MATLAB。以FEAT（任务fMRI）和MELODIC（ICA）最为常用。</div>
+              <a href="https://fsl.fmrib.ox.ac.uk/fsl/" target="_blank">fsl.fmrib.ox.ac.uk</a>
+            </div>
+            <div class="tool-card">
+              <strong>FreeSurfer</strong>
+              <div class="desc">由哈佛大学Martinos生物医学影像中心开发，专长于皮层表面重建和自动体积分割。recon-all流程是皮层厚度分析和表面配准的黄金标准。</div>
+              <a href="https://surfer.nmr.mgh.harvard.edu/" target="_blank">surfer.nmr.mgh.harvard.edu</a>
+            </div>
+            <div class="tool-card">
+              <strong>AFNI</strong>
+              <div class="desc">由美国NIMH开发，在时间序列分析和统计分析方面具有独特优势。完全免费开源，独立于MATLAB。特别适合高级用户进行灵活的数据处理。</div>
+              <a href="https://afni.nimh.nih.gov/" target="_blank">afni.nimh.nih.gov</a>
+            </div>
+          </div>
+          <p class="note">选择建议：SPM拥有最丰富的教程资源和社区支持，是国内心理学fMRI研究中使用最广泛的工具；FSL在扩散成像和ICA分析方面有优势；FreeSurfer是皮层分析的黄金标准。本工作坊使用SPM作为主要演示工具。</p>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第四步——从MRI数据到三维脑模型<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>将结构MRI扫描转换为可用于三维打印的脑模型，通常遵循以下流程：</p>
           <p class="pipeline">DICOM → NIfTI（dcm2niix）→ 皮层分割（FreeSurfer recon-all）→ 表面提取（软脑膜表面）→ 网格转换（STL）→ 网格修复（MeshLab/Blender）→ 三维打印</p>
-          <p style="margin-top:0.7rem;"><strong>流程中的主要工具：</strong></p>
-          <ul>
-            <li><strong>FreeSurfer</strong>——基于T1加权像进行全脑自动体积分割和皮层表面重建。是提取软脑膜表面和灰白质边界的标准工具。计算量大，每个被试约需10至24小时。</li>
-            <li><strong>3D Slicer</strong>——为手动或半自动分割以及直接导出STL文件提供了更易于上手的入口，无需命令行操作。</li>
-            <li><strong>MeshLab</strong>——开源网格处理工具，用于打印前的修复、平滑、面片精简和半球合并。</li>
-            <li><strong>dcm2niix</strong>——将DICOM序列转换为NIfTI格式。随MRIcron附带的必要预处理工具。</li>
-          </ul>
-          <a href="https://fordburles.com/3d-print-brain-guide.html" target="_blank" class="btn primary">完整流程指南（Burles, 2024）</a>
-          <a href="http://www.columbia.edu/~rem2178/assets/HowtoMakea3Dbrainmodel.pdf" target="_blank" class="btn">Columbia简明指南（PDF）</a>
+
+          <p style="margin-top:0.8rem;"><strong>完整流程教程</strong></p>
+          <div class="btn-row">
+            <a href="https://fordburles.com/3d-print-brain-guide.html" target="_blank" class="btn primary">Burles 完整流程指南（2024）</a>
+            <a href="http://www.columbia.edu/~rem2178/assets/HowtoMakea3Dbrainmodel.pdf" target="_blank" class="btn">Columbia 简明指南（PDF）</a>
+          </div>
+
+          <p style="margin-top:1rem;"><strong>PittBrains3D：免费三维脑模型资源</strong></p>
+          <p>匹兹堡大学提供的开放教育资源，包含全脑、半脑、冠状/水平/矢状切面、皮层下结构、脑血管系统等十二个高质量STL模型，可自由下载和打印。</p>
+          <div class="btn-row">
+            <a href="https://oercommons.org/courseware/lesson/123307/student/?section=8" target="_blank" class="btn">PittBrains3D 网站</a>
+            <a href="#" class="btn accent" id="toggle-models" onclick="event.stopPropagation(); document.getElementById('model-panel').style.display = document.getElementById('model-panel').style.display === 'none' ? 'block' : 'none'; return false;">📥 下载十二个脑区模型</a>
+          </div>
+          <div id="model-panel" style="display:none; margin-top:0.6rem;">
+            <div class="model-grid">
+              <a href="/assets/models/Whole brain.stl" class="model-btn" download>Whole Brain</a>
+              <a href="/assets/models/Hemisected brain.stl" class="model-btn" download>Hemisected Brain</a>
+              <a href="/assets/models/Brainstem.stl" class="model-btn" download>Brainstem</a>
+              <a href="/assets/models/Brainstem + cranial nerves.stl" class="model-btn" download>Brainstem + Nerves</a>
+              <a href="/assets/models/Corpus callosum.stl" class="model-btn" download>Corpus Callosum</a>
+              <a href="/assets/models/Striatum.stl" class="model-btn" download>Striatum</a>
+              <a href="/assets/models/Thalami.stl" class="model-btn" download>Thalami</a>
+              <a href="/assets/models/Hippocampus + commissure + amygdala.stl" class="model-btn" download>Hippocampus + Amygdala</a>
+              <a href="/assets/models/Ventricles.stl" class="model-btn" download>Ventricles</a>
+              <a href="/assets/models/Cerebral arteries.stl" class="model-btn" download>Cerebral Arteries</a>
+              <a href="/assets/models/Cerebral veins.stl" class="model-btn" download>Cerebral Veins</a>
+              <a href="/assets/models/Dural sinuses and reflections.stl" class="model-btn" download>Dural Sinuses</a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="resource">
-        <strong>推荐参考：</strong><a href="https://andysbrainbook.readthedocs.io/en/latest/index.html" target="_blank">Andy's Brain Book</a>——一本全面开放获取的MRI数据分析入门教材，涵盖从工具安装到预处理和统计分析的逐步教程。
+        <strong>推荐参考：</strong><a href="https://andysbrainbook.readthedocs.io/en/latest/index.html" target="_blank">Andy's Brain Book</a>——全面开放获取的MRI数据分析入门教材，涵盖从工具安装到预处理和统计分析的逐步教程。
       </div>
 
       <div class="bridge">
@@ -203,10 +309,10 @@
           <p>存在多种脑区分割方案，各自依据不同的原则对大脑进行划分：细胞构筑（Brodmann分区）、大体解剖（脑回与脑沟标志）或功能连接。这些方案之间并不总能对齐，同一解剖位置在不同图谱中可能对应不同的标签。</p>
           <p><strong>神经影像学中常用的主要分割图谱：</strong></p>
           <ul>
-            <li><strong>AAL（自动解剖标记图谱）</strong>——共116个区域（90个皮层区，26个小脑区）。fMRI文献中引用最多的分割方案，广泛用于感兴趣区分析和元分析标记。</li>
-            <li><strong>Harvard-Oxford图谱</strong>——随FSL发布的概率图谱，每个体素携带属于某一结构的概率值，反映了个体间变异。</li>
+            <li><strong>AAL（自动解剖标记图谱）</strong>——共116个区域（90个皮层区，26个小脑区）。fMRI文献中引用最多的分割方案。</li>
+            <li><strong>Harvard-Oxford图谱</strong>——随FSL发布的概率图谱，每个体素携带属于某一结构的概率值。</li>
             <li><strong>Desikan-Killiany图谱</strong>——68个皮层区（每半球34个）。FreeSurfer recon-all流程的默认皮层分割输出。</li>
-            <li><strong>HCP-MMP 1.0</strong>——每半球180个区域，基于人类连接组计划的多模态数据（皮层结构、功能、连接和拓扑）推导得出。是较新、较精细的替代方案。</li>
+            <li><strong>HCP-MMP 1.0</strong>——每半球180个区域，基于人类连接组计划的多模态数据推导得出。</li>
           </ul>
         </div>
       </div>
@@ -214,7 +320,7 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第二步——利用交互工具学习三维脑解剖<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>传统的神经解剖教学依赖二维表征——教科书图谱、染色切片或正交MRI视图。这些方式提供了信息，但无法传达当大脑以可操作的三维对象呈现时即刻显现的空间关系。以下交互式图谱允许通过旋转、深度剥离和选择性高亮来直接探索脑结构：</p>
+          <p>传统的神经解剖教学依赖二维表征。以下交互式图谱允许通过旋转、深度剥离和选择性高亮来直接探索脑结构：</p>
           <div class="tool-grid">
             <div class="tool-card">
               <strong>3D Brain（冷泉港实验室）</strong>
@@ -233,7 +339,7 @@
             </div>
             <div class="tool-card">
               <strong>Neuroglancer</strong>
-              <div class="desc">基于WebGL的浏览器，可渲染拍字节级三维脑数据。支持在突触分辨率下浏览电子显微镜体积数据，同时叠加MRI数据。</div>
+              <div class="desc">基于WebGL的浏览器，可渲染拍字节级三维数据，支持在突触分辨率下浏览脑体积数据。</div>
               <a href="https://neuroglancer-demo.appspot.com/" target="_blank">neuroglancer-demo.appspot.com</a>
             </div>
           </div>
@@ -242,7 +348,7 @@
 
       <div class="bridge">
         <div class="bridge-label">从第二部分到第三部分</div>
-        三维图谱构建了空间知识，但知识在被产出所检验之前仍停留在抽象层面。当研究者将某一脑区从数据中分割出来，并将其转化为物理实体——在检查打印模型是否符合解剖预期时——学习便具备了自我修正的性质。从数字探索到物理制造的转变并非简单的叠加，而是闭合了一条反馈环路：空间理解在"制作"这一行为中持续得到检验和深化。下一节介绍实现这一转变所需的工具和方法。
+        三维图谱构建了空间知识，但知识在被产出所检验之前仍停留在抽象层面。当研究者将某一脑区从数据中分割出来，并将其转化为物理实体时——学习便具备了自我修正的性质。从数字探索到物理制造的转变闭合了一条反馈环路：空间理解在"制作"这一行为中持续得到检验和深化。下一节介绍实现这一转变所需的工具和方法。
       </div>
     </div>
   </div>
@@ -259,36 +365,36 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第一步——三维打印在心理学研究中的应用<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>三维打印已在心理学研究的多个领域中获得了应用。以下为具有代表性的研究综述。</p>
+          <p>三维打印已在心理学研究的多个领域中获得了应用。以下为经核实的研究案例：</p>
           <div class="research-grid">
             <div class="research-card">
               <h4>神经解剖教学</h4>
-              <p>多项对照研究一致表明，通过物理操作三维打印脑模型进行学习的学生，其空间理解水平显著优于仅使用教材或屏幕三维渲染的同辈。触觉成分似乎具有独特的学习优势。</p>
-              <span class="ref">Aridan et al., 2024; Minear et al., 2022; Lee et al., 2026</span>
+              <p>多项对照研究表明，通过物理操作三维打印脑模型进行学习的学生，其空间理解水平显著优于仅使用教材或屏幕三维渲染的同辈。VR学习同样表现出空间理解的增益。</p>
+              <span class="ref">Aridan et al., 2024, Anatomical Sciences Education; Minear et al., 2022, JUNE; Lee et al., 2026, JEEHP</span>
             </div>
             <div class="research-card">
               <h4>产前依恋与心理健康</h4>
-              <p>一项随机对照试验（n = 184）发现，三维打印胎儿模型显著提升了母亲和父亲的产前依恋评分，并降低了抑郁和妊娠相关焦虑水平。三维打印模型和三维打印图片均观察到了这一效果。</p>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/36940782/" target="_blank" class="ref">JOGNN, 2023</a>
+              <p>一项随机对照试验（n = 184）发现，三维打印胎儿模型和三维打印图片均显著提升了产前依恋评分，并降低了抑郁和妊娠相关焦虑水平。</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/36940782/" target="_blank" class="ref">Coté et al., 2023, JOGNN</a>
             </div>
             <div class="research-card">
               <h4>青少年身体活动行为改变</h4>
-              <p>获得三维打印身体活动数据模型的青少年将模型作为身份标识进行展示，与同伴比较，并报告了更高的运动习惯自我反思水平。物理实体成为行为认同的载体。</p>
-              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9861837/" target="_blank" class="ref">IJERPH, 2023</a>
+              <p>获得三维打印身体活动数据模型的青少年将模型作为身份标识进行展示，与同伴比较，并报告了更高的运动习惯自我反思水平。</p>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9861837/" target="_blank" class="ref">McNarry et al., 2023, IJERPH</a>
             </div>
             <div class="research-card">
               <h4>回忆疗法</h4>
-              <p>对老年人个人具有意义的物品的三维打印复制品在回忆疗法中充当了有效的记忆线索。多感官参与提供了超越照片的提取优势。</p>
-              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11620962/" target="_blank" class="ref">J. Applied Gerontology, 2024</a>
+              <p>三维打印的个人意义物品复制品在回忆疗法中充当了有效的多感官记忆线索，触觉深度提供了超越照片的提取优势。</p>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11620962/" target="_blank" class="ref">Anderson et al., 2024, J. Applied Gerontology</a>
             </div>
             <div class="research-card">
               <h4>融合课堂中的同伴互动</h4>
-              <p>三维打印作为合作学习工具，改善了残障学生与非残障学生之间的同伴沟通、知识保持和社会互动。学生表现出对三维打印课程形式的偏好。</p>
+              <p>三维打印作为合作学习工具，改善了残障学生与非残障学生之间的同伴沟通、知识保持和社会互动。</p>
               <span class="ref">Intl. J. Disability, Dev. & Education, 2024</span>
             </div>
             <div class="research-card">
               <h4>儿童假肢与心理健康</h4>
-              <p>定制化的三维打印肌电假肢配合个性化外观设计，显著提升了儿童截肢者的心理健康水平。装置外观的个性化被评价为与机械功能同等重要。</p>
+              <p>定制化三维打印肌电假肢配合个性化外观设计，显著提升了儿童截肢者的心理健康水平。外观个性化被评价为与机械功能同等重要。</p>
               <span class="ref">Lecture Notes in Networks and Systems, 2024</span>
             </div>
           </div>
@@ -298,18 +404,22 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>第二步——三维建模软件<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>创建或编辑三维模型需要使用建模软件。推荐从<strong>Tinkercad</strong>入手：它完全在网页浏览器中运行，无需任何先前经验，采用直接操作方式（拖拽、缩放、组合）。这使得零基础的首次使用者也能制作出适合打印的模型。</p>
+          <p>下方列出了常用的三维建模与网格处理工具，每个平台适用于不同的建模需求。其中<strong>Tinkercad</strong>最适合零基础用户，推荐作为入门首选。</p>
           <div class="btn-row">
-            <a href="https://www.tinkercad.com/" target="_blank" class="btn primary" style="font-size:0.92rem; padding:0.65rem 1.6rem;">Tinkercad（推荐）</a>
+            <a href="https://www.tinkercad.com/" target="_blank" class="btn primary" style="font-size:0.92rem; padding:0.65rem 1.6rem;">Tinkercad（推荐入门）</a>
           </div>
-          <p style="margin:0.7rem 0 0.4rem; font-size:0.83rem; color:var(--text-dim);">其他平台，各自适用不同的建模范式：</p>
+          <p style="margin:0.7rem 0 0.4rem; font-size:0.83rem; color:var(--text-dim);">其他建模与网格处理平台：</p>
           <div class="btn-row">
-            <a href="https://makerworld.com.cn/zh" target="_blank" class="btn">MakerWorld</a>
+            <a href="https://www.blender.org/" target="_blank" class="btn">Blender</a>
+            <a href="https://www.meshlab.net/" target="_blank" class="btn">MeshLab</a>
             <a href="https://www.freecad.org/downloads.php?lang=zh_CN" target="_blank" class="btn">FreeCAD</a>
             <a href="https://openscad.org/" target="_blank" class="btn">OpenSCAD</a>
+            <a href="https://www.autodesk.com/products/fusion-360/" target="_blank" class="btn">Fusion 360</a>
+            <a href="https://www.meshmixer.com/" target="_blank" class="btn">MeshMixer</a>
+            <a href="https://makerworld.com.cn/zh" target="_blank" class="btn">MakerWorld</a>
             <a href="https://3d.hunyuan.tencent.com/" target="_blank" class="btn">Hunyuan3D</a>
           </div>
-          <p class="note">FreeCAD与OpenSCAD为参数化建模工具（通过约束和脚本定义几何形状）。Hunyuan3D利用深度学习从文字或图像生成三维模型。MakerWorld是分享和改编可打印模型的社区平台。对于本工作坊的大多数参与者，Tinkercad是从构想到可打印文件的最直接路径。</p>
+          <p class="note"><strong>Tinkercad</strong>：基于浏览器的直接操作式建模工具（拖拽、缩放、组合），无需安装。适合入门和快速原型设计。<strong>Blender</strong>：专业级开源三维创作套件，功能全面（建模、雕刻、渲染、动画），学习曲线较陡。<strong>MeshLab</strong>：开源网格处理系统，专长于修复、平滑、面片精简和格式转换，是打印前处理的必备工具。<strong>MeshMixer</strong>：Autodesk出品，专注于三维打印前的模型优化，尤其擅长挖空和生成支撑结构。<strong>FreeCAD / OpenSCAD</strong>：参数化建模工具（通过约束和脚本定义几何形状）。<strong>Fusion 360</strong>：Autodesk出品的专业级CAD/CAM平台，教育版免费。<strong>Hunyuan3D</strong>：利用深度学习从文字或图像生成三维模型。</p>
         </div>
       </div>
 
@@ -319,11 +429,11 @@
           <p>打印三维模型需要两个组成部分：打印机硬件以及将模型转换为机器指令的切片软件。</p>
           <div style="margin-bottom:0.8rem;">
             <a href="/assets/files/JGAurora-A6-Manual.pdf" class="btn download" download>JGAurora A6 打印机手册（PDF）</a>
-            <p class="note">JGAurora A6是浙江大学心理与行为科学系配备的熔融沉积成型打印机。本文档说明其操作方法和规格参数。使用其他型号打印机的用户应查阅相应设备的说明文档；此处描述的通用工作流程——模型准备、切片、打印——适用于所有FDM打印机。</p>
+            <p class="note">JGAurora A6是浙江大学心理与行为科学系配备的熔融沉积成型打印机。使用其他型号打印机的用户应查阅相应设备的说明文档；此处描述的通用工作流程适用于所有FDM打印机。</p>
           </div>
           <div style="margin-top:0.8rem;">
             <a href="https://ultimaker.com/software/ultimaker-cura/" target="_blank" class="btn">Ultimaker Cura——切片软件</a>
-            <p class="note">Cura将三维模型（STL、OBJ或3MF格式）转换为G代码——控制打印机运动、温度和挤出的底层指令集。它提供对层高、填充密度、支撑结构和打印速度的控制。尽管软件名中包含"Ultimaker"，Cura与大多数FDM打印机兼容。</p>
+            <p class="note">Cura将三维模型（STL、OBJ或3MF格式）转换为G代码——控制打印机运动、温度和挤出的底层指令集。尽管软件名中包含"Ultimaker"，Cura与大多数FDM打印机兼容。</p>
           </div>
         </div>
       </div>
@@ -354,7 +464,7 @@
       <div class="step" onclick="toggleStep(this, event)">
         <div class="step-header"><span class="step-dot"></span>沉浸式环境中的社会认知<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>虚拟现实能够系统性地操控社交线索——注视方向、人际距离、面部表情和虚拟化身外观——同时将实验混淆因素降至最低。这一方法已被应用于社交焦虑研究，参与者与行为可参数化调节的虚拟观众或对话伙伴进行互动。它也被用于探究个人空间调节和内隐偏见背后的知觉过程等议题，实验者可在其中独立操控肤色、面部形态和行为举止等变量。</p>
+          <p>虚拟现实能够系统性地操控社交线索——注视方向、人际距离、面部表情和虚拟化身外观——同时将实验混淆因素降至最低。这一方法已被应用于社交焦虑研究，参与者与行为可参数化调节的虚拟观众或对话伙伴进行互动。它也被用于探究个人空间调节和内隐偏见背后的知觉过程等议题。</p>
         </div>
       </div>
 
@@ -375,13 +485,17 @@
   </div>
 
   <footer class="footer">
-    <a href="https://consciousness-observers.github.io">Consciousness Observers (CO-LAB)</a> · 工作坊
+    2026年7月9日 · 浙江大学心理与行为科学系
   </footer>
 </div>
 
 <script>
 function togglePart(el) { el.classList.toggle('open'); }
 function toggleStep(el, event) { event.stopPropagation(); el.classList.toggle('open'); }
+document.getElementById('toydata-btn').addEventListener('click', function(e) {
+  e.stopPropagation();
+  e.preventDefault();
+});
 </script>
 </body>
 </html>
