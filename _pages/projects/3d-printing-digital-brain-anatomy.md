@@ -23,19 +23,17 @@ _styles: >
 <span class="host-logo-light"><img src="/assets/img/zju-psych-light.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span><span class="host-logo-dark"><img src="/assets/img/zju-psych-dark.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span>
 
 <div style="margin: 1.2rem 0;">
-  <a href="/playground/" target="_blank" style="display: inline-block; padding: 0.65rem 1.8rem; font-size: 0.95rem; font-weight: 600; background: #003F88; color: #fff; border-radius: 7px; text-decoration: none;">English</a>
-  <a href="/playground/zh/" target="_blank" style="display: inline-block; padding: 0.65rem 1.8rem; font-size: 0.95rem; font-weight: 600; border: 2px solid #003F88; color: #003F88; border-radius: 7px; text-decoration: none; margin-left: 0.5rem;">中文</a>
+  <a href="/playground/" target="_blank" style="display: inline-block; padding: 0.65rem 1.8rem; font-size: 0.95rem; font-weight: 600; background: #003F88; color: #fff; border-radius: 7px; text-decoration: none;">Enter Playground →</a>
   <span style="font-size: 0.82rem; color: var(--global-text-color-light); margin-left: 0.6rem;">Interactive tutorial (opens in new tab)</span>
 </div>
 
 ---
 
-A full-day, hands-on workshop tracing the brain from evolutionary origins to 3D-printed model. Participants explore interactive brain atlases, work with real MRI data, perform virtual dissection, and produce a physical 3D-printed brain model — bridging psychology, neuroscience, imaging, and digital fabrication in a single integrated arc.
+A full-day, hands-on workshop tracing the brain from evolutionary origins to 3D-printed model. Participants explore interactive brain atlases, work with real MRI data, perform virtual dissection, and produce a physical 3D-printed brain model — bridging neuroscience, imaging, and digital fabrication in a single integrated arc.
 
-The workshop is divided into five sessions:
+The accompanying interactive tutorial covers four modules:
 
-1. **Origins** — an evolutionary perspective on brain development, building curiosity before anatomy
-2. **Structure** — interactive 3D brain atlas exploration in small groups, identifying regions of interest for later modeling
-3. **Roundtable** — informal lunch discussion across disciplines
-4. **Imaging** — hands-on work with structural MRI data, from opening a file to generating a 3D-printable model
-5. **Dissection & Printing** — virtual brain dissection guided by the day's earlier ROI work, with live 3D printing
+1. **3D Imaging** — MRI fundamentals, data acquisition, analysis tools, and the pipeline from DICOM to 3D brain model
+2. **3D Brain Anatomy** — brain parcellation atlases and interactive tools for building spatial understanding
+3. **3D Modeling & Printing** — research applications, modeling software, and the print workflow
+4. **VR Technology** — from Unity setup to research-ready experiment frameworks and hardware
