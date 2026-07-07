@@ -22,6 +22,11 @@ _styles: >
 **Location:** Department of Psychology and Behavioral Sciences, Zhejiang University<br>
 <span class="host-logo-light"><img src="/assets/img/zju-psych-light.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span><span class="host-logo-dark"><img src="/assets/img/zju-psych-dark.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span>
 
+<div style="margin-top: 1.2rem;">
+  <a href="/playground/" target="_blank" style="display: inline-block; padding: 0.65rem 1.6rem; font-size: 0.95rem; font-weight: 600; background: #003F88; color: #fff; border-radius: 7px; text-decoration: none;">Enter Playground →</a>
+  <span style="font-size: 0.82rem; color: var(--global-text-color-light); margin-left: 0.6rem;">Interactive tutorial (opens in new tab)</span>
+</div>
+
 ---
 
 ## Overview
