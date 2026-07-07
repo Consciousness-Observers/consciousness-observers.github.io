@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三维技术在心理学研究中的应用 — CO-LAB 工作坊</title>
+<style>
+  :root {
+    --bg: #08090d;
+    --surface: #111318;
+    --border: #1e2130;
+    --border-hover: #2a3050;
+    --text: #c8ccd4;
+    --text-dim: #6b7080;
+    --text-soft: #9095a3;
+    --accent: #003F88;
+    --accent-glow: #005bb8;
+    --step-bg: #141720;
+    --insight-bg: rgba(0,95,184,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
+
+  .header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  .header h1 { font-size: 1.85rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .header .subtitle { font-size: 0.92rem; color: var(--text-dim); margin-bottom: 1.5rem; }
+  .header .meta { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.3rem; }
+  .header .logo { margin-top: 1.4rem; }
+  .header .logo img { height: 2.4rem; }
+  .header .lang { margin-top: 0.8rem; }
+  .header .lang a { color: var(--text-dim); font-size: 0.85rem; text-decoration: none; }
+  .header .lang a:hover { color: var(--accent-glow); }
+
+  .part { margin-bottom: 1rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); transition: border-color 0.2s; }
+  .part:hover { border-color: var(--border-hover); }
+  .part-header { padding: 1.15rem 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
+  .part-header h2 { font-size: 1.05rem; font-weight: 600; color: #e0e4ec; display: flex; align-items: center; gap: 0.6rem; }
+  .part-number { color: var(--accent-glow); font-weight: 700; font-size: 0.85rem; font-family: "SF Mono", "Fira Code", monospace; }
+  .part-arrow { font-size: 0.7rem; color: var(--text-dim); transition: transform 0.3s; }
+  .part.open .part-arrow { transform: rotate(90deg); }
+  .part-body { display: none; padding: 0 1.4rem 1.3rem; }
+  .part.open .part-body { display: block; }
+  .part-desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; }
+
+  .step { margin-bottom: 0.6rem; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; background: var(--step-bg); }
+  .step-header { padding: 0.75rem 1rem; cursor: pointer; display: flex; align-items: center; gap: 0.6rem; user-select: none; font-size: 0.9rem; font-weight: 500; color: #ccd0d8; }
+  .step-header:hover { background: rgba(255,255,255,0.02); }
+  .step-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-glow); flex-shrink: 0; }
+  .step-arrow { font-size: 0.6rem; color: var(--text-dim); margin-left: auto; transition: transform 0.3s; }
+  .step.open .step-arrow { transform: rotate(90deg); }
+  .step-body { display: none; padding: 0 1rem 1rem 1.8rem; font-size: 0.88rem; color: var(--text-dim); line-height: 1.85; }
+  .step.open .step-body { display: block; }
+  .step-body a { color: var(--accent-glow); text-decoration: none; }
+  .step-body a:hover { text-decoration: underline; }
+  .step-body p, .step-body li { margin-bottom: 0.5rem; }
+  .step-body ul { padding-left: 1.2rem; margin-bottom: 0.5rem; }
+
+  .btn { display: inline-block; padding: 0.55rem 1.2rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; cursor: pointer; text-decoration: none; border: 1px solid var(--border); color: var(--text); background: var(--surface); transition: all 0.2s; margin: 0.25rem 0.35rem 0.25rem 0; text-align: center; }
+  .btn:hover { border-color: var(--accent-glow); color: #fff; background: rgba(0,95,184,0.08); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  .btn.primary:hover { background: var(--accent-glow); border-color: var(--accent-glow); }
+  .btn.download { background: #0f1620; border-color: #1a3050; }
+  .btn.download:hover { border-color: #2a5080; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .bridge { margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid var(--accent-glow); background: var(--insight-bg); border-radius: 0 6px 6px 0; font-size: 0.89rem; color: #b0b8c4; line-height: 1.85; }
+  .bridge-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-glow); margin-bottom: 0.3rem; font-weight: 600; }
+
+  .resource { margin-top: 1rem; padding: 0.85rem 1.1rem; background: rgba(255,255,255,0.025); border-radius: 7px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.04); }
+  .resource a { color: var(--accent-glow); }
+
+  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; }
+  @media (max-width: 600px) { .research-grid { grid-template-columns: 1fr; } }
+  .research-card { padding: 0.85rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.83rem; }
+  .research-card h4 { font-size: 0.85rem; color: #d0d6e0; margin-bottom: 0.35rem; }
+  .research-card p { color: var(--text-dim); font-size: 0.8rem; line-height: 1.7; }
+  .research-card .ref { color: var(--accent-glow); font-size: 0.75rem; margin-top: 0.3rem; display: inline-block; }
+
+  .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem; }
+  @media (max-width: 600px) { .tool-grid { grid-template-columns: 1fr; } }
+  .tool-card { padding: 0.7rem; border: 1px solid var(--border); border-radius: 7px; background: var(--step-bg); font-size: 0.85rem; }
+  .tool-card strong { color: #d0d6e0; }
+  .tool-card .desc { font-size: 0.82rem; color: var(--text-dim); }
+
+  .coming-soon { color: var(--text-dim); font-size: 0.88rem; padding: 0.5rem 0; }
+
+  .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-dim); }
+  .footer a { color: var(--text-dim); }
+
+  .note { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.3rem; }
+  .pipeline { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.82rem; color: var(--text-soft); background: rgba(0,0,0,0.3); padding: 0.6rem 0.8rem; border-radius: 5px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <h1>三维技术如何支持心理学研究</h1>
+    <p class="subtitle">CO-LAB 工作坊 · 2026年7月9日</p>
+    <p class="meta">浙江大学心理与行为科学系</p>
+    <div class="logo"><img src="/assets/img/zju-psych-dark.png" alt="浙江大学心理系"></div>
+    <p class="lang"><a href="/playground/">English</a></p>
+  </header>
+
+  <!-- ==================== 第一部分 ==================== -->
+  <div class="part" onclick="togglePart(this)">
+    <div class="part-header">
+      <h2><span class="part-number">第一部分</span> 三维影像——如何阅读与处理磁共振数据</h2>
+      <span class="part-arrow">▶</span>
+    </div>
+    <div class="part-body" onclick="event.stopPropagation()">
+      <p class="part-desc">结构磁共振成像以毫米级分辨率提供活体大脑的三维表征。本节介绍标准数据格式、查看工具和处理流程，使不具备放射学背景的研究者也能访问和操作神经影像数据。</p>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第一步——获取标准脑模板<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>标准脑模板为跨研究和跨个体的脑影像比较提供了统一的坐标系统。这些模板是几乎所有神经影像研究的参照框架。</p>
+          <ul>
+            <li><strong>MNI152</strong>——使用最广泛的标准空间模板，由152名健康青年被试的T1加权像平均而成。定义了绝大多数已发表fMRI研究中所使用的坐标系统（MNI空间）。</li>
+            <li><strong>Colin27</strong>——高分辨率单人模板，通过对同一被试进行27次扫描并平均获得，解剖细节优于MNI152。</li>
+            <li><strong>ICBM152</strong>——由国际脑图谱联盟开发的概率图谱，整合了T1、T2和质子密度等多种对比度信息。</li>
+          </ul>
+          <a href="https://nist.mni.mcgill.ca/atlases/" target="_blank" class="btn primary">NIST Atlases at MNI →</a>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第二步——查看与检视MRI数据<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>MRI数据主要有两种存储格式：<strong>DICOM</strong>（扫描仪直接输出，每层一个文件）与<strong>NIfTI</strong>（单个文件包含完整的三维或四维数据，广泛用于分析）。以下为常用的免费开源查看工具：</p>
+          <div class="tool-grid">
+            <div class="tool-card">
+              <strong>3D Slicer</strong>
+              <div class="desc">综合性平台，支持可视化、手动与半自动分割及三维模型导出。兼容DICOM、NIfTI等多种格式。</div>
+              <a href="https://www.slicer.org/" target="_blank">slicer.org</a>
+            </div>
+            <div class="tool-card">
+              <strong>MRIcroGL</strong>
+              <div class="desc">轻量级查看器，支持GPU加速的三维渲染。加载NIfTI文件速度快，适合快速检视和制作发表级别的截图。</div>
+              <a href="https://www.nitrc.org/projects/mricron" target="_blank">nitrc.org</a>
+            </div>
+            <div class="tool-card">
+              <strong>FSLeyes</strong>
+              <div class="desc">FSL分析套件的一部分，支持多种模态（T1、fMRI统计图、DTI）的同时叠加显示和联动浏览。</div>
+              <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLeyes" target="_blank">fsl.fmrib.ox.ac.uk</a>
+            </div>
+            <div class="tool-card">
+              <strong>ITK-SNAP</strong>
+              <div class="desc">专注于基于主动轮廓方法的半自动分割。适用于勾画感兴趣区并导出标记后的体积数据。</div>
+              <a href="http://www.itksnap.org/" target="_blank">itksnap.org</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第三步——从MRI体数据到三维表面模型<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>将结构T1加权MRI扫描转换为可用于三维打印的脑模型，通常遵循以下流程：</p>
+          <p class="pipeline">DICOM → NIfTI（dcm2niix）→ 皮层分割（FreeSurfer recon-all）→ 表面提取（软脑膜表面）→ 网格转换（STL）→ 网格修复（MeshLab/Blender）→ 三维打印</p>
+          <p style="margin-top:0.7rem;"><strong>流程中的主要工具：</strong></p>
+          <ul>
+            <li><strong>FreeSurfer</strong>——基于T1加权像进行全脑自动体积分割和皮层表面重建。是提取软脑膜表面和灰白质边界的标准工具。计算量大，每个被试约需10至24小时。</li>
+            <li><strong>3D Slicer</strong>——为手动或半自动分割以及直接导出STL文件提供了更易于上手的入口，无需命令行操作。</li>
+            <li><strong>MeshLab</strong>——开源网格处理工具，用于打印前的修复、平滑、面片精简和半球合并。</li>
+            <li><strong>dcm2niix</strong>——将DICOM序列转换为NIfTI格式。随MRIcron附带的必要预处理工具。</li>
+          </ul>
+          <a href="https://fordburles.com/3d-print-brain-guide.html" target="_blank" class="btn primary">完整流程指南（Burles, 2024）</a>
+          <a href="http://www.columbia.edu/~rem2178/assets/HowtoMakea3Dbrainmodel.pdf" target="_blank" class="btn">Columbia简明指南（PDF）</a>
+        </div>
+      </div>
+
+      <div class="resource">
+        <strong>推荐参考：</strong><a href="https://andysbrainbook.readthedocs.io/en/latest/index.html" target="_blank">Andy's Brain Book</a>——一本全面开放获取的MRI数据分析入门教材，涵盖从工具安装到预处理和统计分析的逐步教程。
+      </div>
+
+      <div class="bridge">
+        <div class="bridge-label">从第一部分到第二部分</div>
+        获取和查看MRI数据是一项技术成就，但它本身并不赋予解剖学理解。研究者可以在3D Slicer中加载NIfTI文件并导航至MNI空间中的任意坐标，却仍可能缺乏理解某一体素所代表含义的空间直觉。制约因素通常并非数据获取或软件使用的困难，而是缺乏对脑解剖结构的坚实三维心理表征。下一节正是为了弥补这一缺口。
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 第二部分 ==================== -->
+  <div class="part" onclick="togglePart(this)">
+    <div class="part-header">
+      <h2><span class="part-number">第二部分</span> 三维脑解剖——建立空间理解</h2>
+      <span class="part-arrow">▶</span>
+    </div>
+    <div class="part-body" onclick="event.stopPropagation()">
+      <p class="part-desc">神经影像学论文通常以解剖或功能标签指代脑区。阅读此类文献需要的不只是名称识别——更需要一种空间表征能力，理解各结构在三维空间中的相对位置关系。</p>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第一步——脑区如何被定义与标记<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>存在多种脑区分割方案，各自依据不同的原则对大脑进行划分：细胞构筑（Brodmann分区）、大体解剖（脑回与脑沟标志）或功能连接。这些方案之间并不总能对齐，同一解剖位置在不同图谱中可能对应不同的标签。</p>
+          <p><strong>神经影像学中常用的主要分割图谱：</strong></p>
+          <ul>
+            <li><strong>AAL（自动解剖标记图谱）</strong>——共116个区域（90个皮层区，26个小脑区）。fMRI文献中引用最多的分割方案，广泛用于感兴趣区分析和元分析标记。</li>
+            <li><strong>Harvard-Oxford图谱</strong>——随FSL发布的概率图谱，每个体素携带属于某一结构的概率值，反映了个体间变异。</li>
+            <li><strong>Desikan-Killiany图谱</strong>——68个皮层区（每半球34个）。FreeSurfer recon-all流程的默认皮层分割输出。</li>
+            <li><strong>HCP-MMP 1.0</strong>——每半球180个区域，基于人类连接组计划的多模态数据（皮层结构、功能、连接和拓扑）推导得出。是较新、较精细的替代方案。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第二步——利用交互工具学习三维脑解剖<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>传统的神经解剖教学依赖二维表征——教科书图谱、染色切片或正交MRI视图。这些方式提供了信息，但无法传达当大脑以可操作的三维对象呈现时即刻显现的空间关系。以下交互式图谱允许通过旋转、深度剥离和选择性高亮来直接探索脑结构：</p>
+          <div class="tool-grid">
+            <div class="tool-card">
+              <strong>3D Brain（冷泉港实验室）</strong>
+              <div class="desc">29个带标签的交互式结构，附有简洁的功能说明。基于浏览器，无需安装。本工作坊使用的主要参考工具。</div>
+              <a href="https://www.g2conline.org/3dbrain/" target="_blank">g2conline.org/3dbrain</a>
+            </div>
+            <div class="tool-card">
+              <strong>BrainFacts.org 3D Brain</strong>
+              <div class="desc">交互式图谱，包含各结构功能和相关临床状况的详细描述。</div>
+              <a href="https://www.brainfacts.org/3d-brain" target="_blank">brainfacts.org/3d-brain</a>
+            </div>
+            <div class="tool-card">
+              <strong>MSU Human Brain Atlas</strong>
+              <div class="desc">高分辨率组织学切片与MRI对照。有助于理解结构影像中信号变化的细胞构筑基础。</div>
+              <a href="https://brains.anatomy.msu.edu/brains/human/index.html" target="_blank">brains.anatomy.msu.edu</a>
+            </div>
+            <div class="tool-card">
+              <strong>Neuroglancer</strong>
+              <div class="desc">基于WebGL的浏览器，可渲染拍字节级三维脑数据。支持在突触分辨率下浏览电子显微镜体积数据，同时叠加MRI数据。</div>
+              <a href="https://neuroglancer-demo.appspot.com/" target="_blank">neuroglancer-demo.appspot.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bridge">
+        <div class="bridge-label">从第二部分到第三部分</div>
+        三维图谱构建了空间知识，但知识在被产出所检验之前仍停留在抽象层面。当研究者将某一脑区从数据中分割出来，并将其转化为物理实体——在检查打印模型是否符合解剖预期时——学习便具备了自我修正的性质。从数字探索到物理制造的转变并非简单的叠加，而是闭合了一条反馈环路：空间理解在"制作"这一行为中持续得到检验和深化。下一节介绍实现这一转变所需的工具和方法。
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 第三部分 ==================== -->
+  <div class="part" onclick="togglePart(this)">
+    <div class="part-header">
+      <h2><span class="part-number">第三部分</span> 三维建模与三维打印——从数字模型到物理实体</h2>
+      <span class="part-arrow">▶</span>
+    </div>
+    <div class="part-body" onclick="event.stopPropagation()">
+      <p class="part-desc">第一部分生成的数字脑模型，经第二部分获得解剖学理解后，可通过三维打印实现物质化。本节概述三维打印在心理学中的研究应用，并提供实操工具。</p>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第一步——三维打印在心理学研究中的应用<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>三维打印已在心理学研究的多个领域中获得了应用。以下为具有代表性的研究综述。</p>
+          <div class="research-grid">
+            <div class="research-card">
+              <h4>神经解剖教学</h4>
+              <p>多项对照研究一致表明，通过物理操作三维打印脑模型进行学习的学生，其空间理解水平显著优于仅使用教材或屏幕三维渲染的同辈。触觉成分似乎具有独特的学习优势。</p>
+              <span class="ref">Aridan et al., 2024; Minear et al., 2022; Lee et al., 2026</span>
+            </div>
+            <div class="research-card">
+              <h4>产前依恋与心理健康</h4>
+              <p>一项随机对照试验（n = 184）发现，三维打印胎儿模型显著提升了母亲和父亲的产前依恋评分，并降低了抑郁和妊娠相关焦虑水平。三维打印模型和三维打印图片均观察到了这一效果。</p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/36940782/" target="_blank" class="ref">JOGNN, 2023</a>
+            </div>
+            <div class="research-card">
+              <h4>青少年身体活动行为改变</h4>
+              <p>获得三维打印身体活动数据模型的青少年将模型作为身份标识进行展示，与同伴比较，并报告了更高的运动习惯自我反思水平。物理实体成为行为认同的载体。</p>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9861837/" target="_blank" class="ref">IJERPH, 2023</a>
+            </div>
+            <div class="research-card">
+              <h4>回忆疗法</h4>
+              <p>对老年人个人具有意义的物品的三维打印复制品在回忆疗法中充当了有效的记忆线索。多感官参与提供了超越照片的提取优势。</p>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11620962/" target="_blank" class="ref">J. Applied Gerontology, 2024</a>
+            </div>
+            <div class="research-card">
+              <h4>融合课堂中的同伴互动</h4>
+              <p>三维打印作为合作学习工具，改善了残障学生与非残障学生之间的同伴沟通、知识保持和社会互动。学生表现出对三维打印课程形式的偏好。</p>
+              <span class="ref">Intl. J. Disability, Dev. & Education, 2024</span>
+            </div>
+            <div class="research-card">
+              <h4>儿童假肢与心理健康</h4>
+              <p>定制化的三维打印肌电假肢配合个性化外观设计，显著提升了儿童截肢者的心理健康水平。装置外观的个性化被评价为与机械功能同等重要。</p>
+              <span class="ref">Lecture Notes in Networks and Systems, 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第二步——三维建模软件<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>创建或编辑三维模型需要使用建模软件。推荐从<strong>Tinkercad</strong>入手：它完全在网页浏览器中运行，无需任何先前经验，采用直接操作方式（拖拽、缩放、组合）。这使得零基础的首次使用者也能制作出适合打印的模型。</p>
+          <div class="btn-row">
+            <a href="https://www.tinkercad.com/" target="_blank" class="btn primary" style="font-size:0.92rem; padding:0.65rem 1.6rem;">Tinkercad（推荐）</a>
+          </div>
+          <p style="margin:0.7rem 0 0.4rem; font-size:0.83rem; color:var(--text-dim);">其他平台，各自适用不同的建模范式：</p>
+          <div class="btn-row">
+            <a href="https://makerworld.com.cn/zh" target="_blank" class="btn">MakerWorld</a>
+            <a href="https://www.freecad.org/downloads.php?lang=zh_CN" target="_blank" class="btn">FreeCAD</a>
+            <a href="https://openscad.org/" target="_blank" class="btn">OpenSCAD</a>
+            <a href="https://3d.hunyuan.tencent.com/" target="_blank" class="btn">Hunyuan3D</a>
+          </div>
+          <p class="note">FreeCAD与OpenSCAD为参数化建模工具（通过约束和脚本定义几何形状）。Hunyuan3D利用深度学习从文字或图像生成三维模型。MakerWorld是分享和改编可打印模型的社区平台。对于本工作坊的大多数参与者，Tinkercad是从构想到可打印文件的最直接路径。</p>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第三步——三维打印工作流程<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>打印三维模型需要两个组成部分：打印机硬件以及将模型转换为机器指令的切片软件。</p>
+          <div style="margin-bottom:0.8rem;">
+            <a href="/assets/files/JGAurora-A6-Manual.pdf" class="btn download" download>JGAurora A6 打印机手册（PDF）</a>
+            <p class="note">JGAurora A6是浙江大学心理与行为科学系配备的熔融沉积成型打印机。本文档说明其操作方法和规格参数。使用其他型号打印机的用户应查阅相应设备的说明文档；此处描述的通用工作流程——模型准备、切片、打印——适用于所有FDM打印机。</p>
+          </div>
+          <div style="margin-top:0.8rem;">
+            <a href="https://ultimaker.com/software/ultimaker-cura/" target="_blank" class="btn">Ultimaker Cura——切片软件</a>
+            <p class="note">Cura将三维模型（STL、OBJ或3MF格式）转换为G代码——控制打印机运动、温度和挤出的底层指令集。它提供对层高、填充密度、支撑结构和打印速度的控制。尽管软件名中包含"Ultimaker"，Cura与大多数FDM打印机兼容。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bridge">
+        <div class="bridge-label">从第三部分到第四部分</div>
+        三维打印将解剖模型带入物理空间，使其可被触摸、标注和共享。但三维技术同样可以沿相反方向运作：不是将数字对象物质化，而是使参与者沉浸在完全由计算机构建的环境中。虚拟现实和增强现实将之前各节所论述的逻辑——空间理解、数字建模、实时交互——延伸至实验心理学领域，使环境变量能够以物理实验室无法达到的精度加以控制。
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 第四部分 ==================== -->
+  <div class="part" onclick="togglePart(this)">
+    <div class="part-header">
+      <h2><span class="part-number">第四部分</span> 三维空间中的实验——虚拟现实与增强现实技术</h2>
+      <span class="part-arrow">▶</span>
+    </div>
+    <div class="part-body" onclick="event.stopPropagation()">
+      <p class="part-desc">虚拟现实使研究者能够构建完全受控的三维实验环境。增强现实则将数字信息叠加到物理世界之上。这两类技术将之前各节所介绍的原则——空间表征、数字建模和实时三维交互——延伸至心理学实验的领域。</p>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>空间导航与情景记忆<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>虚拟现实已成为研究人类空间导航的标准方法。参与者可以置身于大尺度虚拟环境中——城市街区、放射状迷宫、自然景观——同时以毫秒级精度记录其路径、注视和生理反应。实验者控制每一个地标、空间的几何结构以及远端线索的可获得性，达到了真实世界导航研究中无法实现的实验控制水平。这一方法在人类网格细胞样表征的发现（Doeller et al., 2010）以及导航策略年龄相关变化的识别中起到了关键作用。</p>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>沉浸式环境中的社会认知<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>虚拟现实能够系统性地操控社交线索——注视方向、人际距离、面部表情和虚拟化身外观——同时将实验混淆因素降至最低。这一方法已被应用于社交焦虑研究，参与者与行为可参数化调节的虚拟观众或对话伙伴进行互动。它也被用于探究个人空间调节和内隐偏见背后的知觉过程等议题，实验者可在其中独立操控肤色、面部形态和行为举止等变量。</p>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>暴露疗法与临床应用<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>基于虚拟现实的暴露疗法是最经临床验证的沉浸式技术应用之一。随机对照试验已证实其对特定恐惧症（恐高、飞行恐惧、蜘蛛恐惧）、创伤后应激障碍和社交焦虑障碍的疗效。其关键优势在于剂量控制：治疗师能够以现实中无法达到的精度调节恐惧刺激的强度，且若痛苦超出可控阈值，可以立即终止治疗。元分析显示其效应量与实地暴露相当，部分人群的脱落率更低。</p>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>增强现实的行为标注与增强感知<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>增强现实为心理学实验提供了与虚拟现实不同的可能性。由于增强现实将数字内容叠加到参与者的真实环境中，它特别适合生态效度至关重要的研究：社交互动的实时标注、物理对象上叠加的增强感知线索，以及自然情境中的情境感知提示。当前研究正在探索基于增强现实的干预措施，以改善偏侧空间忽视症和帕金森病患者的症状——投射至患者视野中的视觉线索能够实时调节步态参数。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <a href="https://consciousness-observers.github.io">Consciousness Observers (CO-LAB)</a> · 工作坊
+  </footer>
+</div>
+
+<script>
+function togglePart(el) { el.classList.toggle('open'); }
+function toggleStep(el, event) { event.stopPropagation(); el.classList.toggle('open'); }
+</script>
+</body>
+</html>
