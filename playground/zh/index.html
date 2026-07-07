@@ -448,37 +448,148 @@
   <!-- ==================== 第四部分 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
-      <h2><span class="part-number">第四部分</span> 三维空间中的实验——虚拟现实与增强现实技术</h2>
+      <h2><span class="part-number">第四部分</span> 三维空间中的实验——虚拟现实技术入门</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">虚拟现实使研究者能够构建完全受控的三维实验环境。增强现实则将数字信息叠加到物理世界之上。这两类技术将之前各节所介绍的原则——空间表征、数字建模和实时三维交互——延伸至心理学实验的领域。</p>
+      <p class="part-desc">虚拟现实（VR）头戴式显示器使研究者能够构建完全受控的三维实验环境。本节从方法论决策出发，逐步介绍VR开发的工作流程、编程工具与硬件选择，以及VR在心理学研究中的主要应用方向。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>空间导航与情景记忆<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第一步——研究中为什么需要VR<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>虚拟现实已成为研究人类空间导航的标准方法。参与者可以置身于大尺度虚拟环境中——城市街区、放射状迷宫、自然景观——同时以毫秒级精度记录其路径、注视和生理反应。实验者控制每一个地标、空间的几何结构以及远端线索的可获得性，达到了真实世界导航研究中无法实现的实验控制水平。这一方法在人类网格细胞样表征的发现（Doeller et al., 2010）以及导航策略年龄相关变化的识别中起到了关键作用。</p>
+          <p>VR相较于传统二维显示屏和真实环境，具有以下关键优势：</p>
+          <ul>
+            <li><strong>追踪自身运动：</strong>头戴式显示器可实时追踪头部位置与朝向，提供自然的视角变化。这是二维屏幕无法实现的生态效度增益。</li>
+            <li><strong>引入深度线索：</strong>双目视差和运动视差共同提供真实的深度感知，使空间认知研究能够考察三维场景中的导航与距离判断。</li>
+            <li><strong>创造现实中不可能出现的环境：</strong>研究者可构建现实中不存在或难以复现的场景——变形空间、矛盾几何、虚拟社交化身——从而检验在物理世界中无法操作的假设。</li>
+            <li><strong>在绝对安全的前提下体验危险环境：</strong>恐高、火灾逃生、交通事故情境等可在完全安全的情况下呈现，为临床干预和风险决策研究提供不可替代的实验平台。</li>
+          </ul>
+          <p style="margin-top:0.7rem;"><strong>VR的局限：</strong></p>
+          <ul>
+            <li>晕动症（cybersickness）：视觉-前庭冲突导致的恶心和眩晕，个体差异显著</li>
+            <li>头戴设备重量与佩戴不适，长时间实验存在依从性挑战</li>
+            <li>空间压缩（distance compression）：VR中感知到的距离系统性地短于真实物理距离</li>
+            <li>无法在fMRI扫描仪中使用（电磁兼容问题）</li>
+          </ul>
+          <p style="margin-top:0.7rem;">通常，研究者在VR带来的优势大于上述局限的情况下选择使用VR。这一条件在偏应用的研究（空间导航、社会互动、暴露治疗）中尤其容易满足。</p>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>沉浸式环境中的社会认知<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第二步——VR程序开发流程<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>虚拟现实能够系统性地操控社交线索——注视方向、人际距离、面部表情和虚拟化身外观——同时将实验混淆因素降至最低。这一方法已被应用于社交焦虑研究，参与者与行为可参数化调节的虚拟观众或对话伙伴进行互动。它也被用于探究个人空间调节和内隐偏见背后的知觉过程等议题。</p>
+          <p>一个完整的VR程序从构想到运行，通常经历四个阶段：</p>
+          <p style="margin-top:0.5rem;"><strong>1. 搭建场景</strong></p>
+          <ul>
+            <li><strong>路径A——自己建模：</strong>使用Blender、3ds Max、Maya等三维建模软件从零创建场景与物体。Blender免费开源，推荐作为入门工具。</li>
+            <li><strong>路径B——利用现成资产：</strong>Unity Asset Store、Sketchfab等平台提供大量可直接使用的三维模型和场景素材，显著缩短开发周期。</li>
+            <li><strong>白模测试（greyboxing）：</strong>在精细模型完成之前，使用简单的替代几何体（立方体、圆柱体）搭建场景的基本布局，优先验证交互逻辑和空间尺度的合理性。</li>
+          </ul>
+          <p style="margin-top:0.5rem;"><strong>2. 添加交互逻辑</strong></p>
+          <p>VR交互的核心范式是<strong>面向对象编程</strong>：将脚本（Script）挂载在场景中的物体上，定义手柄操作与物体响应之间的关系。三种最基本的交互模式：</p>
+          <ul>
+            <li><strong>射线交互（Ray Interaction）：</strong>手柄发出一道虚拟射线，指向远处物体并与之交互。适用于远距离选择和菜单操作。</li>
+            <li><strong>抓取交互（Grab Interaction）：</strong>手柄靠近物体，按下按键抓取并操控。适用于近身物体的拿起、移动和旋转。</li>
+            <li><strong>碰撞交互（Collision）：</strong>手柄或头部进入某个碰撞盒（Collider），触发预定义的逻辑事件。适用于区域进入/离开判断和空间触发。</li>
+          </ul>
+          <p style="margin-top:0.5rem;"><strong>3. 连接设备</strong></p>
+          <p>以Unity + HTC VIVE为例：</p>
+          <ul>
+            <li>启动VR硬件（头戴显示器、手柄、定位基站）</li>
+            <li>启动SteamVR运行环境</li>
+            <li>在Unity项目中启用OpenXR标准——这是一个跨设备的通用VR接口标准，使得同一程序能够兼容HTC VIVE、Meta Quest、Pico等多种设备</li>
+            <li>在场景中放置XR Origin预设体——该预设体已打包好VR设备所需的"眼睛"（Camera）和"手"（手柄控制器），开发者可直接在此基础上构建交互</li>
+          </ul>
+          <p style="margin-top:0.5rem;"><strong>4. 打包发布</strong></p>
+          <ul>
+            <li>PC VR生成可执行文件（.exe），也可不打包直接在Unity编辑器中运行</li>
+            <li>一体机（Meta Quest、Pico等）生成APK文件进行部署</li>
+          </ul>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>暴露疗法与临床应用<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第三步——编程工具与三维建模软件<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>基于虚拟现实的暴露疗法是最经临床验证的沉浸式技术应用之一。随机对照试验已证实其对特定恐惧症（恐高、飞行恐惧、蜘蛛恐惧）、创伤后应激障碍和社交焦虑障碍的疗效。其关键优势在于剂量控制：治疗师能够以现实中无法达到的精度调节恐惧刺激的强度，且若痛苦超出可控阈值，可以立即终止治疗。元分析显示其效应量与实地暴露相当，部分人群的脱落率更低。</p>
+          <p><strong>VR开发引擎</strong></p>
+          <div class="tool-grid">
+            <div class="tool-card">
+              <strong>Unity</strong>
+              <div class="desc">目前VR开发中使用最广泛的引擎。功能全面，资源丰富（Asset Store），社区支持成熟。使用C#语言编程。推荐作为入门首选。</div>
+              <a href="https://unity.com/" target="_blank">unity.com</a>
+            </div>
+            <div class="tool-card">
+              <strong>Unreal Engine</strong>
+              <div class="desc">以蓝图式可视化编程为特色，图形渲染能力突出。对电脑配置要求较高，适合追求高画质渲染的项目。</div>
+              <a href="https://www.unrealengine.com/" target="_blank">unrealengine.com</a>
+            </div>
+            <div class="tool-card">
+              <strong>Vizard</strong>
+              <div class="desc">专为科研设计的轻量化VR开发平台，Python编程接口，对研究者较为友好。非免费软件，需要购买许可证。</div>
+              <a href="https://www.worldviz.com/vizard" target="_blank">worldviz.com</a>
+            </div>
+            <div class="tool-card">
+              <strong>Godot</strong>
+              <div class="desc">完全开源的游戏引擎，轻量且免费。支持VR开发，但文档和教程资源相对不够齐全。</div>
+              <a href="https://godotengine.org/" target="_blank">godotengine.org</a>
+            </div>
+          </div>
+          <p style="margin-top:0.8rem;"><strong>三维建模工具</strong></p>
+          <div class="btn-row">
+            <a href="https://www.blender.org/" target="_blank" class="btn primary">Blender（免费，推荐）</a>
+            <a href="https://www.autodesk.com/products/3ds-max/" target="_blank" class="btn">3ds Max</a>
+            <a href="https://www.autodesk.com/products/maya/" target="_blank" class="btn">Maya</a>
+            <a href="https://www.maxon.net/cinema-4d" target="_blank" class="btn">Cinema 4D</a>
+            <a href="https://www.autodesk.com/products/autocad/" target="_blank" class="btn">AutoCAD</a>
+            <a href="https://unity.com/features/probuilder" target="_blank" class="btn">ProBuilder (Unity)</a>
+          </div>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>增强现实的行为标注与增强感知<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第四步——VR硬件设备<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>增强现实为心理学实验提供了与虚拟现实不同的可能性。由于增强现实将数字内容叠加到参与者的真实环境中，它特别适合生态效度至关重要的研究：社交互动的实时标注、物理对象上叠加的增强感知线索，以及自然情境中的情境感知提示。当前研究正在探索基于增强现实的干预措施，以改善偏侧空间忽视症和帕金森病患者的症状——投射至患者视野中的视觉线索能够实时调节步态参数。</p>
+          <p><strong>浙江大学心理系可用设备</strong></p>
+          <ul>
+            <li><strong>HTC VIVE（一代）：</strong>位于紫金港校区东四教学楼。单眼分辨率1080×1200，视场角110°。适合基础的VR心理实验开发和测试。</li>
+            <li><strong>HTC VIVE Pro 2：</strong>位于紫金港校区系楼。单眼分辨率2448×2448，视场角120°。高分辨率适合需要精细视觉细节的实验范式。</li>
+          </ul>
+          <p style="margin-top:0.7rem;"><strong>PC VR与一体机的对比</strong></p>
+          <div class="tool-grid">
+            <div class="tool-card">
+              <strong>PC VR（HTC VIVE、Varjo XR-4等）</strong>
+              <div class="desc">依赖电脑显卡渲染图像，性能强大。使用外部定位基站实现高精度追踪。适合需要高画质、复杂计算的实验。</div>
+            </div>
+            <div class="tool-card">
+              <strong>一体机（Meta Quest、Pico、Vision Pro等）</strong>
+              <div class="desc">采用inside-out定位：依靠头盔自身的摄像头进行主动空间定位，无需外部基站，可随地部署。但所有硬件集成在头盔中，性能受限，开发流程相对复杂。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第五步——VR在心理学研究中的应用方向<span class="step-arrow">▶</span></div>
+        <div class="step-body">
+          <p>VR在心理学研究中已有若干成熟的应用方向，以下为代表性领域和关键发现。</p>
+          <div class="research-grid">
+            <div class="research-card">
+              <h4>空间导航与情景记忆</h4>
+              <p>VR已成为研究人类空间导航的标准范式。参与者在虚拟城市、放射状迷宫和自然景观中导航，实验者以毫秒精度控制每一个地标和空间线索。该方法在人类网格细胞样表征的发现（Doeller et al., 2010, Nature）和导航策略的年龄差异研究中发挥了关键作用。</p>
+            </div>
+            <div class="research-card">
+              <h4>社会认知与沉浸式社交</h4>
+              <p>VR可系统性操控社交线索——注视方向、人际距离、面部表情和虚拟化身外观——同时严格控制混淆变量。该方法已应用于社交焦虑研究和内隐社会偏见研究。</p>
+            </div>
+            <div class="research-card">
+              <h4>暴露疗法</h4>
+              <p>VR暴露疗法是沉浸式技术中最成熟的临床应用之一。RCT证据支持其对恐高症、飞行恐惧、蜘蛛恐惧、PTSD和社交焦虑的疗效。剂量可控是关键优势——治疗师可在任何时刻终止暴露。</p>
+            </div>
+            <div class="research-card">
+              <h4>风险决策与安全模拟</h4>
+              <p>VR可以在零风险环境中呈现高度危险的情境（火灾逃生、交通事故、极端天气），用于研究紧急情况下的决策过程。这在现实实验中因明显伦理原因无法实现。</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
