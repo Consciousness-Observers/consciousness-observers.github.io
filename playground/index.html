@@ -253,58 +253,143 @@
   <!-- ==================== PART 2 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
-      <h2><span class="part-number">Part 2</span> 3D Brain Anatomy — Building Spatial Understanding</h2>
+      <h2><span class="part-number">Part 2</span> 3D Brain Anatomy — Interactive Exploration</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">Neuroimaging papers routinely reference brain regions by anatomical or functional labels. Navigating this literature requires more than name recognition — it demands a spatial representation of where structures sit relative to one another in three dimensions.</p>
+      <p class="part-desc">Before diving into a specific brain structure, build a three-dimensional understanding of its location using two complementary atlases. This workflow guides you through spatial relationships and anatomical section navigation.</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 1 — How Brain Regions Are Defined & Labeled<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 1 — Understand Spatial Relationships (BrainFacts 3D Brain)<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>Multiple parcellation schemes exist, each dividing the brain according to different principles: cytoarchitecture (Brodmann areas), gross anatomy (gyral and sulcal landmarks), or functional connectivity. These schemes do not always align — the same anatomical location can carry different labels across atlases.</p>
-          <p><strong>Commonly used parcellation atlases:</strong></p>
+          <p>Use <a href="https://www.brainfacts.org/3d-brain#intro=false&focus=Brain-cerebellum&zoom=false" target="_blank">BrainFacts 3D Brain</a> to explore the <strong>relative position and neighboring structures</strong> of your target region. Best for answering:</p>
           <ul>
-            <li><strong>AAL</strong> — 116 regions (90 cortical, 26 cerebellar). The most frequently cited parcellation in the fMRI literature.</li>
-            <li><strong>Harvard-Oxford</strong> — a probabilistic atlas distributed with FSL. Each voxel carries a probability of belonging to a given structure.</li>
-            <li><strong>Desikan-Killiany</strong> — 68 cortical regions (34 per hemisphere). The default FreeSurfer recon-all output.</li>
-            <li><strong>HCP-MMP 1.0</strong> — 180 areas per hemisphere, derived from multi-modal Human Connectome Project data.</li>
+            <li>Where is this structure located in the whole brain?</li>
+            <li>What structures surround it?</li>
+            <li>How does it relate spatially to nearby regions?</li>
           </ul>
+          <p><strong>How to use:</strong></p>
+          <ol>
+            <li>Search and select the target structure</li>
+            <li>Rotate the brain to observe it from different angles</li>
+            <li>Use the separation/hide function to reveal relationships between structures</li>
+            <li>Explore the structures surrounding your target region</li>
+          </ol>
+          <p style="margin-top:0.5rem;">Focus on: <strong>"What is next to this structure?"</strong></p>
+          <a href="https://www.brainfacts.org/3d-brain#intro=false&focus=Brain-cerebellum&zoom=false" target="_blank" class="btn primary">Open BrainFacts 3D Brain</a>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 2 — Interactive Tools for Learning 3D Brain Anatomy<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>Step 2 — Locate in Anatomical Sections (Neurotorium Brain Atlas)<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>Traditional neuroanatomy instruction relies on two-dimensional representations. These interactive atlases allow direct exploration through rotation, depth peeling, and selective highlighting:</p>
-          <div class="tool-grid">
-            <div class="tool-card">
-              <strong>3D Brain (Cold Spring Harbor Lab)</strong>
-              <div class="desc">29 labeled interactive structures with functional summaries. Browser-based, no installation.</div>
-              <a href="https://www.g2conline.org/3dbrain/" target="_blank">g2conline.org/3dbrain</a>
-            </div>
-            <div class="tool-card">
-              <strong>BrainFacts 3D Brain</strong>
-              <div class="desc">Interactive atlas with detailed structural descriptions and associated clinical conditions.</div>
-              <a href="https://www.brainfacts.org/3d-brain" target="_blank">brainfacts.org/3d-brain</a>
-            </div>
-            <div class="tool-card">
-              <strong>MSU Human Brain Atlas</strong>
-              <div class="desc">High-resolution histological sections correlated with MRI. Useful for understanding cytoarchitectonic signal variation.</div>
-              <a href="https://brains.anatomy.msu.edu/brains/human/index.html" target="_blank">brains.anatomy.msu.edu</a>
-            </div>
-            <div class="tool-card">
-              <strong>Neuroglancer</strong>
-              <div class="desc">WebGL-based viewer for petabyte-scale volumetric data. Browse electron microscopy volumes at synaptic resolution.</div>
-              <a href="https://neuroglancer-demo.appspot.com/" target="_blank">neuroglancer-demo.appspot.com</a>
-            </div>
+          <p>Use <a href="https://neurotorium.org/tool/brain-atlas/" target="_blank">Neurotorium Brain Atlas</a> to connect the 3D structure with traditional anatomical sections. Best for answering:</p>
+          <ul>
+            <li>In which anatomical plane is this structure easiest to identify?</li>
+            <li>Is it located medially or laterally? Superficial or deep?</li>
+            <li>Which section best represents its position?</li>
+          </ul>
+          <p><strong>How to use:</strong></p>
+          <ol>
+            <li>Search for your target structure</li>
+            <li>Switch between sagittal, coronal, and horizontal/axial views</li>
+            <li>Compare the appearance of the structure across different sections</li>
+            <li>Select the view(s) that best demonstrate its anatomical location</li>
+          </ol>
+          <p style="margin-top:0.5rem;">Focus on: <strong>"Where exactly is this structure in a brain slice?"</strong></p>
+          <a href="https://neurotorium.org/tool/brain-atlas/" target="_blank" class="btn primary">Open Neurotorium Brain Atlas</a>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>Step 3 — Choose a Structure to Explore<span class="step-arrow">▶</span></div>
+        <div class="step-body" style="padding-bottom:0.5rem;">
+          <p>After completing the two-step workflow above, select a target structure and investigate it using both atlases. Each option includes guiding questions and exploration prompts.</p>
+          <div style="margin:0.8rem 0;">
+            <label for="option-select-en" style="color:#ccd0d8; font-weight:600;">Select a target:</label>
+            <select id="option-select-en" onchange="showOption('en', this.value)" style="margin-left:0.5rem; padding:0.55rem 1rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--text); font-size:0.92rem; cursor:pointer;">
+              <option value="">—— Choose a structure ——</option>
+              <option value="A">Option A — Hippocampus</option>
+              <option value="B">Option B — Amygdala</option>
+              <option value="C">Option C — Thalamus</option>
+              <option value="D">Option D — Basal Ganglia</option>
+              <option value="E">Option E — Cerebellum</option>
+              <option value="F">Option F — Visual Cortex</option>
+            </select>
+          </div>
+
+          <div id="opt-en-A" class="option-content" style="display:none;">
+            <p><strong>Hippocampus</strong></p>
+            <p style="color:var(--text-soft);">A classic structure involved in memory, navigation, and spatial cognition.</p>
+            <p style="margin-top:0.5rem;"><strong>Find:</strong> hippocampus and surrounding structures</p>
+            <p style="margin-top:0.5rem;"><strong>Think about:</strong></p>
+            <ul>
+              <li>Which view (sagittal / coronal / horizontal) best reveals its location?</li>
+              <li>How does the relationship between hippocampus and surrounding structures change across different views?</li>
+            </ul>
+            <p class="note">📸 Take screenshots from the views that best describe its 3D position.</p>
+          </div>
+          <div id="opt-en-B" class="option-content" style="display:none;">
+            <p><strong>Amygdala</strong></p>
+            <p style="color:var(--text-soft);">A small deep structure involved in emotion processing, threat detection, and memory modulation.</p>
+            <p style="margin-top:0.5rem;"><strong>Find:</strong> amygdala and surrounding structures</p>
+            <p style="margin-top:0.5rem;"><strong>Think about:</strong></p>
+            <ul>
+              <li>Why is the amygdala difficult to identify from the external surface of the brain?</li>
+              <li>Which view makes its relationship with the hippocampus easiest to understand?</li>
+            </ul>
+            <p class="note">📸 Take screenshots from the views that best describe its location.</p>
+          </div>
+          <div id="opt-en-C" class="option-content" style="display:none;">
+            <p><strong>Thalamus</strong></p>
+            <p style="color:var(--text-soft);">A central relay structure connecting multiple cortical and subcortical systems.</p>
+            <p style="margin-top:0.5rem;"><strong>Find:</strong> thalamus and surrounding structures</p>
+            <p style="margin-top:0.5rem;"><strong>Think about:</strong></p>
+            <ul>
+              <li>Why is the thalamus a useful anatomical landmark?</li>
+              <li>Which view best shows its central position inside the brain?</li>
+            </ul>
+            <p class="note">📸 Take screenshots from the views that best describe its spatial relationship.</p>
+          </div>
+          <div id="opt-en-D" class="option-content" style="display:none;">
+            <p><strong>Basal Ganglia</strong></p>
+            <p style="color:var(--text-soft);">A group of interconnected subcortical structures involved in movement, learning, and reward.</p>
+            <p style="margin-top:0.5rem;"><strong>Find:</strong> caudate nucleus, putamen, globus pallidus, and surrounding structures</p>
+            <p style="margin-top:0.5rem;"><strong>Think about:</strong></p>
+            <ul>
+              <li>Why is the basal ganglia considered a circuit rather than a single structure?</li>
+              <li>Which view helps distinguish different components of the basal ganglia?</li>
+            </ul>
+            <p class="note">📸 Take screenshots showing the spatial organization of this system.</p>
+          </div>
+          <div id="opt-en-E" class="option-content" style="display:none;">
+            <p><strong>Cerebellum</strong></p>
+            <p style="color:var(--text-soft);">A highly folded structure important for motor coordination, learning, and prediction.</p>
+            <p style="margin-top:0.5rem;"><strong>Find:</strong> cerebellar hemispheres, vermis, cerebellar peduncles, and surrounding structures</p>
+            <p style="margin-top:0.5rem;"><strong>Think about:</strong></p>
+            <ul>
+              <li>Why is the cerebellum difficult to understand using only 2D slices?</li>
+              <li>Which view best demonstrates its folded organization?</li>
+            </ul>
+            <p class="note">📸 Take screenshots from the views that best capture its 3D structure.</p>
+          </div>
+          <div id="opt-en-F" class="option-content" style="display:none;">
+            <p><strong>Visual Cortex</strong></p>
+            <p style="color:var(--text-soft);">A well-studied example where anatomical location and functional organization are closely connected.</p>
+            <p style="margin-top:0.5rem;"><strong>Find:</strong> occipital lobe, calcarine sulcus, primary visual cortex (V1), and surrounding structures</p>
+            <p style="margin-top:0.5rem;"><strong>Think about:</strong></p>
+            <ul>
+              <li>Does an anatomical region always correspond to a single functional area?</li>
+              <li>Which view best shows the relationship between visual cortex and surrounding structures?</li>
+            </ul>
+            <p class="note">📸 Take screenshots from the views that best describe its anatomical location.</p>
           </div>
         </div>
       </div>
 
       <div class="bridge">
         <div class="bridge-label">From Part 2 to Part 3</div>
-        Three-dimensional atlases build spatial knowledge, but knowledge remains abstract until tested through production. When a researcher segments a brain region from data and converts it into a physical object — checking whether the printed model matches anatomical expectation — learning becomes self-correcting. The transition from digital exploration to physical fabrication closes a feedback loop. The next section introduces the tools for this transition.
+        Three-dimensional atlases build spatial knowledge, but knowledge remains abstract until tested through production. When a researcher segments a brain region from data and converts it into a physical object — checking whether the printed model matches anatomical expectation — learning becomes self-correcting. The next section introduces the tools for this transition.
       </div>
     </div>
   </div>
@@ -515,6 +600,10 @@
 <script>
 function togglePart(el) { el.classList.toggle('open'); }
 function toggleStep(el, event) { event.stopPropagation(); el.classList.toggle('open'); }
+function showOption(lang, value) {
+  document.querySelectorAll('.option-content').forEach(function(el){ el.style.display='none'; });
+  if (value) { var opt = document.getElementById('opt-'+lang+'-'+value); if (opt) opt.style.display='block'; }
+}
 document.getElementById('toydata-btn').addEventListener('click', function(e){ e.stopPropagation(); e.preventDefault(); });
 </script>
 </body>
