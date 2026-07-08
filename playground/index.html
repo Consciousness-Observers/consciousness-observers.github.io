@@ -73,6 +73,11 @@
   .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--text-dim); }
   .note { font-size: 0.82rem; color: var(--text-dim); margin-top: 0.35rem; }
   .pipeline { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.85rem; color: var(--text-soft); background: rgba(0,0,0,0.3); padding: 0.7rem 0.9rem; border-radius: 5px; overflow-x: auto; margin: 0.5rem 0; }
+  .guide-img { cursor: pointer; transition: opacity 0.2s; }
+  .guide-img:hover { opacity: 0.85; }
+  .img-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); z-index: 9999; justify-content: center; align-items: center; cursor: pointer; }
+  .img-overlay.open { display: flex; }
+  .img-overlay img { max-width: 92vw; max-height: 92vh; border-radius: 8px; }
 </style>
 </head>
 <body>
@@ -407,15 +412,15 @@
           </ul>
           <div style="margin:0.8rem 0; display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:flex-start;">
             <div style="flex:1; min-width:140px; max-width:220px; text-align:center;">
-              <img src="/playground/img/ebrains-1-search.jpg" alt="Search region" style="width:100%; border-radius:6px; border:1px solid var(--border);">
+              <img src="/playground/img/ebrains-1-search.jpg" alt="Search region" class="guide-img" onclick="event.stopPropagation(); var o=document.getElementById('img-overlay-en'); o.querySelector('img').src=this.src; o.classList.add('open');" style="width:100%; border-radius:6px; border:1px solid var(--border);">
               <p style="font-size:0.78rem; color:var(--text-dim); margin-top:0.25rem;">① Enter target region</p>
             </div>
             <div style="flex:1; min-width:140px; max-width:220px; text-align:center;">
-              <img src="/playground/img/ebrains-2-features.jpg" alt="Click Features" style="width:100%; border-radius:6px; border:1px solid var(--border);">
+              <img src="/playground/img/ebrains-2-features.jpg" alt="Click Features" class="guide-img" onclick="event.stopPropagation(); var o=document.getElementById('img-overlay-en'); o.querySelector('img').src=this.src; o.classList.add('open');" style="width:100%; border-radius:6px; border:1px solid var(--border);">
               <p style="font-size:0.78rem; color:var(--text-dim); margin-top:0.25rem;">② Click "Features"</p>
             </div>
             <div style="flex:1; min-width:140px; max-width:220px; text-align:center;">
-              <img src="/playground/img/ebrains-3-select.jpg" alt="Select and view" style="width:100%; border-radius:6px; border:1px solid var(--border);">
+              <img src="/playground/img/ebrains-3-select.jpg" alt="Select and view" class="guide-img" onclick="event.stopPropagation(); var o=document.getElementById('img-overlay-en'); o.querySelector('img').src=this.src; o.classList.add('open');" style="width:100%; border-radius:6px; border:1px solid var(--border);">
               <p style="font-size:0.78rem; color:var(--text-dim); margin-top:0.25rem;">③ Select category & view data</p>
             </div>
           </div>
@@ -626,6 +631,10 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="img-overlay" id="img-overlay-en" onclick="this.classList.remove('open')">
+    <img src="" alt="">
   </div>
 
   <footer class="footer">
