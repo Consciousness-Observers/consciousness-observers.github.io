@@ -20,6 +20,7 @@ _styles: >
 **Advisors:** Yuzheng Hu, Qinmei Xu<br>
 **Instructors:** Zihao Wang (Psychology), Yixin Xu (Life Sciences), Shijie Zhang (Physics)<br>
 **Location:** Department of Psychology and Behavioral Sciences, Zhejiang University<br>
+**Acknowledgments:** Zhiwei Ye (3D printing), Dr. Ruoyu Lu (VR)<br>
 <span class="host-logo-light"><img src="/assets/img/zju-psych-light.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span><span class="host-logo-dark"><img src="/assets/img/zju-psych-dark.png" alt="ZJU Psychology" style="height: 2.8rem; vertical-align: middle; margin-top: 0.4rem;"></span>
 
 <div style="margin: 1.2rem 0;">
