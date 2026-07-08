@@ -32,10 +32,9 @@ _styles: >
 
 A full-day, hands-on workshop tracing the brain from evolutionary origins to 3D-printed model. Participants explore interactive brain atlases, work with real MRI data, perform virtual dissection, and produce a physical 3D-printed brain model — bridging neuroscience, imaging, and digital fabrication in a single integrated arc.
 
-The accompanying interactive tutorial covers five modules:
+The accompanying interactive tutorial covers four modules:
 
 1. **3D Imaging** — MRI fundamentals, data acquisition, analysis tools, and the pipeline from DICOM to 3D brain model
-2. **3D Brain Anatomy** — interactive atlas exploration with guided problem sets for six brain regions
-3. **Multimodal Exploration** — understanding a brain region across anatomical, connectivity, and molecular dimensions with EBRAINS
-4. **3D Modeling & Printing** — research applications, modeling software, and the print workflow
-5. **VR Technology** — from Unity setup to research-ready experiment frameworks and hardware
+2. **3D Brain Anatomy** — interactive atlas exploration with guided problem sets, followed by multimodal investigation with EBRAINS
+3. **3D Modeling & Printing** — research applications, modeling software, and the print workflow
+4. **VR Technology** — from Unity setup to research-ready experiment frameworks and hardware
