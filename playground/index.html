@@ -85,16 +85,16 @@
   </header>
 
   <!-- ==================== PART 1 ==================== -->
-  <div class="part" onclick="togglePart(this)">
-    <div class="part-header">
+  <div class="part">
+    <div class="part-header" onclick="togglePart(this.parentElement)">
       <h2><span class="part-number">Part 1</span> 3D Imaging — From MRI Principles to Data Processing</h2>
       <span class="part-arrow">▶</span>
     </div>
-    <div class="part-body" onclick="event.stopPropagation()">
+    <div class="part-body">
       <p class="part-desc">Understanding the basic principles and appropriate use of functional MRI is the first step in designing a brain imaging study. This section covers the full workflow: deciding whether to use fMRI, scheduling a scanner, acquiring data, and processing it.</p>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 1 — MRI Fundamentals & Study Preparation<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 1 — MRI Fundamentals & Study Preparation<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>How fMRI works</strong></p>
           <p>fMRI measures the <strong>BOLD (Blood Oxygenation Level Dependent)</strong> signal — an indirect, vascular proxy for neural activity. When neurons fire, local blood flow increases, altering the ratio of oxygenated to deoxygenated hemoglobin. Deoxyhemoglobin is paramagnetic and reduces the MR signal; its washout causes the signal to rise. The BOLD response peaks roughly 5–10 seconds after neural activity, lagging by 1–2 seconds. fMRI therefore measures a hemodynamic response coupled to neural activity, not neural activity itself.</p>
@@ -142,8 +142,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 2 — Obtain Data<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 2 — Obtain Data<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>Standard brain templates</strong> provide a common coordinate system for comparing brains across studies and individuals:</p>
           <ul>
@@ -169,8 +169,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 3 — MRI Analysis Tools<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 3 — MRI Analysis Tools<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>After acquiring data, you need analysis software. These are the most widely used tools:</p>
           <div class="tool-grid">
@@ -198,8 +198,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 4 — From MRI to 3D Brain Model<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 4 — From MRI to 3D Brain Model<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>The standard pipeline for converting a structural MRI scan into a 3D-printable brain model:</p>
           <p class="pipeline">DICOM → NIfTI (dcm2niix) → Segmentation (FreeSurfer recon-all) → Surface Extraction → Mesh Conversion (STL) → Mesh Cleanup (MeshLab/Blender) → 3D Print</p>
@@ -251,16 +251,16 @@
   </div>
 
   <!-- ==================== PART 2 ==================== -->
-  <div class="part" onclick="togglePart(this)">
-    <div class="part-header">
+  <div class="part">
+    <div class="part-header" onclick="togglePart(this.parentElement)">
       <h2><span class="part-number">Part 2</span> 3D Brain Anatomy — Interactive Exploration</h2>
       <span class="part-arrow">▶</span>
     </div>
-    <div class="part-body" onclick="event.stopPropagation()">
+    <div class="part-body">
       <p class="part-desc">Before diving into a specific brain structure, build a three-dimensional understanding of its location using two complementary atlases. This workflow guides you through spatial relationships and anatomical section navigation.</p>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 1 — Understand Spatial Relationships (BrainFacts 3D Brain)<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 1 — Understand Spatial Relationships (BrainFacts 3D Brain)<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>Use <a href="https://www.brainfacts.org/3d-brain#intro=false&focus=Brain-cerebellum&zoom=false" target="_blank">BrainFacts 3D Brain</a> to explore the <strong>relative position and neighboring structures</strong> of your target region. Best for answering:</p>
           <ul>
@@ -280,8 +280,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 2 — Locate in Anatomical Sections (Neurotorium Brain Atlas)<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 2 — Locate in Anatomical Sections (Neurotorium Brain Atlas)<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>Use <a href="https://neurotorium.org/tool/brain-atlas/" target="_blank">Neurotorium Brain Atlas</a> to connect the 3D structure with traditional anatomical sections. Best for answering:</p>
           <ul>
@@ -301,8 +301,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 3 — Choose a Structure to Explore<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 3 — Choose a Structure to Explore<span class="step-arrow">▶</span></div>
         <div class="step-body" style="padding-bottom:0.5rem;">
           <p>After completing the two-step workflow above, select a target structure and investigate it using both atlases. Each option includes guiding questions and exploration prompts.</p>
           <div style="margin:0.8rem 0;">
@@ -395,16 +395,16 @@
   </div>
 
   <!-- ==================== PART 3 ==================== -->
-  <div class="part" onclick="togglePart(this)">
-    <div class="part-header">
+  <div class="part">
+    <div class="part-header" onclick="togglePart(this.parentElement)">
       <h2><span class="part-number">Part 3</span> 3D Modeling &amp; Printing — From Digital Model to Physical Object</h2>
       <span class="part-arrow">▶</span>
     </div>
-    <div class="part-body" onclick="event.stopPropagation()">
+    <div class="part-body">
       <p class="part-desc">The digital brain models generated in Part 1, now anatomically understood through Part 2, can be materialized through 3D printing. This section surveys research applications and provides practical tools to get started.</p>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 1 — Research Applications of 3D Printing<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 1 — Research Applications of 3D Printing<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>3D printing has been applied across several research domains. Representative findings with accessible sources:</p>
           <div class="research-grid">
@@ -422,8 +422,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 2 — 3D Modeling Software<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 2 — 3D Modeling Software<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>Tinkercad</strong> runs in your browser, uses direct manipulation (drag, resize, group), and requires no prior experience — recommended as the starting point. Other tools, each with distinct strengths:</p>
           <div class="btn-row">
@@ -440,8 +440,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 3 — 3D Printing Workflow<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 3 — 3D Printing Workflow<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>Printing requires two components: the printer hardware and slicing software that translates your model into machine instructions.</p>
           <div style="margin:0.8rem 0;">
@@ -463,24 +463,24 @@
   </div>
 
   <!-- ==================== PART 4 ==================== -->
-  <div class="part" onclick="togglePart(this)">
-    <div class="part-header">
+  <div class="part">
+    <div class="part-header" onclick="togglePart(this.parentElement)">
       <h2><span class="part-number">Part 4</span> Experiments in 3D Space — A Practical Introduction to VR</h2>
       <span class="part-arrow">▶</span>
     </div>
-    <div class="part-body" onclick="event.stopPropagation()">
+    <div class="part-body">
       <p class="part-desc">Virtual reality (VR) head-mounted displays enable the construction of fully controlled three-dimensional experimental environments. This section provides a practical guide, from deciding whether VR is the right tool to building and running your first VR experiment.</p>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 1 — Why VR in Research<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 1 — Why VR in Research<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>Key advantages:</strong> real-time head tracking, binocular disparity for genuine depth perception, the ability to construct environments that do not exist in reality, and safe presentation of hazardous scenarios. When these benefits outweigh the limitations, VR is the appropriate method.</p>
           <p style="margin-top:0.6rem;"><strong>Main limitations:</strong> cybersickness; headset weight and comfort; distance compression (perceived distances are systematically shorter than physical distances); incompatibility with fMRI scanners.</p>
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 2 — Setting Up Unity for VR Development<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 2 — Setting Up Unity for VR Development<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>After completing these steps, you will have a working VR scene you can test immediately.</p>
           <p style="margin-top:0.5rem;"><strong>1. Install Unity</strong> via Unity Hub (2022 LTS or later). <strong>2. Create a project</strong> using the 3D Core template. <strong>3. Configure OpenXR</strong>: Edit → Project Settings → XR Plugin Management → Install and enable OpenXR → click Fix All. <strong>4. Add controller profiles</strong> under Interaction Profiles (HTC Vive / Oculus Touch). <strong>5. Install XR Interaction Toolkit</strong>: Package Manager → add <code>com.unity.xr.interaction.toolkit</code> → import Starter Assets. <strong>6. Create XR Origin</strong>: Hierarchy → XR → XR Origin (Action-based) → drag Starter Assets controller presets onto the Inspector. <strong>7. Test interaction</strong>: create a Cube → add XR Grab Interactable → Play → press Grip to grab.</p>
@@ -493,8 +493,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 3 — VR Development Workflow<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 3 — VR Development Workflow<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>Once the environment is set up, a full VR program goes through four stages:</p>
           <p style="margin-top:0.5rem;"><strong>1. Build the scene</strong> — model from scratch (Blender, etc.) or use existing assets (Unity Asset Store, Sketchfab). Start with greyboxing: use simple geometric stand-ins to validate layout and interaction before importing detailed models.</p>
@@ -504,8 +504,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 4 — Research-Ready VR Frameworks<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 4 — Research-Ready VR Frameworks<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>Building a VR experiment from scratch is time-intensive. These frameworks provide pre-built experiment structures (Session → Block → Trial), many usable with minimal coding.</p>
           <div class="tool-grid">
@@ -533,8 +533,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 5 — VR Engines & 3D Modeling Tools<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 5 — VR Engines & 3D Modeling Tools<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>Development engines</strong></p>
           <div class="tool-grid">
@@ -554,8 +554,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 6 — VR Hardware<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 6 — VR Hardware<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>Available at Zhejiang University, Dept. of Psychology:</strong></p>
           <ul>
@@ -566,8 +566,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>Step 7 — Major Research Applications<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>Step 7 — Major Research Applications<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <div class="research-grid">
             <div class="research-card">
@@ -599,7 +599,7 @@
 
 <script>
 function togglePart(el) { el.classList.toggle('open'); }
-function toggleStep(el, event) { event.stopPropagation(); el.classList.toggle('open'); }
+function toggleStep(el) { el.classList.toggle('open'); }
 function showOption(lang, value) {
   document.querySelectorAll('.option-content').forEach(function(el){ el.style.display='none'; });
   if (value) { var opt = document.getElementById('opt-'+lang+'-'+value); if (opt) opt.style.display='block'; }
