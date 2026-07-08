@@ -86,16 +86,16 @@
   </header>
 
   <!-- ==================== PART 1 ==================== -->
-  <div class="part" onclick="togglePart(this)">
-    <div class="part-header">
+  <div class="part">
+    <div class="part-header" onclick="togglePart(this.parentElement)">
       <h2><span class="part-number">第一部分</span> 三维影像——从磁共振原理到数据处理</h2>
       <span class="part-arrow">▶</span>
     </div>
-    <div class="part-body" onclick="event.stopPropagation()">
+    <div class="part-body">
       <p class="part-desc">理解功能磁共振成像的基本原理与适用范围，是设计脑成像实验的第一步。本节覆盖从研究方法决策、实验室预约到数据获取和处理的完整流程。</p>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第一步——MRI技术基本原理与实验准备<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第一步——MRI技术基本原理与实验准备<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>fMRI的基本原理</strong></p>
           <p>fMRI通过测量<strong>血氧水平依赖（BOLD）</strong>信号间接反映神经活动。当神经元集群发放动作电位时，局部脑血流和耗氧量增加，引起脱氧血红蛋白与氧合血红蛋白比例的改变——脱氧血红蛋白为顺磁性物质，会降低局部MR信号；其浓度的下降导致信号增强。BOLD信号的峰值出现在神经活动后约5–10秒，滞后于真实神经事件约1–2秒。这意味着fMRI测量的是与神经活动耦合的血管响应，而非神经活动本身。</p>
@@ -143,8 +143,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第二步——获取数据<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第二步——获取数据<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>标准脑模板</strong>为跨研究和跨个体的脑影像比较提供了统一的坐标系统：</p>
           <ul>
@@ -170,8 +170,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第三步——主流MRI数据分析工具<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第三步——主流MRI数据分析工具<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>获取数据后，需要使用专业软件进行分析处理。以下是使用最广泛的几款工具：</p>
           <div class="tool-grid">
@@ -199,8 +199,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第四步——从MRI数据到三维脑模型<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第四步——从MRI数据到三维脑模型<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>将结构MRI扫描转换为可用于三维打印的脑模型，通常遵循以下流程：</p>
           <p class="pipeline">DICOM → NIfTI（dcm2niix）→ 皮层分割（FreeSurfer recon-all）→ 表面提取 → 网格转换（STL）→ 网格修复（MeshLab/Blender）→ 三维打印</p>
@@ -252,16 +252,16 @@
   </div>
 
   <!-- ==================== PART 2 ==================== -->
-  <div class="part" onclick="togglePart(this)">
-    <div class="part-header">
+  <div class="part">
+    <div class="part-header" onclick="togglePart(this.parentElement)">
       <h2><span class="part-number">第二部分</span> 三维脑解剖——交互式脑区探索</h2>
       <span class="part-arrow">▶</span>
     </div>
-    <div class="part-body" onclick="event.stopPropagation()">
+    <div class="part-body">
       <p class="part-desc">在深入特定脑结构之前，先通过两个互补的图谱工具建立对该结构三维空间位置的整体认知。以下工作流程引导你从空间关系和切片定位两个维度理解目标脑区。</p>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第一步——理解空间关系（BrainFacts 3D Brain）<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第一步——理解空间关系（BrainFacts 3D Brain）<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>使用 <a href="https://www.brainfacts.org/3d-brain#intro=false&focus=Brain-cerebellum&zoom=false" target="_blank">BrainFacts 3D Brain</a> 来探索目标脑区的<strong>相对位置和邻近结构</strong>。该工具最适合回答以下问题：</p>
           <ul>
@@ -281,8 +281,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第二步——在解剖切片中定位（Neurotorium Brain Atlas）<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第二步——在解剖切片中定位（Neurotorium Brain Atlas）<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>使用 <a href="https://neurotorium.org/tool/brain-atlas/" target="_blank">Neurotorium Brain Atlas</a> 将三维结构与传统的解剖切片联系起来。该工具最适合回答以下问题：</p>
           <ul>
@@ -302,8 +302,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第三步——选择一个脑区进行探索<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第三步——选择一个脑区进行探索<span class="step-arrow">▶</span></div>
         <div class="step-body" style="padding-bottom:0.5rem;">
           <p>完成上述两步工作流程后，从下方选择一个目标结构，使用两个图谱工具进行系统探索。每个选项都包含引导性问题和探索提示。</p>
           <div style="margin:0.8rem 0;">
@@ -396,16 +396,16 @@
   </div>
 
   <!-- ==================== PART 3 ==================== -->
-  <div class="part" onclick="togglePart(this)">
-    <div class="part-header">
+  <div class="part">
+    <div class="part-header" onclick="togglePart(this.parentElement)">
       <h2><span class="part-number">第三部分</span> 三维建模与三维打印——从数字模型到物理实体</h2>
       <span class="part-arrow">▶</span>
     </div>
-    <div class="part-body" onclick="event.stopPropagation()">
+    <div class="part-body">
       <p class="part-desc">第一部分生成的数字脑模型，经第二部分获得解剖学理解后，可通过三维打印实现物质化。本节概述三维打印的研究应用，并提供实操工具。</p>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第一步——三维打印的研究应用<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第一步——三维打印的研究应用<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>三维打印已在多个学科的研究中获得应用。以下为经核实的代表性案例：</p>
           <div class="research-grid">
@@ -423,8 +423,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第二步——三维建模<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第二步——三维建模<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>Tinkercad</strong> 基于浏览器，直接拖拽操作，无需安装和任何先前经验，推荐入门首选。以下是其他常用工具，各有侧重：</p>
           <div class="btn-row">
@@ -441,8 +441,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第三步——三维打印工作流程<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第三步——三维打印工作流程<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>打印需要两项准备：打印机硬件 + 切片软件（将模型转为机器指令）。</p>
           <div style="margin:0.8rem 0;">
@@ -464,24 +464,24 @@
   </div>
 
   <!-- ==================== PART 4 ==================== -->
-  <div class="part" onclick="togglePart(this)">
-    <div class="part-header">
+  <div class="part">
+    <div class="part-header" onclick="togglePart(this.parentElement)">
       <h2><span class="part-number">第四部分</span> 三维空间中的实验——虚拟现实技术入门</h2>
       <span class="part-arrow">▶</span>
     </div>
-    <div class="part-body" onclick="event.stopPropagation()">
+    <div class="part-body">
       <p class="part-desc">虚拟现实（VR）头戴式显示器使研究者能够构建完全受控的三维实验环境。本节从方法论决策出发，提供从环境搭建到实验开发的操作指南。</p>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第一步——研究中为什么需要VR<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第一步——研究中为什么需要VR<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>核心优势：</strong>实时追踪头部运动、双目视差提供真实深度感知、可构建现实中不存在的场景、安全呈现危险情境。当这些优势超过其局限时，VR是最合适的方法。</p>
           <p style="margin-top:0.6rem;"><strong>主要局限：</strong>晕动症；设备重量与佩戴舒适度；空间压缩（感知距离短于真实距离）；无法在fMRI扫描仪中使用。</p>
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第二步——从零搭建Unity VR环境<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第二步——从零搭建Unity VR环境<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>以下步骤完成后，你将拥有一个可运行的基础VR场景。</p>
           <p style="margin-top:0.5rem;"><strong>1. 安装Unity</strong>：通过Unity Hub安装Unity 2022 LTS或更高版本。 <strong>2. 创建项目</strong>：选择3D Core模板（不选VR模板）。 <strong>3. 配置OpenXR</strong>：Edit → Project Settings → XR Plugin Management → 安装并勾选OpenXR → 点击Fix All。 <strong>4. 添加控制器配置</strong>：在Interaction Profiles中添加对应硬件（HTC Vive / Oculus Touch）。 <strong>5. 安装XR Interaction Toolkit</strong>：Package Manager → 添加 <code>com.unity.xr.interaction.toolkit</code> → 导入Starter Assets。 <strong>6. 创建XR Origin</strong>：Hierarchy右键 → XR → XR Origin (Action-based) → 将Starter Assets中的左右手柄预设拖到对应Inspector上。 <strong>7. 测试交互</strong>：创建Cube → 添加XR Grab Interactable组件 → Play → 手柄靠近按Grip键抓取。</p>
@@ -494,8 +494,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第三步——VR程序开发流程<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第三步——VR程序开发流程<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>环境搭建完成后，一个完整的VR程序经历四个阶段：</p>
           <p style="margin-top:0.5rem;"><strong>1. 搭建场景</strong>——自己建模（Blender等）或利用现成素材（Unity Asset Store、Sketchfab）。先用简单的几何体做白模测试，验证交互逻辑后再替换精细模型。</p>
@@ -505,8 +505,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第四步——科研VR实验框架<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第四步——科研VR实验框架<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p>从零编写VR实验程序耗时较大。以下框架提供了预置的实验结构（Session → Block → Trial），多数无需或仅需少量编程即可使用。</p>
           <div class="tool-grid">
@@ -534,8 +534,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第五步——VR开发引擎与建模工具<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第五步——VR开发引擎与建模工具<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>开发引擎</strong></p>
           <div class="tool-grid">
@@ -567,8 +567,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第六步——VR硬件设备<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第六步——VR硬件设备<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <p><strong>浙大心理系可用设备：</strong></p>
           <ul>
@@ -579,8 +579,8 @@
         </div>
       </div>
 
-      <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第七步——VR的主要应用方向<span class="step-arrow">▶</span></div>
+      <div class="step">
+        <div class="step-header" onclick="toggleStep(this.parentElement)"><span class="step-dot"></span>第七步——VR的主要应用方向<span class="step-arrow">▶</span></div>
         <div class="step-body">
           <div class="research-grid">
             <div class="research-card">
@@ -612,7 +612,7 @@
 
 <script>
 function togglePart(el) { el.classList.toggle('open'); }
-function toggleStep(el, event) { event.stopPropagation(); el.classList.toggle('open'); }
+function toggleStep(el) { el.classList.toggle('open'); }
 function showOption(lang, value) {
   document.querySelectorAll('.option-content').forEach(function(el){ el.style.display='none'; });
   if (value) { var opt = document.getElementById('opt-'+lang+'-'+value); if (opt) opt.style.display='block'; }
