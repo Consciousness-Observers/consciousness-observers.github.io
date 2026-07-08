@@ -168,8 +168,8 @@
           </div>
 
           <div style="margin-top:0.8rem;">
-            <a href="#" class="btn accent" id="toydata-btn">📦 Workshop Dataset (coming soon)</a>
-            <p class="note">A toy DICOM dataset for hands-on practice will be available for download before the workshop.</p>
+            <a href="/assets/toydata/toydata.zip" class="btn accent" download>📦 Download Workshop Dataset (NIfTI)</a>
+            <p class="note">ICBM152 standard brain template (T1-weighted), NIfTI format. Open directly in 3D Slicer, MRIcroGL, or any NIfTI-compatible viewer. Source: <a href="https://nist.mni.mcgill.ca/atlases/" target="_blank">MNI NIST Atlases</a>.</p>
           </div>
         </div>
       </div>
@@ -649,7 +649,6 @@ function showOption(lang, value) {
   document.querySelectorAll('.option-content').forEach(function(el){ el.style.display='none'; });
   if (value) { var opt = document.getElementById('opt-'+lang+'-'+value); if (opt) opt.style.display='block'; }
 }
-document.getElementById('toydata-btn').addEventListener('click', function(e){ e.stopPropagation(); e.preventDefault(); });
 </script>
 </body>
 </html>
