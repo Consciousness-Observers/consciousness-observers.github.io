@@ -254,58 +254,143 @@
   <!-- ==================== PART 2 ==================== -->
   <div class="part" onclick="togglePart(this)">
     <div class="part-header">
-      <h2><span class="part-number">第二部分</span> 三维脑解剖——建立空间理解</h2>
+      <h2><span class="part-number">第二部分</span> 三维脑解剖——交互式脑区探索</h2>
       <span class="part-arrow">▶</span>
     </div>
     <div class="part-body" onclick="event.stopPropagation()">
-      <p class="part-desc">神经影像论文通常以解剖或功能标签指代脑区。阅读这类文献需要的不只是名称识别——更需要理解各结构在三维空间中的相对位置关系。</p>
+      <p class="part-desc">在深入特定脑结构之前，先通过两个互补的图谱工具建立对该结构三维空间位置的整体认知。以下工作流程引导你从空间关系和切片定位两个维度理解目标脑区。</p>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第一步——脑区如何被定义与标记<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第一步——理解空间关系（BrainFacts 3D Brain）<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>存在多种脑区分割方案，各自依据不同的原则对大脑进行划分：细胞构筑（Brodmann分区）、大体解剖（脑回与脑沟标志）或功能连接。这些方案之间并不总能对齐——同一解剖位置在不同图谱中可能对应不同的标签。</p>
-          <p><strong>常用的分割图谱：</strong></p>
+          <p>使用 <a href="https://www.brainfacts.org/3d-brain#intro=false&focus=Brain-cerebellum&zoom=false" target="_blank">BrainFacts 3D Brain</a> 来探索目标脑区的<strong>相对位置和邻近结构</strong>。该工具最适合回答以下问题：</p>
           <ul>
-            <li><strong>AAL</strong>——116个区域（90个皮层区，26个小脑区），fMRI文献中引用最多</li>
-            <li><strong>Harvard-Oxford</strong>——随FSL发布的概率图谱，每个体素携带属于某一结构的概率值</li>
-            <li><strong>Desikan-Killiany</strong>——68个皮层区（每半球34个），FreeSurfer的默认输出</li>
-            <li><strong>HCP-MMP 1.0</strong>——每半球180个区域，基于人类连接组计划的多模态数据</li>
+            <li>这个结构在大脑中的哪个位置？</li>
+            <li>它的周围有哪些结构？</li>
+            <li>它与邻近区域的空间关系是怎样的？</li>
           </ul>
+          <p><strong>操作方法：</strong></p>
+          <ol>
+            <li>搜索并选择目标结构</li>
+            <li>旋转大脑，从不同角度观察</li>
+            <li>使用分离/隐藏功能揭示结构之间的空间关系</li>
+            <li>探索目标区域周围的结构</li>
+          </ol>
+          <p style="margin-top:0.5rem;">核心问题：<strong>"这个结构旁边是什么？"</strong></p>
+          <a href="https://www.brainfacts.org/3d-brain#intro=false&focus=Brain-cerebellum&zoom=false" target="_blank" class="btn primary">打开 BrainFacts 3D Brain</a>
         </div>
       </div>
 
       <div class="step" onclick="toggleStep(this, event)">
-        <div class="step-header"><span class="step-dot"></span>第二步——利用交互工具学习三维脑解剖<span class="step-arrow">▶</span></div>
+        <div class="step-header"><span class="step-dot"></span>第二步——在解剖切片中定位（Neurotorium Brain Atlas）<span class="step-arrow">▶</span></div>
         <div class="step-body">
-          <p>传统神经解剖教学依赖二维表征。以下交互式图谱允许通过旋转、剥离和选择来直接探索脑结构：</p>
-          <div class="tool-grid">
-            <div class="tool-card">
-              <strong>3D Brain（冷泉港实验室）</strong>
-              <div class="desc">29个带标签的交互式结构，附功能说明。基于浏览器，无需安装。</div>
-              <a href="https://www.g2conline.org/3dbrain/" target="_blank">g2conline.org/3dbrain</a>
-            </div>
-            <div class="tool-card">
-              <strong>BrainFacts 3D Brain</strong>
-              <div class="desc">交互式图谱，包含各结构功能和相关临床状况的详细描述。</div>
-              <a href="https://www.brainfacts.org/3d-brain" target="_blank">brainfacts.org/3d-brain</a>
-            </div>
-            <div class="tool-card">
-              <strong>MSU Human Brain Atlas</strong>
-              <div class="desc">高分辨率组织学切片与MRI对照。有助于理解影像信号变化的细胞构筑基础。</div>
-              <a href="https://brains.anatomy.msu.edu/brains/human/index.html" target="_blank">brains.anatomy.msu.edu</a>
-            </div>
-            <div class="tool-card">
-              <strong>Neuroglancer</strong>
-              <div class="desc">基于WebGL，可渲染拍字节级三维数据，支持浏览突触分辨率的脑体积数据。</div>
-              <a href="https://neuroglancer-demo.appspot.com/" target="_blank">neuroglancer-demo.appspot.com</a>
-            </div>
+          <p>使用 <a href="https://neurotorium.org/tool/brain-atlas/" target="_blank">Neurotorium Brain Atlas</a> 将三维结构与传统的解剖切片联系起来。该工具最适合回答以下问题：</p>
+          <ul>
+            <li>在哪个解剖平面中最容易识别这个结构？</li>
+            <li>它位于内侧还是外侧？浅层还是深层？</li>
+            <li>哪个截面最能代表它的位置？</li>
+          </ul>
+          <p><strong>操作方法：</strong></p>
+          <ol>
+            <li>搜索目标结构</li>
+            <li>切换矢状面、冠状面和水平面/轴状面视图</li>
+            <li>比较该结构在不同截面中的呈现</li>
+            <li>选择最能展示其解剖位置的视图</li>
+          </ol>
+          <p style="margin-top:0.5rem;">核心问题：<strong>"这个结构在脑切片中到底在哪里？"</strong></p>
+          <a href="https://neurotorium.org/tool/brain-atlas/" target="_blank" class="btn primary">打开 Neurotorium Brain Atlas</a>
+        </div>
+      </div>
+
+      <div class="step" onclick="toggleStep(this, event)">
+        <div class="step-header"><span class="step-dot"></span>第三步——选择一个脑区进行探索<span class="step-arrow">▶</span></div>
+        <div class="step-body" style="padding-bottom:0.5rem;">
+          <p>完成上述两步工作流程后，从下方选择一个目标结构，使用两个图谱工具进行系统探索。每个选项都包含引导性问题和探索提示。</p>
+          <div style="margin:0.8rem 0;">
+            <label for="option-select-zh" style="color:#ccd0d8; font-weight:600;">选择探索目标：</label>
+            <select id="option-select-zh" onchange="showOption('zh', this.value)" style="margin-left:0.5rem; padding:0.55rem 1rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--text); font-size:0.92rem; cursor:pointer;">
+              <option value="">—— 请选择一个脑区 ——</option>
+              <option value="A">Option A — 海马（Hippocampus）</option>
+              <option value="B">Option B — 杏仁核（Amygdala）</option>
+              <option value="C">Option C — 丘脑（Thalamus）</option>
+              <option value="D">Option D — 基底节（Basal Ganglia）</option>
+              <option value="E">Option E — 小脑（Cerebellum）</option>
+              <option value="F">Option F — 视觉皮层（Visual Cortex）</option>
+            </select>
+          </div>
+
+          <div id="opt-zh-A" class="option-content" style="display:none;">
+            <p><strong>海马（Hippocampus）</strong></p>
+            <p style="color:var(--text-soft);">经典脑结构，参与记忆、导航和空间认知。</p>
+            <p style="margin-top:0.5rem;"><strong>探索目标：</strong>海马及其周围结构</p>
+            <p style="margin-top:0.5rem;"><strong>思考：</strong></p>
+            <ul>
+              <li>哪个视图（矢状面 / 冠状面 / 水平面）最能展示海马的位置？</li>
+              <li>海马与周围结构的关系在不同视图下如何变化？</li>
+            </ul>
+            <p class="note">📸 截取最能描述海马三维位置的视图。</p>
+          </div>
+          <div id="opt-zh-B" class="option-content" style="display:none;">
+            <p><strong>杏仁核（Amygdala）</strong></p>
+            <p style="color:var(--text-soft);">位于颞叶深处的小型结构，参与情绪加工、威胁检测和记忆调节。</p>
+            <p style="margin-top:0.5rem;"><strong>探索目标：</strong>杏仁核及其周围结构</p>
+            <p style="margin-top:0.5rem;"><strong>思考：</strong></p>
+            <ul>
+              <li>为什么从大脑外表面难以识别杏仁核？</li>
+              <li>哪个视图最能帮助理解它与海马的关系？</li>
+            </ul>
+            <p class="note">📸 截取最能描述杏仁核位置的视图。</p>
+          </div>
+          <div id="opt-zh-C" class="option-content" style="display:none;">
+            <p><strong>丘脑（Thalamus）</strong></p>
+            <p style="color:var(--text-soft);">连接多个皮层和皮层下系统的中枢中继结构。</p>
+            <p style="margin-top:0.5rem;"><strong>探索目标：</strong>丘脑及其周围结构</p>
+            <p style="margin-top:0.5rem;"><strong>思考：</strong></p>
+            <ul>
+              <li>为什么丘脑是一个有用的解剖地标？</li>
+              <li>哪个视图最能展示它在大脑中心的枢纽位置？</li>
+            </ul>
+            <p class="note">📸 截取最能描述丘脑空间关系的视图。</p>
+          </div>
+          <div id="opt-zh-D" class="option-content" style="display:none;">
+            <p><strong>基底节（Basal Ganglia）</strong></p>
+            <p style="color:var(--text-soft);">一组相互连接的皮层下结构，参与运动、学习和奖赏。</p>
+            <p style="margin-top:0.5rem;"><strong>探索目标：</strong>尾状核、壳核、苍白球及其周围结构</p>
+            <p style="margin-top:0.5rem;"><strong>思考：</strong></p>
+            <ul>
+              <li>为什么基底节被视为一个环路而非单一结构？</li>
+              <li>哪个视图有助于区分基底节的不同组成部分？</li>
+            </ul>
+            <p class="note">📸 截取展示基底节空间组织的视图。</p>
+          </div>
+          <div id="opt-zh-E" class="option-content" style="display:none;">
+            <p><strong>小脑（Cerebellum）</strong></p>
+            <p style="color:var(--text-soft);">高度折叠的结构，对运动协调、学习和预测至关重要。</p>
+            <p style="margin-top:0.5rem;"><strong>探索目标：</strong>小脑半球、蚓部、小脑脚及其周围结构</p>
+            <p style="margin-top:0.5rem;"><strong>思考：</strong></p>
+            <ul>
+              <li>为什么仅凭二维切片难以理解小脑？</li>
+              <li>哪个视图最能展示它的折叠结构？</li>
+            </ul>
+            <p class="note">📸 截取最能捕捉小脑三维结构的视图。</p>
+          </div>
+          <div id="opt-zh-F" class="option-content" style="display:none;">
+            <p><strong>视觉皮层（Visual Cortex）</strong></p>
+            <p style="color:var(--text-soft);">解剖位置与功能组织密切关联的经典研究案例。</p>
+            <p style="margin-top:0.5rem;"><strong>探索目标：</strong>枕叶、距状沟、初级视觉皮层（V1）及其周围结构</p>
+            <p style="margin-top:0.5rem;"><strong>思考：</strong></p>
+            <ul>
+              <li>解剖区域是否总是对应单一功能区？</li>
+              <li>哪个视图最能展示视觉皮层与周围结构的关系？</li>
+            </ul>
+            <p class="note">📸 截取最能描述视觉皮层解剖位置的视图。</p>
           </div>
         </div>
       </div>
 
       <div class="bridge">
         <div class="bridge-label">从第二部分到第三部分</div>
-        三维图谱构建了空间知识，但知识在被产出检验之前仍停留在抽象层面。当研究者将脑区从数据中分割出来并转化为物理实体时——学习便具有了自我修正的性质。从数字探索到物理制造的转变闭合了一条反馈环路。下一节介绍实现这一转变所需的工具和方法。
+        三维图谱构建了空间知识，但知识在被产出检验之前仍停留在抽象层面。当研究者将脑区从数据中分割出来并转化为物理实体时——学习便具有了自我修正的性质。下一节介绍实现这一转变所需的工具和方法。
       </div>
     </div>
   </div>
@@ -528,6 +613,10 @@
 <script>
 function togglePart(el) { el.classList.toggle('open'); }
 function toggleStep(el, event) { event.stopPropagation(); el.classList.toggle('open'); }
+function showOption(lang, value) {
+  document.querySelectorAll('.option-content').forEach(function(el){ el.style.display='none'; });
+  if (value) { var opt = document.getElementById('opt-'+lang+'-'+value); if (opt) opt.style.display='block'; }
+}
 document.getElementById('toydata-btn').addEventListener('click', function(e){ e.stopPropagation(); e.preventDefault(); });
 </script>
 </body>
