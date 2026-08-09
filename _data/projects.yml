@@ -22,4 +22,15 @@
     psychology, neuroscience, imaging, and digital fabrication.
   status: active
 
-# Outreach category — no projects yet
+- title: "Imagine"
+  slug: imagine
+  category: outreach
+  contacts:
+    - Zihao Wang
+  description: >
+    An interdisciplinary art–science exhibition on consciousness, imagination,
+    and what happens when imagination is missing — aphantasia and the absent
+    inner voice. Science, phenomenology, and art, braided together.
+  status: active
+
+# Outreach projects above
