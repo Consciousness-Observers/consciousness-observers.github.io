@@ -48,13 +48,21 @@ The research is not confined to the laboratory; it unfolds along three parallel 
 
 ## The Exhibition Project
 
-I am working toward a bold plan: in **Hangzhou**, China's innovation capital, in collaboration with the **School of Intermedia Art, China Academy of Art** and **Zhejiang University (College of AI / Art & Archaeology Museum)**, to stage a cutting-edge art exhibition on **consciousness, missing imagination, and phenomenological experience**.
+I am working toward a bold plan: in **Hangzhou**, China's innovation capital, in discussion with the **School of Intermedia Art, China Academy of Art** and **Zhejiang University (College of AI / Art & Archaeology Museum)** — a partnership currently being planned — to stage a cutting-edge art exhibition on **consciousness, missing imagination, and phenomenological experience**.
 
 **What the exhibition will do:**
 
 - **Transcend perception.** Following the spirit of Tsinghua University's *Another Sense* exhibition, we will let audiences — in dark rooms and before interactive installations — be temporarily *deprived* or *confused* in their vision and hearing, so they can feel the everyday world of aphantasics and of those without an inner voice.
 - **Public science.** Turn rigorous psychological and neuroscientific research into a visual narrative with real tension, so that every ordinary visitor can feel the science of consciousness in a visceral way.
 - **Find companions.** The exhibition will include a strictly anonymous psychophysical screening channel, precisely recruiting aphantasics and people without an inner voice for our laboratory.
+
+---
+
+## Try the Research Yourself
+
+You don't have to wait for the exhibition to feel what this project is about. The **picture–text matching paradigm** behind it runs in your browser right now: view a natural scene, read a Chinese description that grows from 1 to 40 characters, and judge whether it matches — experiencing firsthand how reading changes when the "voice" inside you is not there to help.
+
+<a href="https://psychwangzihao.github.io/assets/playground/coconnect/" target="_blank" style="display: inline-block; padding: 0.6rem 1.6rem; font-size: 0.9rem; font-weight: 600; background: var(--global-theme-color); color: #fff; border-radius: 7px; text-decoration: none;">Launch the COCOnnect experiment →</a>
 
 ---
 
@@ -69,3 +77,15 @@ I am working toward a bold plan: in **Hangzhou**, China's innovation capital, in
 ---
 
 *For inquiries or to get involved, reach out to the project contact above.*
+
+---
+
+## Known vs. Hypothesized
+
+The poetic framing of imagination as a "sixth sense" deserves an honest scientific footnote.
+
+**Well established — perception is a boundary.** We do not perceive a copy of the world; we perceive a construction of it, and its boundary is negotiable. David Eagleman's sensory-substitution work shows the brain can learn to "see" through touch or to "hear" through patterns on the skin — the brain is a reality engine that builds a world from whatever input it is given. Our world *is* our perception.
+
+**Well established — imagery varies.** Aphantasia — the absence of mental imagery — is a measurable, well-documented variation of visual imagery (VVIQ; Zeman and colleagues). People without an inner voice (anendophasia) are a newer, less-studied population; the term and its behavioral correlates are still being established.
+
+**What this project hypothesizes.** Imagination is the *inner* part of that perceptual boundary — and when it is missing, we can see how the boundary is built. The exhibition is a hypothesis made visible, not a settled claim.
