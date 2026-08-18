@@ -1,6 +1,14 @@
 # CO-LAB Members
 # All members are equal — no roles, no hierarchy.
-# Listed in alphabetical order (by first name).
+# Listed newest first (most recent member at the top).
+
+- name: Yixin Xu
+  background: Cognitive Neuroscience
+  institution: College of Life Sciences, Zhejiang University
+  image: 2_q6_Sunny_Photo_近照_4.png
+  contact: yixinxu@zju.edu.cn
+  research_focus: computational neuroscience of consciousness — biologically grounded modeling of consciousness
+  statement: "I approach consciousness as a problem that can be progressively constrained through computational models, neural data, and biological mechanisms. Rather than treating consciousness primarily as an abstract philosophical question, I am especially interested in how particular forms of neural organization and dynamics could give rise to different conscious states, contents, and representations of the self. My current interests therefore lie at the intersection of neuroscience, computational modeling, and artificial intelligence."
 
 - name: Shijie Zhang
   background: Physics
