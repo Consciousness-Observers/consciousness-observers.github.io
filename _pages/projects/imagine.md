@@ -62,7 +62,11 @@ I am working toward a bold plan: in **Hangzhou**, China's innovation capital, in
 
 You don't have to wait for the exhibition to feel what this project is about. The **picture–text matching paradigm** behind it runs in your browser right now: view a natural scene, read a Chinese description that grows from 1 to 40 characters, and judge whether it matches — experiencing firsthand how reading changes when the "voice" inside you is not there to help.
 
-<a href="https://psychwangzihao.github.io/assets/playground/coconnect/" target="_blank" style="display: inline-block; padding: 0.6rem 1.6rem; font-size: 0.9rem; font-weight: 600; background: var(--global-theme-color); color: #fff; border-radius: 7px; text-decoration: none;">Launch the COCOnnect experiment →</a>
+<a href="https://psychwangzihao.github.io/assets/demos/coconnect/" target="_blank" style="display: inline-block; padding: 0.6rem 1.6rem; font-size: 0.9rem; font-weight: 600; background: var(--global-theme-color); color: #fff; border-radius: 7px; text-decoration: none;">Launch the COCOnnect experiment →</a>
+
+And the talk itself — given at the **2050 roundtable *The Form and Substance of Future Perception*** on 18 September 2026 — runs in the browser as well. Eleven scenes on how perception is built rather than received, where its edges are, and what imagination has to do with art. Several of them are things the audience *does*, not things they are told.
+
+<a href="https://psychwangzihao.github.io/assets/demos/perception-2050/" target="_blank" style="display: inline-block; padding: 0.6rem 1.6rem; font-size: 0.9rem; font-weight: 600; background: var(--global-theme-color); color: #fff; border-radius: 7px; text-decoration: none;">Open 「感知 / Perception」 →</a>
 
 ---
 
