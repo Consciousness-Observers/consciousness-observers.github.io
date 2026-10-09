@@ -18,7 +18,9 @@ nav: false
 
 ---
 
-The idea follows Yi Rao's *Concepts and Approaches in Biology*: take **one important concept** in psychology, and go back to the **original papers** that established it. Not a summary of a literature — a reconstruction of how a concept was built.
+The idea follows Yi Rao's *Concepts and Approaches in Biology*: take **one important concept** in psychology, and go back to the **original papers** that established it.
+
+The concept is what we are after. The approach comes along with it — not as a separate lesson, but because following the experiment is the only way to see how a concept was actually built.
 
 For each concept we trace the same chain:
 
@@ -26,15 +28,22 @@ For each concept we trace the same chain:
 - how the experiments were designed, and what alternatives were ruled out;
 - how the results were read — and how the field argued back.
 
-**How it runs**
+## How it runs
 
-- **One concept per session** — the concept supplies the question; the papers supply how it was answered.
-- **Weekly during term**, roughly **ten concepts a semester**, with a pause at the beginning and the end of term.
-- **8–10 students**, drawn from Zhejiang University's honours programmes. The group is deliberately **fluid** — come to the sessions that interest you, skip the ones that don't.
-- Evenings, somewhere relaxed, over tea.
+- **One concept per session, weekly, on a fixed schedule** — roughly ten over a semester, with a pause at the beginning and the end of term.
+- **The next leader comes from this session's participants.** Whoever is in the room chooses who leads the next discussion.
+- **The group is fluid.** Different people come to different sessions — attend the ones that interest you.
+- **The topics roll.** Each session settles the next one, or the one after it; nothing is fixed for the whole term.
+- **Everyone who takes part joins the group chat**, and the discussion carries on there — so if you miss a session, you can still catch up and stay in.
 
-There is no lecture and no resident expert. Everyone reads beforehand; the discussion belongs to whoever is in the room.
+There is no lecture and no resident expert. Everyone reads beforehand; the discussion belongs to whoever is in the room. We meet in the evening, somewhere relaxed, over tea.
 
-Notes and reading lists from each session are published on this site, so the sequence stays visible — and so the next concept can be proposed by anyone.
+## Session records
+
+Every session leaves a written record: what the concept was, which papers we read, what the argument in the room actually turned on. Papers and further resources are linked from each one.
+
+{% include cap_sessions.liquid %}
+
+---
 
 If you would like to propose a concept, suggest a paper, or sit in on a session, [reach out to the project contact](mailto:psychwangzihao@zju.edu.cn?subject=Concepts%20and%20Approaches%20in%20Psychology).
