@@ -9,13 +9,17 @@ nav: false
 
 <div style="margin-bottom: 0.5rem; margin-top: 1rem;">
   <span style="font-size: 0.75rem; background: var(--global-theme-color); color: #fff; padding: 0.15rem 0.5rem; border-radius: 12px;">active</span>
-  <span style="font-size: 0.85rem; color: var(--global-text-color-light); margin-left: 0.5rem;">Courses</span>
+  <span style="font-size: 0.85rem; color: var(--global-text-color-light); margin-left: 0.5rem;">Reading Group</span>
 </div>
 
 **Project Contact:** <a href="/members/#zihao-wang">Zihao Wang</a>
 
 ---
 
-This course is currently in preparation. We are developing a comprehensive, open-access curriculum that introduces foundational concepts in psychology — perception, attention, memory, decision-making, social cognition — and traces their connections to consciousness research. Designed for an interdisciplinary audience, the course does not assume prior training in psychology.
+This project runs as a **student-initiated reading group** rather than a course. Each session gathers **8–10 students from Zhejiang University's honors program** around **one central concept in psychology and one approach to studying it** — the concept supplies the question, the approach supplies the method.
 
-Full details and syllabus will be published here once available. In the meantime, [reach out to the project contact](mailto:psychwangzihao@zju.edu.cn?subject=Concepts%20and%20Approaches%20in%20Psychology) if you'd like to contribute or learn more.
+We meet in the **evening**, somewhere relaxed, over tea. A session is a discussion rather than a lecture: everyone reads beforehand, and the conversation is ours to steer.
+
+We are starting from the concepts closest to our own work — perception, attention, memory, decision-making, social cognition — and from the question of how each of them connects to consciousness research. The group is interdisciplinary by design; no prior training in psychology is assumed.
+
+If you would like to propose a concept, suggest an approach, or sit in on a session, [reach out to the project contact](mailto:psychwangzihao@zju.edu.cn?subject=Concepts%20and%20Approaches%20in%20Psychology).

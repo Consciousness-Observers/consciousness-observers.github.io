@@ -1,14 +1,15 @@
 # CO-LAB Projects
-# Category: courses, workshops, outreach
+# Category: reading-group, workshops, outreach
 
 - title: "Concepts and Approaches in Psychology"
   slug: concepts-approaches-psychology
-  category: courses
+  category: reading-group
   contacts:
     - Zihao Wang
   description: >
-    An open-access course exploring foundational concepts in psychology and their
-    connections to consciousness research. Designed for an interdisciplinary audience.
+    A student-initiated reading group. Each session gathers 8–10 students from
+    Zhejiang University's honors program around one central concept in psychology
+    and one approach to studying it — evenings, over tea, somewhere informal.
   status: active
 
 - title: "3D Printing and Digital Brain Anatomy"
