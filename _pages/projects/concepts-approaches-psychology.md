@@ -28,15 +28,25 @@ For each concept we trace the same chain:
 - how the experiments were designed, and what alternatives were ruled out;
 - how the results were read — and how the field argued back.
 
-## How it runs
+## What we read
 
-- **One concept per session, weekly, on a fixed schedule** — roughly ten over a semester, with a pause at the beginning and the end of term.
-- **The next leader comes from this session's participants.** Whoever is in the room chooses who leads the next discussion.
-- **The group is fluid.** Different people come to different sessions — attend the ones that interest you.
-- **The topics roll.** Each session settles the next one, or the one after it; nothing is fixed for the whole term.
-- **Everyone who takes part joins the group chat**, and the discussion carries on there — so if you miss a session, you can still catch up and stay in.
+One concept per session, in three to five papers:
 
-There is no lecture and no resident expert. Everyone reads beforehand; the discussion belongs to whoever is in the room. We meet in the evening, somewhere relaxed, over tea.
+- **Where it was proposed** — one paper.
+- **How it developed** — one or two.
+- **Where it was put to use** — one or two.
+
+Each paper goes to two or three people, who read it together and bring their own questions to the session.
+
+## How a session runs
+
+**Before.** Sign up, and the organiser assigns you a paper. Read it, and send in what it left you wondering about. The day before the session those questions are collected and ordered, then sent round — to everyone taking part, and to the PhD students of the recommending lab — so that the room arrives with the same questions in hand.
+
+**During.** We take the papers in order. Whoever read a paper presents it; then the floor opens, working through the question list and whatever the PhD students bring back to it.
+
+**After.** Everyone writes up the paper they read. The organiser and the PhD student put those write-ups together into one article, on which they are corresponding authors and everyone else a co-first author.
+
+Sessions run five times a semester, in the evening, over tea. There is no lecture: everyone reads beforehand, and the discussion belongs to whoever is in the room.
 
 ## Session records
 
