@@ -155,6 +155,11 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  # repo-only files: never publish them as pages/assets
+  - Gemfile
+  - Gemfile.lock
+  - SECURITY.md
+  - .deployignore
 keep_files:
   - CNAME
   - .nojekyll
@@ -248,8 +253,10 @@ scholar:
   group_order: descending
 
 enable_publication_badges:
-  altmetric: true
-  dimensions: true
+  # altmetric/dimensions inject a third-party script on EVERY page that phones
+  # home to those services. No publications here, so keep them off.
+  altmetric: false
+  dimensions: false
   google_scholar: true
   inspirehep: true
 

@@ -1,6 +1,7 @@
 _site
 .bundle
-.DS_store
+.DS_Store
+**/.DS_Store
 .idea
 .jekyll-cache
 .jekyll-metadata
@@ -10,6 +11,10 @@ _site
 .venv
 assets/libs/
 assets/rendercv/rendercv_output/*.typ
-Gemfile.lock
 node_modules/
 vendor
+
+# Gemfile.lock is intentionally tracked here: the GitHub Pages build runs
+# `bundler-cache`, so committing the lock keeps CI resolving exactly the gem
+# versions the site was verified with (and stops the file showing up as an
+# "untracked but present on the remote" oddity).

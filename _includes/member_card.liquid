@@ -34,7 +34,7 @@
         <!-- Name (with optional personal page link) -->
         <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem;">
           {% if member.personal_page %}
-            <a href="{{ member.personal_page }}" target="_blank" style="color: var(--global-text-color); text-decoration: none;">
+            <a href="{{ member.personal_page }}" target="_blank" rel="noopener noreferrer" style="color: var(--global-text-color); text-decoration: none;">
               {{ member.name }} <span style="font-size: 0.7rem; color: var(--global-theme-color); opacity: 0.6;">🌐</span>
             </a>
           {% else %}
