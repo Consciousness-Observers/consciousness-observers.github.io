@@ -1,0 +1,91 @@
+{% comment %}
+  场次记录页顶部的那一块：概念 × 途径、时间、领读人、原始论文、资源。
+  数据全部来自本页的 front matter —— 正文只写讨论本身。
+  用法：在记录页正文最前面写一行 {% include cap_session_meta.liquid %}
+{% endcomment %}
+
+<div class="cap-meta">
+  {% if page.concept %}
+  <p class="cap-meta-line">
+    <span class="cap-meta-k">Concept</span> {{ page.concept }}
+    {%- if page.approach %}<span class="cap-meta-x">×</span><span class="cap-meta-k">Approach</span> {{ page.approach }}{% endif %}
+  </p>
+  {% endif %}
+  {% if page.date_display or page.leader %}
+  <p class="cap-meta-sub">
+    {%- if page.date_display %}{{ page.date_display }}{% endif -%}
+    {%- if page.date_display and page.leader %} · {% endif -%}
+    {%- if page.leader %}led by {{ page.leader }}{% endif -%}
+  </p>
+  {% endif %}
+</div>
+
+{% if page.papers %}
+<h3>Original papers</h3>
+<ul class="cap-list">
+  {% for paper in page.papers %}
+  <li>
+    {% if paper.url %}<a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}
+    {%- if paper.authors %} <span class="cap-dim">— {{ paper.authors }}</span>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if page.resources %}
+<h3>Resources</h3>
+<ul class="cap-list">
+  {% for r in page.resources %}
+  <li>
+    <a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.title }}</a>
+    {%- if r.note %} <span class="cap-dim">— {{ r.note }}</span>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<style>
+  .cap-meta {
+    margin: 1.25rem 0 1.5rem;
+    padding: .85rem 1.1rem;
+    border-left: 3px solid var(--global-theme-color);
+    background: var(--global-card-bg-color);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .cap-meta-line {
+    margin: 0;
+    font-size: 1rem; font-weight: 600;
+    color: var(--global-text-color);
+  }
+
+  .cap-meta-k {
+    font-size: .7rem; font-weight: 600; letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    margin-right: .3rem;
+  }
+
+  .cap-meta-x {
+    color: var(--global-theme-color);
+    margin: 0 .6rem;
+  }
+
+  .cap-meta-sub {
+    margin: .35rem 0 0;
+    font-size: .82rem;
+    color: var(--global-text-color-light);
+  }
+
+  .cap-list {
+    margin: .5rem 0 1.25rem;
+    padding-left: 1.1rem;
+  }
+
+  .cap-list li {
+    margin-bottom: .35rem;
+    line-height: 1.55;
+  }
+
+  .cap-dim { color: var(--global-text-color-light); font-size: .88rem; }
+</style>

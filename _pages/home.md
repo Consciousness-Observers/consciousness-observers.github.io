@@ -22,6 +22,6 @@ permalink: /
 
 ---
 
-We host regular online seminars where members from different disciplines present ideas and debate them openly. Transcriptions are shared publicly after review, so the conversation reaches beyond the room. We also develop collaborative projects — courses, workshops, and outreach — freely accessible to anyone interested.
+We host regular online seminars where members from different disciplines present ideas and debate them openly. Transcriptions are shared publicly after review, so the conversation reaches beyond the room. We also develop collaborative projects — reading groups, workshops, and outreach — freely accessible to anyone interested.
 
 Our home base is **Zhejiang University** in Hangzhou, but our meetings happen by video conference, with participants joining from everywhere.

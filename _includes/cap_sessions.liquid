@@ -1,0 +1,110 @@
+{% comment %}
+  Concepts and Approaches in Psychology —— 每一场讨论一张卡片。
+
+  卡片上的信息全部来自各场记录页（_pages/projects/cap/session-*.md）的 front matter，
+  这里不写任何具体内容。**加一场讨论 = 加一个文件**，不用碰这个 include。
+
+  场次顺序由 front matter 里的 cap_session（1、2、3…）决定，和文件名无关。
+{% endcomment %}
+
+{% assign sessions = site.pages | sort: "cap_session" %}
+{% assign count = 0 %}
+{% for p in sessions %}{% if p.cap_session %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
+
+{% if count > 0 %}
+<div class="cap-grid">
+
+{% for p in sessions %}
+  {% if p.cap_session %}
+  <a class="cap-card" href="{{ p.url | relative_url }}">
+    <p class="cap-head">
+      <span class="cap-num">Session {{ p.cap_session }}</span>
+      {% if p.date_display %}<span class="cap-date">{{ p.date_display }}</span>{% endif %}
+    </p>
+    <p class="cap-concept">{{ p.concept }}</p>
+    {% if p.approach %}<p class="cap-approach">× {{ p.approach }}</p>{% endif %}
+    {% if p.summary %}<p class="cap-summary">{{ p.summary }}</p>{% endif %}
+    {% if p.papers or p.leader %}
+      <p class="cap-note">
+        {%- if p.papers %}{{ p.papers.size }} original paper{% if p.papers.size > 1 %}s{% endif %}{% endif -%}
+        {%- if p.papers and p.leader %} · {% endif -%}
+        {%- if p.leader %}led by {{ p.leader }}{% endif -%}
+      </p>
+    {% endif %}
+    <span class="cap-go">Read the record →</span>
+  </a>
+  {% endif %}
+{% endfor %}
+
+</div>
+{% else %}
+<p style="color: var(--global-text-color-light); font-style: italic;">
+  No sessions yet — the first one is being planned.
+  <a href="mailto:psychwangzihao@zju.edu.cn?subject=Concepts%20and%20Approaches%20in%20Psychology">Get in touch</a>
+  if you would like to propose the first concept.
+</p>
+{% endif %}
+
+<style>
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    gap: 1rem;
+    margin: 1.25rem 0 .5rem;
+  }
+
+  .cap-card {
+    display: block;
+    padding: 1.1rem 1.25rem 1.15rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    background: var(--global-card-bg-color);
+    text-decoration: none !important;
+    transition: border-color .18s, transform .18s;
+  }
+
+  .cap-card:hover {
+    border-color: var(--global-theme-color);
+    transform: translateY(-2px);
+  }
+
+  .cap-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin: 0 0 .5rem;
+    font-size: .72rem; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--global-text-color-light);
+  }
+
+  .cap-num { font-weight: 600; }
+
+  .cap-concept {
+    margin: 0;
+    font-size: 1.05rem; font-weight: 600;
+    color: var(--global-text-color);
+  }
+
+  .cap-approach {
+    margin: .15rem 0 0;
+    font-size: .85rem;
+    color: var(--global-theme-color);
+  }
+
+  .cap-summary {
+    margin: .6rem 0 0;
+    font-size: .85rem; line-height: 1.5;
+    color: var(--global-text-color-light);
+  }
+
+  .cap-note {
+    margin: .7rem 0 0;
+    font-size: .78rem;
+    color: var(--global-text-color-light);
+  }
+
+  .cap-go {
+    display: inline-block;
+    margin-top: .7rem;
+    font-size: .82rem; font-weight: 500;
+    color: var(--global-theme-color);
+  }
+</style>

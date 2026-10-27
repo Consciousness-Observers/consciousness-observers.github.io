@@ -1,6 +1,6 @@
 {% if site.data.projects %}
-{% assign categories = "courses,workshops,outreach" | split: "," %}
-{% assign category_labels = "Courses,Workshops,Outreach" | split: "," %}
+{% assign categories = "reading-group,workshops,outreach" | split: "," %}
+{% assign category_labels = "Reading Group,Workshops,Outreach" | split: "," %}
 {% for cat_index in (0..2) %}
 {% assign category = categories[cat_index] %}
 {% assign category_label = category_labels[cat_index] %}
