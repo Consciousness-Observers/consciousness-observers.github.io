@@ -19,6 +19,6 @@ vendor
 # versions the site was verified with (and stops the file showing up as an
 # "untracked but present on the remote" oddity).
 
-# heavy assets kept locally only (never published)
+# unused heavy assets (re-downloadable upstream) — never commit them
 assets/models/
 assets/files/spm.zip
