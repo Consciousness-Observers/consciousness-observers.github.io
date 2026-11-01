@@ -18,3 +18,7 @@ vendor
 # `bundler-cache`, so committing the lock keeps CI resolving exactly the gem
 # versions the site was verified with (and stops the file showing up as an
 # "untracked but present on the remote" oddity).
+
+# heavy assets kept locally only (never published)
+assets/models/
+assets/files/spm.zip
