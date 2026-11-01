@@ -1,8 +1,0 @@
-# Files that exist in this folder but must NOT be published to the site.
-# One glob per line; a bare name matches any file with that name.
-#
-# The playground pages link the anatomy models straight to the upstream
-# PittBrains3D repository (raw.githubusercontent.com), so these local copies
-# are unused — and at ~630 MB they would bloat the Pages repo for nothing.
-assets/models/*.stl
-assets/files/spm.zip
