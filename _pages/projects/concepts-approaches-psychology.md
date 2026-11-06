@@ -52,7 +52,11 @@ Sessions run five times a semester, in the evening, over tea. There is no lectur
 
 Every session leaves a written record: what the concept was, which papers we read, what the argument in the room actually turned on. Papers and further resources are linked from each one.
 
-{% include cap_sessions.liquid %}
+The records are collected in an open book, so that what the room worked out stays readable — to the next session, and to anyone else who wants to follow the same papers.
+
+<p style="margin: 1.4rem 0 0;">
+  <a href="https://consciousness-observers.github.io/concepts-and-approaches/" style="display: inline-block; padding: 0.65rem 1.8rem; font-size: 0.9375rem; font-weight: 600; background: var(--global-theme-color); color: #fff; border-radius: 7px; text-decoration: none;">Read the book →</a>
+</p>
 
 ---
 
