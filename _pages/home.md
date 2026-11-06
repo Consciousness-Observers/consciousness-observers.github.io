@@ -11,7 +11,7 @@ permalink: /
       CO-LAB · Linking Across Boundaries
     </p>
     <p style="font-size: 1rem; line-height: 1.7;">
-      An interdisciplinary community for researchers who study consciousness — across psychology, physics, neuroscience, philosophy, and beyond. We meet to think, to question, and to learn from each other. No bureaucracy, no funding streams — just curiosity.
+      An interdisciplinary community for researchers who study consciousness, from psychology and neuroscience to physics and philosophy. We meet to think, to question, and to learn from each other.
     </p>
   </div>
   <div class="col-md-4 text-center">
@@ -22,6 +22,6 @@ permalink: /
 
 ---
 
-We host regular online seminars where members from different disciplines present ideas and debate them openly. Transcriptions are shared publicly after review, so the conversation reaches beyond the room. We also develop collaborative projects — reading groups, workshops, and outreach — freely accessible to anyone interested.
+We host regular online seminars where members from different disciplines present ideas and debate them openly. Transcriptions are shared publicly after review. We also run reading groups, workshops and outreach; all of it is open to anyone interested.
 
 Our home base is **Zhejiang University** in Hangzhou, but our meetings happen by video conference, with participants joining from everywhere.
