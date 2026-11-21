@@ -1,7 +1,7 @@
 {% if site.data.projects %}
-{% assign categories = "reading-group,workshops,outreach" | split: "," %}
-{% assign category_labels = "Reading Group,Workshops,Outreach" | split: "," %}
-{% for cat_index in (0..2) %}
+{% assign categories = "reading-group,workshops,outreach,gallery" | split: "," %}
+{% assign category_labels = "Reading Group,Workshops,Outreach,Gallery" | split: "," %}
+{% for cat_index in (0..3) %}
 {% assign category = categories[cat_index] %}
 {% assign category_label = category_labels[cat_index] %}
 
@@ -11,7 +11,8 @@
 {% for project in site.data.projects %}
 {% if project.category == category %}
 {% assign has_project = true %}
-<div class="project-card" style="margin-bottom: 1.5rem; padding: 1.25rem 1.5rem; border: 1px solid var(--global-divider-color); border-radius: 8px; background: var(--global-card-bg-color); cursor: pointer;" onclick="location.href='/projects/{{ project.slug }}/'">
+{% if project.url %}{% assign card_url = project.url %}{% else %}{% assign card_url = project.slug | prepend: '/projects/' | append: '/' %}{% endif %}
+<div class="project-card" style="margin-bottom: 1.5rem; padding: 1.25rem 1.5rem; border: 1px solid var(--global-divider-color); border-radius: 8px; background: var(--global-card-bg-color); cursor: pointer;" onclick="location.href='{{ card_url }}'">
 <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem;">
 {{ project.title }}
 {% if project.title_en %}
@@ -32,7 +33,7 @@
 {% if project.description %}
 <p style="font-size: 0.9rem; margin-bottom: 0.65rem; color: var(--global-text-color);">{{ project.description }}</p>
 {% endif %}
-<a href="/projects/{{ project.slug }}/" style="font-size: 0.85rem; font-weight: 500; color: var(--global-theme-color);">View details →</a>
+<a href="{{ card_url }}" style="font-size: 0.85rem; font-weight: 500; color: var(--global-theme-color);">{% if project.category == "gallery" %}Open the gallery →{% else %}View details →{% endif %}</a>
 </div>
 {% endif %}
 {% endfor %}

@@ -36,3 +36,14 @@
   status: active
 
 # Outreach projects above
+
+- title: "Mind in Nature"
+  slug: mind-in-nature
+  category: gallery
+  url: /assets/gallery/mind-in-nature/
+  contacts:
+    - Zihao Wang
+  description: >
+    A ring of Nature covers, one per issue, from the science of mind and brain.
+    Scrolls on its own; pause and click a cover to read what that issue was about.
+  status: active
