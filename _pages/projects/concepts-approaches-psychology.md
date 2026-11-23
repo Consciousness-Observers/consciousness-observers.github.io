@@ -60,4 +60,4 @@ The records are collected in an open book, so that what the room worked out stay
 
 ---
 
-If you would like to propose a concept, suggest a paper, or sit in on a session, [reach out to the project contact](mailto:psychwangzihao@zju.edu.cn?subject=Concepts%20and%20Approaches%20in%20Psychology).
+If you would like to propose a concept, suggest a paper, or sit in on a session, [reach out to the project contact](mailto:consciousness.observers@outlook.com?subject=Concepts%20and%20Approaches%20in%20Psychology).

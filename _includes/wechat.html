@@ -1,0 +1,93 @@
+{% comment %}
+  公众号入口：点击打开二维码，右上角 × 关闭（也可 Esc、点背景关闭）。
+  放在需要的页面里 {% include wechat.html %} 即可；重复引入也只绑定一次的。
+{% endcomment %}
+
+<button type="button" class="wechat-btn" data-wechat-open>
+  <span aria-hidden="true">💬</span> WeChat official account
+</button>
+
+<div class="wechat-modal" id="wechat-modal" aria-hidden="true">
+  <div class="wechat-dialog" role="dialog" aria-modal="true" aria-label="CO-LAB WeChat official account">
+    <button type="button" class="wechat-close" data-wechat-close aria-label="Close">×</button>
+    <img src="{{ '/assets/img/wechat-qr.jpg' | relative_url }}" alt="CO-LAB WeChat official account QR code" width="430" height="430">
+    <p class="wechat-caption">Scan with WeChat to follow CO-LAB.</p>
+  </div>
+</div>
+
+<style>
+  .wechat-btn {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font: inherit; font-size: .92rem; font-weight: 600;
+    padding: .55rem 1.15rem; border-radius: 7px;
+    border: 1px solid var(--global-theme-color);
+    background: transparent; color: var(--global-theme-color);
+    cursor: pointer;
+  }
+  .wechat-btn:hover { background: var(--global-theme-color); color: #fff; }
+
+  .wechat-modal {
+    position: fixed; inset: 0; z-index: 2000;
+    display: none; align-items: center; justify-content: center;
+    padding: 6vh 5vw;
+    background: rgba(0, 0, 0, .72);
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  }
+  .wechat-modal.is-open { display: flex; }
+
+  .wechat-dialog {
+    position: relative;
+    background: #fff; color: #222;
+    padding: 1.4rem 1.4rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .45);
+    text-align: center;
+    max-width: min(430px, 90vw);
+  }
+  .wechat-dialog img {
+    display: block; width: 100%; max-width: 340px; height: auto;
+    margin: 0 auto;
+  }
+  .wechat-caption {
+    margin: .7rem 0 0; font-size: .82rem; color: #6b6b6b;
+  }
+  .wechat-close {
+    position: absolute; top: -0.55rem; right: -0.55rem;
+    width: 2rem; height: 2rem; line-height: 1;
+    border: 0; border-radius: 50%;
+    background: #fff; color: #444;
+    font-size: 1.35rem; cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+  }
+  .wechat-close:hover { background: #f2f2f2; }
+</style>
+
+<script>
+(function () {
+  if (window.__wechatBound) return;
+  window.__wechatBound = true;
+
+  var modal = document.getElementById('wechat-modal');
+  if (!modal) return;
+  var closeBtn = modal.querySelector('[data-wechat-close]');
+
+  function open() {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    closeBtn.focus();
+  }
+  function close() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  document.querySelectorAll('[data-wechat-open]').forEach(function (btn) {
+    btn.addEventListener('click', open);
+  });
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) { e.stopPropagation(); close(); }
+  });
+})();
+</script>

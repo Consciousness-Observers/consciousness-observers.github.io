@@ -8,9 +8,12 @@ last_name: CO-LAB
 contact_note: >
   Website issues? Contact the maintainer.
 description: >
-  Consciousness Observers (CO-LAB) — a student-led, interdisciplinary platform for the study of consciousness, based at Zhejiang University.
+  Consciousness Observers (CO-LAB) — a student-led, interdisciplinary team working on
+  consciousness, resident at the Future Learning Center, Zhejiang University.
 footer_text: >
-  <a href="https://consciousness-observers.github.io">Consciousness Observers (CO-LAB)</a>.
+  <a href="https://consciousness-observers.github.io">Consciousness Observers (CO-LAB)</a> ·
+  Future Learning Center, Zhejiang University ·
+  <a href="mailto:consciousness.observers@outlook.com">consciousness.observers@outlook.com</a>.
   Site maintained by <a href="/members/#zihao-wang">Zihao Wang</a>.
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 keywords: consciousness-observers, consciousness, interdisciplinary, consciousness-studies, student-led

@@ -31,7 +31,7 @@ You are affiliated with a university or research institute — a student at any 
   </a>
 </div>
 
-Having trouble with the form? Contact [**psychwangzihao@zju.edu.cn**](mailto:psychwangzihao@zju.edu.cn?subject=CO-LAB%20Membership).
+Having trouble with the form? Contact [**consciousness.observers@outlook.com**](mailto:consciousness.observers@outlook.com?subject=CO-LAB%20Membership).
 
 ---
 
