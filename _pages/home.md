@@ -16,8 +16,12 @@ permalink: /
     </p>
   </div>
   <div class="col-md-4 text-center">
-    <img src="{{ '/assets/img/CO_Logo.png' | relative_url }}" alt="CO-LAB Logo"
-         style="max-width: 220px; height: auto;" loading="eager">
+    <img class="only-light" src="{{ '/assets/img/CO_Logo_round.png' | relative_url }}"
+         alt="CO-LAB logo" width="700" height="703"
+         style="margin: 0 auto; max-width: 220px; height: auto;" loading="eager">
+    <img class="only-dark" src="{{ '/assets/img/CO_Logo_round_light.png' | relative_url }}"
+         alt="CO-LAB logo" width="700" height="703"
+         style="margin: 0 auto; max-width: 220px; height: auto;" loading="eager">
   </div>
 </div>
 
