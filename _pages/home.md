@@ -40,16 +40,16 @@ permalink: /
 
   <p>
     CO-LAB became a resident team of the <strong>Future Learning Center, Zhejiang University</strong>
-    in 2026. We have a room there, plus the centre's spaces, 3D printers and student network. The
-    room matters: it holds the reading list, the open questions and half-finished workshop material
-    between sessions. We remain an independent, cross-school student group — not attached to one
-    department, not run by faculty.
+    in 2026. We have desks there, and can use the centre's shared spaces, 3D printers and student
+    network. Somewhere to leave the reading list, the open questions and half-finished workshop
+    material between sessions matters more than it sounds. We remain an independent, cross-school
+    student group — not attached to one department, not run by faculty.
   </p>
 </div>
 
 <div class="photo-grid">
-  <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>Our room in the Future Learning Center</figcaption></figure>
-  <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>Desks and the reading wall</figcaption></figure>
+  <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>Our desks in the Future Learning Center</figcaption></figure>
+  <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>The centre's shared space</figcaption></figure>
   <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>The team at work</figcaption></figure>
 </div>
 
