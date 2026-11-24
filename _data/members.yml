@@ -36,9 +36,23 @@
   personal_page: https://psychwangzihao.github.io
 
 - name: Yueyang Lu
-  background: Optoelectronics and biomedical engineering
-  institution: Chu Kochen Honors College & Institute for Basic Interdisciplinary Research, Zhejiang University
-  research_focus: biomedical engineering perspective — instrumentation and measurement for consciousness research
+  background: Optoelectronic Information Science and Engineering
+  institution: College of Optical Science and Engineering, Zhejiang University
+  image: yueyang_lu.jpg
+  research_focus: computational imaging and neural population dynamics — how measurements at one scale speak to another
+  statement: >-
+    I approach consciousness as something that cannot be settled by finding a single neural
+    correlate, or by proposing a theory up front. What interests me is how microscopic neural
+    mechanisms connect to population dynamics, behaviour, and experience — and what each
+    measurement can actually tell us. Through Zhejiang University's interdisciplinary training
+    I have worked on behavioural neuroscience, biosensing, and computational microscopy, and
+    the same lesson kept returning: before relating phenomena across scales, we have to
+    understand how the states are measured, which information survives, and where the models
+    fail. I am now working towards a modest, testable question — whether population spiking
+    carries information about subsequent local field potentials beyond stimulus, behaviour and
+    signal history. I hope to learn from people approaching consciousness through theory,
+    experiment and AI, and to help turn broad questions about experience into precise,
+    experimentally constrained ones.
 
 - name: Chenglu Gao
   background: Theoretical psychology
