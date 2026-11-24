@@ -20,7 +20,7 @@ nav: false
 
 The idea follows Yi Rao's *Concepts and Approaches in Biology*: take **one important concept** in psychology, and go back to the **original papers** that established it.
 
-The concept is what we are after. The approach comes along with it — not as a separate lesson, but because following the experiment is the only way to see how a concept was actually built.
+The concept is the point. The approach comes with it: following the experiment is how you see a concept being built.
 
 For each concept we trace the same chain:
 
@@ -40,19 +40,19 @@ Each paper goes to two or three people, who read it together and bring their own
 
 ## How a session runs
 
-**Before.** Sign up, and the organiser assigns you a paper. Read it, and send in what it left you wondering about. The day before the session those questions are collected and ordered, then sent round — to everyone taking part, and to the PhD students of the recommending lab — so that the room arrives with the same questions in hand.
+**Before.** Sign up; the organiser assigns you a paper. Read it, and send in what it left you wondering about. The day before, those questions are collected, ordered and sent to everyone — including the PhD students of the lab that recommended the paper — so the room arrives with the same questions.
 
 **During.** We take the papers in order. Whoever read a paper presents it; then the floor opens, working through the question list and whatever the PhD students bring back to it.
 
 **After.** Everyone writes up the paper they read. The organiser and the PhD student put those write-ups together into one article, on which they are corresponding authors and everyone else a co-first author.
 
-Sessions run five times a semester, in the evening, over tea. There is no lecture: everyone reads beforehand, and the discussion belongs to whoever is in the room.
+Five sessions a term, evenings, over tea. No lectures: everyone reads beforehand, and the discussion belongs to whoever is in the room.
 
 ## Session records
 
-Every session leaves a written record: what the concept was, which papers we read, what the argument in the room actually turned on. Papers and further resources are linked from each one.
+Every session leaves a record: the concept, the papers we read, and what the argument actually turned on. Papers and resources are linked from each.
 
-The records are collected in an open book, so that what the room worked out stays readable — to the next session, and to anyone else who wants to follow the same papers.
+The records are collected in an open book — readable by the next session, and by anyone following the same papers.
 
 <p style="margin: 1.4rem 0 0;">
   <a href="https://consciousness-observers.github.io/concepts-and-approaches/" style="display: inline-block; padding: 0.65rem 1.8rem; font-size: 0.9375rem; font-weight: 600; background: var(--global-theme-color); color: #fff; border-radius: 7px; text-decoration: none;">Read the book →</a>

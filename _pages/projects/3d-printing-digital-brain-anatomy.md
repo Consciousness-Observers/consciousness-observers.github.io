@@ -30,7 +30,7 @@ _styles: >
 
 ---
 
-A full-day, hands-on workshop tracing the brain from evolutionary origins to 3D-printed model. Participants explore interactive brain atlases, work with real MRI data, perform virtual dissection, and produce a physical 3D-printed brain model — bridging neuroscience, imaging, and digital fabrication in a single integrated arc.
+A full-day workshop tracing the brain from evolutionary origins to a 3D-printed model. Participants explore interactive atlases, work with real MRI data, do a virtual dissection, and print a brain of their own — neuroscience, imaging and fabrication in one day.
 
 The accompanying interactive tutorial covers four modules:
 

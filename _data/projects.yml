@@ -7,10 +7,8 @@
   contacts:
     - Zihao Wang
   description: >
-    A reading group hosted by the Department of Psychology and Behavioral Sciences
-    and co-organised with CO-LAB. One concept per session, in three to five original
-    papers — five sessions a semester, evenings, over tea. Each session leaves a
-    written record, and a summary article.
+    One concept per session, traced through three to five original papers. Five
+    evenings a term, over tea. Every session leaves a written record.
   status: active
 
 - title: "3D Printing and Digital Brain Anatomy"
@@ -19,9 +17,8 @@
   contacts:
     - Zihao Wang
   description: >
-    A full-day workshop tracing the brain from evolutionary origins to 3D-printed
-    model — interactive 3D atlases, real MRI data, and virtual dissection — bridging
-    psychology, neuroscience, imaging, and digital fabrication.
+    A full-day workshop from evolutionary origins to a printed model: interactive
+    3D atlases, real MRI data, virtual dissection.
   status: active
 
 # Outreach projects above
@@ -33,6 +30,6 @@
   contacts:
     - Zihao Wang
   description: >
-    A ring of Nature covers, one per issue, from the science of mind and brain.
-    Scrolls on its own; pause and click a cover to read what that issue was about.
+    A ring of Nature covers on mind and brain. It scrolls by itself; pause and click
+    a cover to read the story behind it.
   status: active

@@ -9,14 +9,14 @@ nav_order: 6
 
 ### Who We're Looking For
 
-You are affiliated with a university or research institute — a student at any level, a postdoc, a research assistant, an independent scholar — and you care deeply about consciousness. You come because the question matters, not because it pays.
+Students, postdocs, research assistants, independent scholars: anyone at a university or research institute who cares about consciousness.
 
 ### How It Works
 
 1. **Apply** — fill out the form
 2. **Observe** — attend one session as an observer
-3. **Present** — give a brief introduction at a second session (your research, your approach to consciousness — no need for a formal talk)
-4. **Vote** — all members vote after the second session; majority approval invites you to join
+3. **Present** — introduce your work at a second session. No formal talk needed.
+4. **Vote** — members vote after the second session; a majority invites you in.
 
 ---
 
@@ -39,5 +39,5 @@ Having trouble with the form? Contact [**consciousness.observers@outlook.com**](
 
 ### How We Work Together
 
-We leave academic rank at the door. Disagreement is welcome; condescension is not. Every disciplinary approach to consciousness is respected, and no unedited discussion materials are shared without everyone's consent.
+We leave academic rank at the door. Disagreement is welcome; condescension is not. No discussion material is shared outside the room without everyone's consent.
 

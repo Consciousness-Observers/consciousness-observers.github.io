@@ -11,8 +11,8 @@ permalink: /
       CO-LAB · Linking Across Boundaries
     </p>
     <p style="font-size: 1rem; line-height: 1.7;">
-      A student-led, interdisciplinary team working on consciousness — physics, psychology,
-      neuroscience, biomedical engineering and philosophy, in the same room.
+      A student-led team working on consciousness across physics, psychology, neuroscience,
+      biomedical engineering and philosophy.
     </p>
   </div>
   <div class="col-md-4 text-center">
@@ -27,36 +27,28 @@ permalink: /
 
 ## What we are
 
-We are a small group of students who want to understand consciousness, and who got tired of
-having the same conversation in different departments. Physics, psychology, life sciences,
-biomedical engineering, philosophy — between us we cover most of the disciplines the question
-touches, and most of the programmes the university has already built for it.
+A handful of students who want to understand consciousness. Between us we cover most of the
+disciplines the question touches, and most of the programmes the university has built for it.
 
-The name says what we are after: *Consciousness Observers — Linking Across Boundaries*. Learning
-that crosses boundaries, and a shared way in to working on the question.
+Our name says the rest: *Consciousness Observers — Linking Across Boundaries*.
 
 ## How we work
 
-Decentralised and equal. Every member takes part in decisions and in the work of keeping the
-group running; there are no ranks and no one is anyone's assistant. We stay deliberately small
-so that everyone can take part deeply rather than marginally.
+Decentralised. Every member takes part in decisions and in the chores; there are no ranks.
 
-We read original papers together, argue about them, and then try to turn what we read into
-something other people can use — a workshop, a record, a page like this one.
+We read original papers together, argue about them, and turn what survives into something others
+can use — a workshop, a reading record, this site.
 
 ## Where we are
 
-CO-LAB was admitted to the **[Future Learning Center, Zhejiang University](https://www.zju.edu.cn/)**
-as a resident team in 2026. We have our own room in the centre, and we work with what the centre
-offers — its spaces, its 3D printing and its network of student teams — to run reading groups,
-workshops and teaching that would be harder to run from a corridor.
+CO-LAB became a resident team of the **Future Learning Center, Zhejiang University** in 2026. We
+have a room there, plus the centre's spaces, 3D printers and student network.
 
-It also gives us a place to keep things: the papers we are reading, the questions we are stuck
-on, the material a workshop needs. A room that can hold yesterday's whiteboard makes a
-difference to work that takes more than one evening.
+The room matters: it holds the reading list, the open questions and half-finished workshop
+material between sessions.
 
-At the same time we are an independent, cross-school student organisation. We are not attached
-to a single department and we are not run by faculty; the members decide what we do.
+We remain an independent, cross-school student group — not attached to one department, not run by
+faculty.
 
 <div class="photo-grid">
   <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>Our room in the Future Learning Center</figcaption></figure>
@@ -91,20 +83,20 @@ to a single department and we are not run by faculty; the members decide what we
 ## What we do
 
 **Reading groups.** *Concepts and Approaches in Psychology* takes one concept per session and
-goes back to the original papers that built it. Five sessions a term, evenings, over tea; the
-records are kept as an [open book](https://consciousness-observers.github.io/concepts-and-approaches/).
+reads the original papers behind it. Five evenings a term; the records are an
+[open book](https://consciousness-observers.github.io/concepts-and-approaches/).
 
-**Workshops.** *3D Printing and Digital Brain Anatomy* runs from evolutionary origins to a
-printed model — interactive atlases, real MRI data, virtual dissection.
+**Workshops.** *3D Printing and Digital Brain Anatomy* goes from evolutionary origins to a
+printed model: interactive atlases, real MRI data, virtual dissection.
 
-**Seminars and writing.** Members present their own work across disciplinary lines, and what is
-worth keeping gets written up in public rather than on someone's laptop.
+**Seminars and writing.** Members present their own work across disciplines, and what is worth
+keeping is written up in public.
 
 ## Get in touch
 
 Write to [**consciousness.observers@outlook.com**](mailto:consciousness.observers@outlook.com) —
-for collaboration, for joining a session, or just to argue about consciousness. We also post
-what we are reading and running on our official account.
+to collaborate, sit in on a session, or argue. What we are reading and running goes on our
+official account.
 
 <div class="wechat-entry" style="margin-top: 1.2rem;">
   {% include wechat.html %}
