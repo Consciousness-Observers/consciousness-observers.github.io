@@ -39,18 +39,13 @@ permalink: /
   </p>
 
   <p>
-    CO-LAB became a resident team of the <strong>Future Learning Center, Zhejiang University</strong>
+    CO-LAB became a resident team of the
+    <a href="https://mp.weixin.qq.com/s/BVXmELc6KxfYkHOkl8wNoQ">Future Learning Center, Zhejiang University</a>
     in 2026. We have desks there, and can use the centre's shared spaces, 3D printers and student
     network. Somewhere to leave the reading list, the open questions and half-finished workshop
     material between sessions matters more than it sounds. We remain an independent, cross-school
     student group — not attached to one department, not run by faculty.
   </p>
-</div>
-
-<div class="photo-grid">
-  <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>Our desks in the Future Learning Center</figcaption></figure>
-  <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>The centre's shared space</figcaption></figure>
-  <figure class="photo-slot"><div class="photo-empty">Photo to come</div><figcaption>The team at work</figcaption></figure>
 </div>
 
 <div class="home-prose">
@@ -80,28 +75,6 @@ permalink: /
     margin-bottom: 1.15rem;
   }
   .home-prose p:last-child { margin-bottom: 0; }
-
-  .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-  .photo-slot { margin: 0; }
-  .photo-empty {
-    display: flex; align-items: center; justify-content: center;
-    aspect-ratio: 4 / 3;
-    border: 1px dashed var(--global-divider-color);
-    border-radius: 8px;
-    background: var(--global-card-bg-color);
-    color: var(--global-text-color-light);
-    font-size: .82rem;
-  }
-  .photo-slot figcaption {
-    margin-top: .45rem;
-    font-size: .8rem;
-    color: var(--global-text-color-light);
-  }
 
   .home-contact {
     margin-top: 2.4rem;
